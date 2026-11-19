@@ -4,18 +4,15 @@
 {% set r = next_retreat %}
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <h1>Yoga &amp; Pilates retreats for women in Georgia</h1>
-      <p class="intro">Small groups, beautiful hotels, good food, and a teacher who is also a medical doctor.</p>
-      <div class="actions">
-        {% if r %}<a class="btn btn-light" href="/retreats/{{ r.slug }}/">See the next retreat</a>{% else %}<a class="btn btn-light" href="/#waitlist">Join the waitlist</a>{% endif %}
-        <a class="btn btn-line-light" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} Follow on Instagram</a>
-      </div>
-      {{ lotus() }}
+  <div class="wrap hero-text">
+    <h1>Yoga &amp; Pilates retreats for women in Georgia</h1>
+    <p class="intro">Small groups, beautiful hotels, good food, and a teacher who is also a medical doctor.</p>
+    <div class="actions">
+      {% if r %}<a class="btn btn-light" href="/retreats/{{ r.slug }}/">See the next retreat</a>{% else %}<a class="btn btn-light" href="/#waitlist">Join the waitlist</a>{% endif %}
+      <a class="btn btn-line-light" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} Follow on Instagram</a>
     </div>
-    {{ picture("dancer", "(max-width: 820px) 100vw, 520px", "Anastasia Mzhavia in dancer pose on a beach", "hero-photo", eager=true) }}
   </div>
+  {{ lotus() }}
 </section>
 
 <div class="wrap facts">
