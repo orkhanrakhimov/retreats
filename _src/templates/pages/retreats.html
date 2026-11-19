@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% from "macros.html" import photo, schedule, faq_items, contact_buttons %}
+{% block title %}Retreats | retreats.ge{% endblock %}
+{% block content %}
+
+<section class="page-top">
+  <div class="wrap">
+    <h1>Retreats</h1>
+    <p class="intro page-intro">A few days away in a beautiful hotel in Georgia, with yoga and Pilates every day, good food, rest, and a small group of women.</p>
+  </div>
+</section>
+
+<section class="section tight-top" id="waitlist">
+  <div class="wrap">
+    {% for x in open_retreats %}
+    <article class="retreat-card">
+      {{ photo("The hotel", "retreat-photo") }}
+      <div class="retreat-body">
+        <p class="meta">{{ x.location|ph }} · {{ x.dates|ph }}</p>
+        <h2>{{ x.name|ph }}</h2>
+        <p>{{ x.summary|ph }}</p>
+        <div class="actions"><a class="btn" href="/retreats/{{ x.slug }}/">Details and booking</a></div>
+      </div>
+    </article>
+    {% else %}
+    <div class="soon-card">
+      <div class="soon-text">
+        <p class="soon-badge">Announcing soon</p>
+        <h2>The first retreat is being planned now</h2>
+        <p>Dates, place and prices will be announced here and on Instagram. Join the waitlist to hear first and book before places open to everyone.</p>
+        <ul class="ticks">
+          <li>Up to 12 places per retreat</li>
+          <li>The waitlist can book before anyone else</li>
+          <li>No payment or commitment now</li>
+        </ul>
+      </div>
+      <form class="form" data-waitlist>
+        <div class="field"><label for="w-name">Name</label><input id="w-name" name="Name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="w-email">Email</label><input id="w-email" name="Email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="w-phone">Phone or WhatsApp <span class="muted">(optional)</span></label><input id="w-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <fieldset class="field">
+          <legend>Which would suit you?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="Format" value="Weekend (2–3 nights)"><span>Weekend</span></label>
+            <label class="chip"><input type="checkbox" name="Format" value="Week (5–7 nights)"><span>Full week</span></label>
+            <label class="chip"><input type="checkbox" name="Format" value="Either"><span>Either</span></label>
+          </div>
+        </fieldset>
+        <button class="btn" type="submit">Join the waitlist</button>
+        <p class="form-done" hidden>Thank you! Your email app should have opened with your sign-up. Send it, and you're on the list.</p>
+      </form>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <h2 class="title">What every retreat includes</h2>
+    <ul class="includes">
+      <li><h3>A beautiful place to stay</h3><p>Hand-picked boutique hotels with comfortable rooms and a spa, sauna or pool.</p></li>
+      <li><h3>Yoga and Pilates every day</h3><p>Yoga in the morning, Pilates in the afternoon, both for all levels.</p></li>
+      <li><h3>All meals</h3><p>Fresh Georgian food from the hotel's kitchen. Tell us about any diet.</p></li>
+      <li><h3>Transfer from Tbilisi</h3><p>We pick you up in the city and bring you back.</p></li>
+      <li><h3>A doctor on hand</h3><p>Anastasia reads your health form before you arrive and adapts the classes to you.</p></li>
+      <li><h3>Time for yourself</h3><p>Free hours every day to rest, walk or enjoy the spa.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <h2 class="title">A day at the retreat</h2>
+      <p class="lead">Two classes a day, good meals, and plenty of rest in between.</p>
+    </div>
+    <div>{{ schedule() }}</div>
+  </div>
+</section>
+
+<section class="section tint" id="questions">
+  <div class="wrap split">
+    <h2 class="title">Questions</h2>
+    {{ faq_items(site) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact">
+    <h2 class="title">Have a question?</h2>
+    <p class="lead">Write to Anastasia. She answers every message herself.</p>
+    {{ contact_buttons(site) }}
+  </div>
+</section>
+{% endblock %}

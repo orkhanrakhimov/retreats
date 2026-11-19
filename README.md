@@ -7,7 +7,7 @@ Website for Anastasia Mzhavia's women's wellness retreats in Georgia. Live at ht
 - `_src/data/site.json`: contact details (Instagram, email), deposit %, currency
 - `_src/data/credentials.json`: Anastasia's diplomas and certificates (images in `assets/img/certificates`)
 - `_src/data/retreats.json`: every retreat: name, dates, venue, rooms and prices, what's included. `"status": "open"` gets its own page and booking; `"soon"` shows as "Coming soon".
-- `_src/templates/`: page templates
+- `_src/templates/`: page templates (Home, Retreats, About, Private & corporate, Contact; `retreat.html` is used once a retreat's status is `open`)
 - `assets/`: styles and scripts
 
 After changing anything in `_src`, rebuild and commit:

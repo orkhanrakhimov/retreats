@@ -160,7 +160,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .retreat-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: #fff; border: 1px solid var(--line); }
 .retreat-photo { aspect-ratio: auto; min-height: 420px; border-radius: 0; }
 .retreat-body { padding: clamp(28px, 4vw, 48px); }
-.retreat-body h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3vw, 40px); line-height: 1.1; margin-bottom: 14px; }
+.retreat-body h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3vw, 40px); line-height: 1.1; margin-bottom: 14px; }
 .mini-facts { display: flex; flex-wrap: wrap; gap: 14px 36px; margin: 26px 0 0; }
 .mini-facts dt { font-size: 13px; color: var(--muted); }
 .mini-facts dd { margin: 2px 0 0; color: var(--ink); font-weight: 500; }
@@ -171,7 +171,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* Coming soon + waitlist */
 .soon-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); padding: clamp(28px, 4.5vw, 56px); background: #fff; border: 1px solid var(--line); }
 .soon-badge { display: inline-block; margin-bottom: 18px; padding: 5px 12px; border: 1px solid var(--green); border-radius: 99px; font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--green); }
-.soon-text h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3vw, 40px); line-height: 1.1; margin-bottom: 16px; }
+.soon-text h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3vw, 40px); line-height: 1.1; margin-bottom: 16px; }
 .soon-text .ticks { margin-top: 22px; }
 fieldset.field { border: 0; padding: 0; margin: 0; }
 fieldset.field legend { font-size: 14.5px; font-weight: 500; margin-bottom: 8px; padding: 0; }
@@ -189,7 +189,7 @@ fieldset.field legend { font-size: 14.5px; font-weight: 500; margin-bottom: 8px;
 .option { display: flex; flex-direction: column; gap: 14px; padding: clamp(26px, 3vw, 36px); background: #fff; border: 1px solid var(--line); transition: border-color .2s, box-shadow .2s; }
 .option:hover { border-color: var(--green-light); box-shadow: 0 16px 40px -28px rgba(25, 27, 24, .45); }
 .option-num { font-family: var(--serif); font-size: 20px; color: var(--green); }
-.option h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.1; }
+.option h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.1; }
 .option p { color: var(--muted); }
 .option .option-meta { font-size: 14px; color: var(--ink); font-weight: 500; padding-top: 12px; border-top: 1px solid var(--line); margin-top: auto; }
 .option .btn { align-self: stretch; }
@@ -321,3 +321,26 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
 }
 .show-sm { display: none; }
 @media (max-width: 560px) { .hide-sm { display: none; } .show-sm { display: inline; } }
+
+/* Page building blocks */
+.page-intro { max-width: 40ch; margin-top: 20px; }
+.section.tight-top { padding-top: 0; }
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; }
+.pillar { border-top: 1px solid var(--ink); padding-top: 20px; }
+.pillar h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.2vw, 29px); line-height: 1.15; margin-bottom: 10px; }
+.pillar p { color: var(--muted); }
+@media (max-width: 860px) { .pillars { grid-template-columns: 1fr; gap: 28px; } }
+.teaser { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; }
+.teaser .title { margin-bottom: 16px; }
+.teaser .lead { max-width: 52ch; }
+.teaser-actions { justify-content: flex-end; margin-top: 0; }
+@media (max-width: 860px) { .teaser { grid-template-columns: 1fr; } .teaser-actions { justify-content: flex-start; } }
+@media (max-width: 560px) { .teaser-actions .btn, .section .actions .btn { flex: 1 1 100%; } }
+.steps li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--line); }
+.steps li:last-child { border-bottom: 1px solid var(--line); }
+.step-num { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--green); color: var(--green); font-family: var(--serif); font-size: 20px; }
+.steps p { color: var(--muted); margin-top: 4px; }
+.contact-page { min-height: 62vh; display: flex; align-items: center; }
+.contact-page .page-intro { margin: 20px auto 0; }
+.contact .actions + .contact-btns { margin-top: 14px; }
+.about-copy { margin-top: 28px; }

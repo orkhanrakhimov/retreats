@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "macros.html" import contact_buttons %}
+{% block title %}Contact | retreats.ge{% endblock %}
+{% block content %}
+
+<section class="page-top contact-page">
+  <div class="wrap contact">
+    <h1>Contact</h1>
+    <p class="intro page-intro">Questions about a retreat, a private booking, or your health and fitness level? Write to Anastasia. She answers every message herself.</p>
+    {{ contact_buttons(site) }}
+    <p class="small muted">Based in Tbilisi, Georgia. WhatsApp is usually the fastest.</p>
+  </div>
+</section>
+{% endblock %}

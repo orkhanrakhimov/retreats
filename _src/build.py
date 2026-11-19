@@ -20,7 +20,9 @@ PAGES = {
     "index.html": "index.html",
     "about.html": "about/index.html",
     "404.html": "404.html",
-    "redirect.html": "retreats/index.html",
+    "retreats.html": "retreats/index.html",
+    "private.html": "private/index.html",
+    "contact.html": "contact/index.html",
 }
 
 

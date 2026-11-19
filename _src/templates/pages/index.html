@@ -1,15 +1,14 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, picture, insta_icon, schedule, faq_items, lotus, contact_buttons, wa_icon, wa_link %}
+{% from "macros.html" import picture, insta_icon, lotus %}
 {% block content %}
-{% set r = next_retreat %}
 
 <section class="hero">
   <div class="wrap hero-text">
     <h1>Yoga &amp; Pilates retreats for women in Georgia</h1>
     <p class="intro">Small groups, beautiful hotels, good food, and a teacher who is also a medical doctor.</p>
     <div class="actions">
-      {% if r %}<a class="btn btn-light" href="/retreats/{{ r.slug }}/">See the next retreat</a>{% else %}<a class="btn btn-light" href="/#waitlist">Join the waitlist</a>{% endif %}
-      <a class="btn btn-line-light" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} Follow on Instagram</a>
+      <a class="btn btn-light" href="/retreats/#waitlist">Join the waitlist</a>
+      <a class="btn btn-line-light" href="/retreats/">About the retreats</a>
     </div>
   </div>
   {{ lotus() }}
@@ -21,106 +20,38 @@
   <p><strong>Led by a doctor</strong> who knows the body</p>
 </div>
 
-<section class="section" id="retreats">
+<section class="section">
   <div class="wrap">
-    <h2 class="title">Upcoming retreats</h2>
-    {% for x in open_retreats %}
-    <article class="retreat-card">
-      {{ photo("The hotel", "retreat-photo") }}
-      <div class="retreat-body">
-        <p class="meta">{{ x.location|ph }} · {{ x.dates|ph }}</p>
-        <h3>{{ x.name|ph }}</h3>
-        <p>{{ x.summary|ph }}</p>
-        <dl class="mini-facts">
-          <div><dt>Stay</dt><dd>{{ x.venue|ph }}</dd></div>
-          <div><dt>From</dt><dd>{{ x|from_price }}</dd></div>
-        </dl>
-        <div class="actions"><a class="btn" href="/retreats/{{ x.slug }}/">Details and booking</a></div>
+    <h2 class="title">A retreat with Anastasia</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>A beautiful place to stay</h3>
+        <p>Hand-picked boutique hotels with comfortable rooms, a spa or pool, and fresh Georgian food.</p>
       </div>
-    </article>
-    {% else %}
-    <div class="soon-card" id="waitlist">
-      <div class="soon-text">
-        <p class="soon-badge">Announcing soon</p>
-        <h3>The first retreat is being planned now</h3>
-        <p>Dates, place and prices will be announced here and on Instagram. Join the waitlist and you'll hear first, with early access to book before places open to everyone.</p>
-        <ul class="ticks">
-          <li>Up to 12 places per retreat</li>
-          <li>The waitlist can book before anyone else</li>
-          <li>No payment or commitment now</li>
-        </ul>
+      <div class="pillar">
+        <h3>Yoga and Pilates every day</h3>
+        <p>Yoga in the morning, Pilates in the afternoon, both for all levels, with free time in between.</p>
       </div>
-      <form class="form" data-waitlist>
-        <div class="field"><label for="w-name">Name</label><input id="w-name" name="Name" type="text" required autocomplete="name"></div>
-        <div class="field"><label for="w-email">Email</label><input id="w-email" name="Email" type="email" required autocomplete="email"></div>
-        <div class="field"><label for="w-phone">Phone or WhatsApp <span class="muted">(optional)</span></label><input id="w-phone" name="Phone" type="tel" autocomplete="tel"></div>
-        <fieldset class="field">
-          <legend>Which would suit you?</legend>
-          <div class="chips">
-            <label class="chip"><input type="checkbox" name="Format" value="Weekend (2–3 nights)"><span>Weekend</span></label>
-            <label class="chip"><input type="checkbox" name="Format" value="Week (5–7 nights)"><span>Full week</span></label>
-            <label class="chip"><input type="checkbox" name="Format" value="Either"><span>Either</span></label>
-          </div>
-        </fieldset>
-        <button class="btn" type="submit">Join the waitlist</button>
-        <p class="form-done" hidden>Thank you! Your email app should have opened with your sign-up. Send it, and you're on the list.</p>
-      </form>
+      <div class="pillar">
+        <h3>Care from a doctor</h3>
+        <p>Anastasia is a medical doctor. She knows your health before you arrive and adapts every class to you.</p>
+      </div>
     </div>
-    {% endfor %}
+    <div class="actions"><a class="btn btn-line" href="/retreats/">More about the retreats</a></div>
   </div>
 </section>
 
 <section class="section tint">
-  <div class="wrap">
-    <h2 class="title">What every retreat includes</h2>
-    <ul class="includes">
-      <li><h3>A beautiful place to stay</h3><p>Hand-picked boutique hotels with comfortable rooms and a spa, sauna or pool.</p></li>
-      <li><h3>Yoga and Pilates every day</h3><p>Yoga in the morning, Pilates in the afternoon, both for all levels.</p></li>
-      <li><h3>All meals</h3><p>Fresh Georgian food from the hotel's kitchen. Tell us about any diet.</p></li>
-      <li><h3>Transfer from Tbilisi</h3><p>We pick you up in the city and bring you back.</p></li>
-      <li><h3>A doctor on hand</h3><p>Anastasia checks your health form before you arrive and adapts the classes to you.</p></li>
-      <li><h3>Time for yourself</h3><p>Free hours every day to rest, walk or enjoy the spa.</p></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="more">
-  <div class="wrap">
-    <h2 class="title">More ways to practise with Anastasia</h2>
-    <p class="lead more-lead">Besides the group retreats, Anastasia plans private and corporate retreats, and teaches one-to-one in Tbilisi.</p>
-    <div class="options">
-      <article class="option">
-        <span class="option-num">01</span>
-        <h3>Private retreat</h3>
-        <p>A retreat just for you and your friends: a birthday, a bride-to-be, or simply time away together. Your dates, a venue we choose together, a programme built around your group.</p>
-        <p class="option-meta">2 to 20 guests · weekend or week</p>
-        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I would like to plan a private retreat.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Plan a private retreat</a>
-      </article>
-      <article class="option">
-        <span class="option-num">02</span>
-        <h3>Corporate wellness</h3>
-        <p>Yoga and Pilates for teams, led by a doctor: posture, back health and stress. A wellness day at your office, or a full team retreat outside the city.</p>
-        <p class="option-meta">Teams of any size · on-site or away</p>
-        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I am interested in corporate wellness for our team.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Ask about corporate</a>
-      </article>
-      <article class="option">
-        <span class="option-num">03</span>
-        <h3>Private sessions</h3>
-        <p>One-to-one yoga or Pilates in Tbilisi, planned around your body and goals, including recovery after injury.</p>
-        <p class="option-meta">Tbilisi · in person</p>
-        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I would like to book a private session.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Book a private session</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap split">
+  <div class="wrap teaser">
     <div>
-      <h2 class="title">A day at the retreat</h2>
-      <p class="lead">Two classes a day, three good meals, and plenty of rest in between.</p>
+      <p class="soon-badge">Announcing soon</p>
+      <h2 class="title">The first retreat is being planned</h2>
+      <p class="lead">Dates, place and prices will be announced on the site and on Instagram. The waitlist hears first and can book before anyone else.</p>
     </div>
-    <div>{{ schedule() }}</div>
+    <div class="actions teaser-actions">
+      <a class="btn" href="/retreats/#waitlist">Join the waitlist</a>
+      <a class="btn btn-line" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} Follow on Instagram</a>
+    </div>
   </div>
 </section>
 
@@ -128,31 +59,27 @@
   <div class="wrap about-grid">
     {{ picture("dancer-close", "(max-width: 860px) 100vw, 460px", "Anastasia Mzhavia doing yoga by the sea", "portrait", widths=(700, 1000)) }}
     <div>
-      <h2 class="title">Your teacher, Anastasia Mzhavia</h2>
-      <p class="lead">Anastasia is a medical doctor and a yoga and Pilates teacher with more than six years of experience. She teaches at OkTopUs Fitness in Tbilisi and has worked with private clients in luxury hotels.</p>
-      <p>Because of her medical background, she knows how to keep a class safe for every body: sore backs, old injuries, beginners and all.</p>
+      <h2 class="title">Meet Anastasia</h2>
+      <p class="lead">A medical doctor and a yoga and Pilates teacher with more than six years of experience. She teaches at OkTopUs Fitness in Tbilisi.</p>
       <ul class="creds">
-        {% for c in credentials if c.main %}
-        <li><strong>{{ c.title }}</strong><span>{{ c.org }}, {{ c.year }}</span></li>
-        {% endfor %}
+        <li><strong>Medical Doctor</strong><span>BAU International University Batumi</span></li>
+        <li><strong>500 hours of yoga teacher training</strong><span>Hatha Yoga Institute, India</span></li>
+        <li><strong>Yoga &amp; Pilates teacher</strong><span>6+ years</span></li>
       </ul>
-      <div class="actions"><a class="btn btn-light" href="/about/">About Anastasia and her certificates</a></div>
+      <div class="actions"><a class="btn btn-light" href="/about/">Her story and certificates</a></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="questions">
-  <div class="wrap split">
-    <h2 class="title">Questions</h2>
-    {{ faq_items(site) }}
-  </div>
-</section>
-
-<section class="section tint" id="contact">
-  <div class="wrap contact">
-    <h2 class="title">Get in touch</h2>
-    <p class="lead">Message Anastasia on WhatsApp or Instagram, or send an email. She answers every message herself.</p>
-    {{ contact_buttons(site) }}
+<section class="section">
+  <div class="wrap teaser">
+    <div>
+      <h2 class="title">Something private?</h2>
+      <p class="lead">Anastasia also plans private retreats for friends, wellness days for companies, and one-to-one sessions in Tbilisi.</p>
+    </div>
+    <div class="actions teaser-actions">
+      <a class="btn btn-line" href="/private/">Private &amp; corporate</a>
+    </div>
   </div>
 </section>
 {% endblock %}

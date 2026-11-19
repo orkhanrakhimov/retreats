@@ -53,7 +53,7 @@
   });
 
   // Gentle fade-in as sections scroll into view
-  var targets = document.querySelectorAll(".section .title, .section .lead, .retreat-card, .soon-card, .option, .includes li, .schedule li, .faq details, .creds li, .price-row, .certs li, .styles li, .facts p, .two-lists > div, .form, .contact .actions");
+  var targets = document.querySelectorAll(".section .title, .section .lead, .retreat-card, .soon-card, .option, .pillar, .steps li, .includes li, .schedule li, .faq details, .creds li, .price-row, .certs li, .styles li, .facts p, .two-lists > div, .form, .contact .actions");
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {

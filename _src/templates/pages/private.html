@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% from "macros.html" import wa_icon, wa_link, contact_buttons %}
+{% block title %}Private retreats & corporate wellness | retreats.ge{% endblock %}
+{% block description %}Private yoga and Pilates retreats for friends, corporate wellness for teams, and one-to-one sessions in Tbilisi with Anastasia Mzhavia, MD.{% endblock %}
+{% block content %}
+
+<section class="page-top">
+  <div class="wrap">
+    <h1>Private &amp; corporate</h1>
+    <p class="intro page-intro">Beyond the group retreats, Anastasia plans retreats and sessions around you: your group, your dates, your goals.</p>
+  </div>
+</section>
+
+<section class="section tight-top">
+  <div class="wrap">
+    <div class="options">
+      <article class="option">
+        <span class="option-num">01</span>
+        <h2>Private retreat</h2>
+        <p>A retreat just for you and your friends: a birthday, a bride-to-be, or simply time away together. Your dates, a venue we choose together, a programme built around your group.</p>
+        <p class="option-meta">2 to 20 guests · weekend or week</p>
+        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I would like to plan a private retreat.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Plan a private retreat</a>
+      </article>
+      <article class="option">
+        <span class="option-num">02</span>
+        <h2>Corporate wellness</h2>
+        <p>Yoga and Pilates for teams, led by a doctor: posture, back health and stress. A wellness day at your office, or a team retreat outside the city.</p>
+        <p class="option-meta">Teams of any size · at your office or away</p>
+        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I am interested in corporate wellness for our team.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Ask about corporate</a>
+      </article>
+      <article class="option">
+        <span class="option-num">03</span>
+        <h2>Private sessions</h2>
+        <p>One-to-one yoga or Pilates in Tbilisi, planned around your body and goals, including recovery after injury.</p>
+        <p class="option-meta">Tbilisi · in person</p>
+        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I would like to book a private session.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Book a private session</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap split">
+    <h2 class="title">How it works</h2>
+    <ol class="steps">
+      <li><span class="step-num">1</span><div><h3>Tell us what you have in mind</h3><p>Message Anastasia with your idea, the size of your group and roughly when.</p></div></li>
+      <li><span class="step-num">2</span><div><h3>We plan it together</h3><p>She suggests a venue, a programme and a price, and adjusts it until it's right for you.</p></div></li>
+      <li><span class="step-num">3</span><div><h3>You just arrive</h3><p>Classes, meals, transfers and the details are taken care of.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact">
+    <h2 class="title">Start planning</h2>
+    <p class="lead">Write to Anastasia in the way that suits you.</p>
+    {{ contact_buttons(site) }}
+  </div>
+</section>
+{% endblock %}
