@@ -13,7 +13,7 @@
  */
 
 var SHEET_NAME = 'Sign-ups';
-var COLUMNS = ['id', 'date', 'type', 'name', 'email', 'phone', 'preference', 'message', 'page', 'status', 'notes'];
+var COLUMNS = ['id', 'date', 'type', 'name', 'email', 'phone', 'level', 'motivation', 'health', 'preference', 'page', 'status', 'notes'];
 var MAX_LEN = 1000;
 
 function sheet_() {
@@ -25,7 +25,20 @@ function sheet_() {
     sh.setFrozenRows(1);
     sh.getRange(1, 1, 1, COLUMNS.length).setFontWeight('bold');
   }
+  // Add any columns that are missing (keeps older sheets working)
+  var header = headers_(sh);
+  COLUMNS.forEach(function (c) {
+    if (header.indexOf(c) === -1) {
+      sh.getRange(1, header.length + 1).setValue(c).setFontWeight('bold');
+      header.push(c);
+    }
+  });
   return sh;
+}
+
+function headers_(sh) {
+  var last = Math.max(sh.getLastColumn(), 1);
+  return sh.getRange(1, 1, 1, last).getValues()[0].map(String).filter(function (h) { return h; });
 }
 
 function json_(obj) {
@@ -50,11 +63,12 @@ function doPost(e) {
 
   if (body.action === 'update') {
     if (!isAdmin_(body.key)) return json_({ ok: false, error: 'unauthorised' });
-    var sh = sheet_(), data = sh.getDataRange().getValues();
+    var sh = sheet_(), header = headers_(sh), data = sh.getDataRange().getValues();
+    var idCol = header.indexOf('id');
     for (var i = 1; i < data.length; i++) {
-      if (String(data[i][0]) === String(body.id)) {
-        if (body.status != null) sh.getRange(i + 1, COLUMNS.indexOf('status') + 1).setValue(clean_(body.status));
-        if (body.notes != null) sh.getRange(i + 1, COLUMNS.indexOf('notes') + 1).setValue(clean_(body.notes));
+      if (String(data[i][idCol]) === String(body.id)) {
+        if (body.status != null) sh.getRange(i + 1, header.indexOf('status') + 1).setValue(clean_(body.status));
+        if (body.notes != null) sh.getRange(i + 1, header.indexOf('notes') + 1).setValue(clean_(body.notes));
         return json_({ ok: true });
       }
     }
@@ -63,16 +77,20 @@ function doPost(e) {
 
   // Honeypot: real visitors never fill this hidden field
   if (body.website) return json_({ ok: true });
-  if (!body.name || !body.email) return json_({ ok: false, error: 'missing fields' });
+  if (!body.name || !body.email || !body.phone) return json_({ ok: false, error: 'missing fields' });
 
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
     var id = Utilities.getUuid().slice(0, 8);
-    sheet_().appendRow([
-      id, new Date(), clean_(body.type || 'waitlist'), clean_(body.name), clean_(body.email),
-      clean_(body.phone), clean_(body.preference), clean_(body.message), clean_(body.page), 'New', ''
-    ]);
+    var sh = sheet_(), header = headers_(sh);
+    var record = {
+      id: id, date: new Date(), type: clean_(body.type || 'retreat interest'), name: clean_(body.name),
+      email: clean_(body.email), phone: clean_(body.phone), level: clean_(body.level),
+      motivation: clean_(body.motivation), health: clean_(body.health), preference: clean_(body.preference),
+      page: clean_(body.page), status: 'New', notes: ''
+    };
+    sh.appendRow(header.map(function (h) { return record[h] != null ? record[h] : ''; }));
   } finally {
     lock.releaseLock();
   }
@@ -81,10 +99,11 @@ function doPost(e) {
   if (to) {
     MailApp.sendEmail({
       to: to,
-      subject: 'New ' + (body.type || 'waitlist') + ' sign-up: ' + String(body.name).slice(0, 80),
+      subject: 'New retreat sign-up: ' + String(body.name).slice(0, 80),
       body: [
         'Name: ' + body.name, 'Email: ' + body.email, 'Phone: ' + (body.phone || '-'),
-        'Preference: ' + (body.preference || '-'), 'Message: ' + (body.message || '-'),
+        'Level: ' + (body.level || '-'), 'Wants from a retreat: ' + (body.motivation || '-'),
+        'Health: ' + (body.health || '-'), 'Prefers: ' + (body.preference || '-'),
         '', 'See everyone at https://retreats.ge/admin/'
       ].join('\n'),
       replyTo: String(body.email)
@@ -96,10 +115,10 @@ function doPost(e) {
 /** Admin only: list all sign-ups for the /admin page. */
 function doGet(e) {
   if (!isAdmin_(e.parameter.key)) return json_({ ok: false, error: 'unauthorised' });
-  var data = sheet_().getDataRange().getValues();
+  var sh = sheet_(), header = headers_(sh), data = sh.getDataRange().getValues();
   var rows = data.slice(1).map(function (r) {
     var o = {};
-    COLUMNS.forEach(function (c, i) { o[c] = r[i] instanceof Date ? r[i].toISOString() : r[i]; });
+    header.forEach(function (c, i) { o[c] = r[i] instanceof Date ? r[i].toISOString() : r[i]; });
     return o;
   }).reverse();
   return json_({ ok: true, rows: rows, sheet: SpreadsheetApp.getActiveSpreadsheet().getUrl() });

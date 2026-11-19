@@ -33,7 +33,7 @@
       <a href="/contact/">Contact</a>
     </nav>
     <div class="header-end">
-<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Join the waitlist</span><span class="show-sm">Waitlist</span></a>      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
+<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
         <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>
     </div>
@@ -55,33 +55,51 @@
       <div class="soon-text">
         <p class="soon-badge">Announcing soon</p>
         <h2>The first retreat is being planned now</h2>
-        <p>Dates, place and prices will be announced here and on Instagram. Join the waitlist to hear first and book before places open to everyone.</p>
+        <p>Dates, place and prices will be announced here and on Instagram. Register your interest and Anastasia will contact you personally before places open to everyone.</p>
         <ul class="ticks">
           <li>Up to 12 places per retreat</li>
-          <li>The waitlist can book before anyone else</li>
+          <li>Registered guests can book before anyone else</li>
           <li>No payment or commitment now</li>
         </ul>
       </div>
-      <form class="form" data-waitlist>
+      <form class="form" data-waitlist novalidate>
         <div class="hp" aria-hidden="true"><label for="w-website">Website</label><input id="w-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <div class="field"><label for="w-name">Name</label><input id="w-name" name="Name" type="text" required autocomplete="name"></div>
-        <div class="field"><label for="w-email">Email</label><input id="w-email" name="Email" type="email" required autocomplete="email"></div>
-        <div class="field"><label for="w-phone">Phone or WhatsApp <span class="muted">(optional)</span></label><input id="w-phone" name="Phone" type="tel" autocomplete="tel"></div>
-        <fieldset class="field">
-          <legend>Which would suit you?</legend>
+        <p class="form-step">About you</p>
+        <div class="field"><label for="w-name">Full name</label><input id="w-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="field-row">
+          <div class="field"><label for="w-email">Email</label><input id="w-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="w-phone">Phone number</label><input id="w-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+995 …"></div>
+        </div>
+
+        <p class="form-step">Your practice</p>
+        <fieldset class="field" data-required-group>
+          <legend>Your level of yoga or Pilates</legend>
           <div class="chips">
-            <label class="chip"><input type="checkbox" name="Format" value="Weekend (2–3 nights)"><span>Weekend</span></label>
-            <label class="chip"><input type="checkbox" name="Format" value="Week (5–7 nights)"><span>Full week</span></label>
-            <label class="chip"><input type="checkbox" name="Format" value="Either"><span>Either</span></label>
+            <label class="chip"><input type="radio" name="level" value="New to it" required><span>New to it</span></label>
+            <label class="chip"><input type="radio" name="level" value="Some experience"><span>Some experience</span></label>
+            <label class="chip"><input type="radio" name="level" value="Practise regularly"><span>Practise regularly</span></label>
+            <label class="chip"><input type="radio" name="level" value="Advanced"><span>Advanced</span></label>
           </div>
         </fieldset>
-        <button class="btn" type="submit">Join the waitlist</button>
-        <p class="form-error" role="alert" hidden>Something went wrong. Please try again, or write to Anastasia on WhatsApp.</p>
+        <div class="field"><label for="w-motivation">What would you like from a retreat?</label><textarea id="w-motivation" name="motivation" rows="3" required placeholder="For example: rest and switch off, get stronger, help with back pain, time for myself"></textarea></div>
+        <div class="field"><label for="w-health">Anything medical Anastasia should know?</label><textarea id="w-health" name="health" rows="3" required placeholder="Injuries, back or joint pain, conditions, pregnancy, medication. Write &quot;None&quot; if nothing."></textarea><span class="hint">Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.</span></div>
+        <fieldset class="field">
+          <legend>Which would suit you? <span class="muted">(optional)</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="format" value="Weekend (2–3 nights)"><span>Weekend</span></label>
+            <label class="chip"><input type="checkbox" name="format" value="Week (5–7 nights)"><span>Full week</span></label>
+            <label class="chip"><input type="checkbox" name="format" value="Abroad"><span>Abroad</span></label>
+          </div>
+        </fieldset>
+
+        <label class="check-row consent"><input type="checkbox" name="consent" required> <span>I agree that Anastasia keeps these details to plan retreats and contact me. They are never shared.</span></label>
+        <button class="btn" type="submit">Register my interest</button>
+        <p class="form-error" role="alert" hidden></p>
       </form>
       <div class="form-success" data-success hidden tabindex="-1">
         <p class="soon-badge">You're on the list</p>
         <h3>Thank you, <span data-first-name></span>!</h3>
-        <p>You'll be the first to hear when the retreat is announced, and you'll get to book before anyone else.</p>
+        <p>Anastasia will be in touch when the retreat is announced, and you'll be able to book before anyone else.</p>
         <p class="muted small">In the meantime, say hello on <a href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener">Instagram</a>.</p>
       </div>
     </div>
@@ -128,7 +146,7 @@
   <details><summary>I've never done yoga or Pilates. Can I come?</summary><p>Yes. Classes are for all levels, and Anastasia shows an easier version of every exercise.</p></details>
   <details><summary>I have an injury or back pain.</summary><p>Tell us when you book. Anastasia is a medical doctor with a background in rehabilitation, so she'll adapt the classes for you, or tell you honestly if a retreat isn't right for you yet.</p></details>
   <details><summary>Can I come on my own?</summary><p>Yes, many guests do. Take a private room, or share a twin room with another guest.</p></details>
-  <details><summary>How do I book and pay?</summary><p>Join the waitlist and you'll hear first when a retreat is announced. Then you send a booking request, Anastasia confirms your place, and a 30% deposit holds it.</p></details>
+  <details><summary>How do I book and pay?</summary><p>Register your interest on the Retreats page. When a retreat is announced, Anastasia contacts you personally to confirm your place, and a 30% deposit by bank transfer holds it.</p></details>
   <details><summary>What if I need to cancel?</summary><p><span class="fill">[Cancellation policy]</span></p></details>
   <details><summary>Is transport included?</summary><p>Yes. Transfers to and from the venue are included in every retreat. For retreats abroad, flights are not included.</p></details>
 </div>
@@ -140,10 +158,7 @@
     <h2 class="title">Have a question?</h2>
     <p class="lead">Write to Anastasia. She answers every message herself.</p>
     <div class="contact-btns ">
-<a class="contact-btn" href="https://wa.me/995591326326?text=Hello%20Anastasia%21%20I%20have%20a%20question%20about%20your%20retreats." target="_blank" rel="noopener">
-    <span class="contact-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.4-1.6-1-2-2l1-1-1-2z"/></svg></span>
-    <span class="contact-text"><span class="contact-label">WhatsApp</span><span class="contact-value">+995 591 326 326</span></span>
-  </a>  <a class="contact-btn" href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener">
+  <a class="contact-btn" href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener">
     <span class="contact-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></span>
     <span class="contact-text"><span class="contact-label">Instagram</span><span class="contact-value">@anastasiamzhavia</span></span>
   </a>
@@ -170,7 +185,7 @@
         <a href="/contact/">Contact</a>
       </nav>
       <div class="footer-icons">
-<a class="icon-btn" href="https://wa.me/995591326326?text=Hello%20Anastasia%21%20I%20have%20a%20question%20about%20your%20retreats." target="_blank" rel="noopener" aria-label="WhatsApp +995 591 326 326"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.4-1.6-1-2-2l1-1-1-2z"/></svg></a>        <a class="icon-btn" href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener" aria-label="Instagram @anastasiamzhavia"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
+        <a class="icon-btn" href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener" aria-label="Instagram @anastasiamzhavia"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
         <a class="icon-btn" href="mailto:anastasiamzhavia@gmail.com" aria-label="Email anastasiamzhavia@gmail.com"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>
       </div>
     </div>
@@ -181,7 +196,7 @@
   </div>
 </footer>
 
-<script>window.SITE = {"currency": "\u20be", "deposit_percent": 30, "email": "anastasiamzhavia@gmail.com", "forms_endpoint": "", "host": "Anastasia Mzhavia", "instagram": "https://www.instagram.com/anastasiamzhavia/", "instagram_handle": "@anastasiamzhavia", "name": "retreats.ge", "tagline": "Yoga \u0026 Pilates retreats with Anastasia Mzhavia", "url": "https://retreats.ge", "whatsapp": "+995591326326", "whatsapp_display": "+995 591 326 326"};</script>
+<script>window.SITE = {"currency": "\u20be", "deposit_percent": 30, "email": "anastasiamzhavia@gmail.com", "forms_endpoint": "", "host": "Anastasia Mzhavia", "instagram": "https://www.instagram.com/anastasiamzhavia/", "instagram_handle": "@anastasiamzhavia", "name": "retreats.ge", "tagline": "Yoga \u0026 Pilates retreats with Anastasia Mzhavia", "url": "https://retreats.ge"};</script>
 <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

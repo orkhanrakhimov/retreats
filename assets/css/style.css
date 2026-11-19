@@ -397,3 +397,22 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
   .admin-table td::before { content: attr(data-label); display: block; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
   .admin-table select, .admin-table textarea { width: 100%; min-width: 0; }
 }
+
+.form-step { font-size: 12.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--green); padding-top: 10px; border-top: 1px solid var(--line); }
+.form-step:first-of-type { border-top: 0; padding-top: 0; }
+.hint { font-size: 13.5px; color: var(--muted); }
+.consent { align-items: flex-start; font-size: 14.5px; color: var(--text); }
+.consent input { margin-top: 3px; flex: none; }
+.field.invalid input, .field.invalid textarea { border-color: #9B3B2A; }
+.field.invalid legend, .field.invalid > label { color: #9B3B2A; }
+.check-row.invalid { color: #9B3B2A; }
+
+.about-cell { min-width: 260px; max-width: 380px; }
+.about-cell p { margin: 0 0 8px; line-height: 1.45; }
+.about-cell p:last-child { margin-bottom: 0; }
+.cell-label { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.health-flag { background: #FBF1E3; border-left: 3px solid #C9A227; padding: 4px 8px; }
+.admin-table td[data-label="Person"] { min-width: 230px; }
+.admin-table td[data-label="Person"] a { white-space: nowrap; word-break: normal; }
+.admin-table td[data-label="Level"] { min-width: 110px; }
+@media (max-width: 760px) { .admin-table td[data-label="Person"] a { white-space: normal; word-break: break-word; } }

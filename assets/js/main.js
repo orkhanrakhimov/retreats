@@ -35,35 +35,65 @@
     });
   });
 
-  // Waitlist sign-up: saved to the sign-ups sheet (falls back to email until it is connected)
+  // Interest registration: saved to the sign-ups sheet (falls back to email until it is connected)
   document.querySelectorAll("[data-waitlist]").forEach(function (form) {
     var success = form.parentNode.querySelector("[data-success]");
     var error = form.querySelector(".form-error");
+    var showError = function (msg) { error.textContent = msg; error.hidden = !msg; };
+
+    var validate = function () {
+      var first = null;
+      form.querySelectorAll(".invalid").forEach(function (el) { el.classList.remove("invalid"); });
+      form.querySelectorAll("input[required], textarea[required]").forEach(function (el) {
+        var ok = el.type === "radio" ? !!form.querySelector('input[name="' + el.name + '"]:checked')
+          : el.type === "checkbox" ? el.checked : el.checkValidity() && el.value.trim() !== "";
+        if (!ok) {
+          (el.closest(".field") || el.closest(".check-row")).classList.add("invalid");
+          if (!first) first = el;
+        }
+      });
+      if (first) {
+        showError(first.name === "consent" ? "Please tick the box to agree." : first.type === "email" && first.value ? "Please check your email address." : "Please fill in the highlighted fields.");
+        first.focus();
+        return false;
+      }
+      showError(""); return true;
+    };
+    form.addEventListener("input", function (e) {
+      var w = e.target.closest(".invalid"); if (w) w.classList.remove("invalid");
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!form.reportValidity()) return;
+      if (!validate()) return;
       var f = form.elements, prefs = [];
-      form.querySelectorAll("input[name=Format]:checked").forEach(function (c) { prefs.push(c.value); });
+      form.querySelectorAll("input[name=format]:checked").forEach(function (c) { prefs.push(c.value); });
       var data = {
-        type: "waitlist", name: f.Name.value.trim(), email: f.Email.value.trim(), phone: f.Phone.value.trim(),
-        preference: prefs.join(", "), page: location.pathname, website: f.website ? f.website.value : ""
+        type: "retreat interest", name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
+        level: (form.querySelector("input[name=level]:checked") || {}).value || "",
+        motivation: f.motivation.value.trim(), health: f.health.value.trim(),
+        preference: prefs.join(", "), page: location.pathname, website: f.website.value
       };
       var done = function () {
         success.querySelector("[data-first-name]").textContent = data.name.split(" ")[0];
         form.hidden = true; success.hidden = false; success.focus();
       };
       if (!SITE.forms_endpoint) {
-        var body = ["Name: " + data.name, "Email: " + data.email, "Phone: " + (data.phone || "-"), "Prefers: " + (data.preference || "-")].join("\n");
-        window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Retreat waitlist") + "&body=" + encodeURIComponent(body);
+        var body = ["Name: " + data.name, "Email: " + data.email, "Phone: " + data.phone, "Level: " + data.level,
+          "Motivation: " + data.motivation, "Health: " + data.health, "Prefers: " + (data.preference || "-")].join("\n");
+        window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Retreat interest: " + data.name) + "&body=" + encodeURIComponent(body);
         done();
         return;
       }
       var btn = form.querySelector("button[type=submit]");
-      btn.disabled = true; btn.textContent = "Sending…"; error.hidden = true;
+      btn.disabled = true; btn.textContent = "Sending…"; showError("");
       fetch(SITE.forms_endpoint, { method: "POST", body: JSON.stringify(data) })
         .then(function (r) { return r.json(); })
         .then(function (res) { if (!res.ok) throw new Error(res.error); done(); })
-        .catch(function () { error.hidden = false; btn.disabled = false; btn.textContent = "Join the waitlist"; });
+        .catch(function () {
+          showError("Something went wrong. Please try again, or email " + SITE.email + ".");
+          btn.disabled = false; btn.textContent = "Register my interest";
+        });
     });
   });
 

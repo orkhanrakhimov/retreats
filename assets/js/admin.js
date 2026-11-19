@@ -29,10 +29,10 @@
   var sample = function () {
     var now = Date.now(), day = 864e5;
     return [
-      { id: "a1", date: new Date(now - 0.2 * day).toISOString(), type: "waitlist", name: "Nino Beridze", email: "nino@example.com", phone: "+995 555 12 34 56", preference: "Weekend (2–3 nights)", status: "New", notes: "" },
-      { id: "a2", date: new Date(now - 1.5 * day).toISOString(), type: "waitlist", name: "Mariam K.", email: "mariam@example.com", phone: "", preference: "Week (5–7 nights)", status: "Contacted", notes: "Wants to come with her sister" },
-      { id: "a3", date: new Date(now - 4 * day).toISOString(), type: "waitlist", name: "Sophie Laurent", email: "sophie@example.com", phone: "+33 6 12 34 56 78", preference: "Either", status: "Booked", notes: "Flying from Paris" },
-      { id: "a4", date: new Date(now - 9 * day).toISOString(), type: "waitlist", name: "Ana Gelashvili", email: "ana@example.com", phone: "+995 599 00 11 22", preference: "Weekend (2–3 nights)", status: "New", notes: "" }
+      { id: "a1", date: new Date(now - 0.2 * day).toISOString(), name: "Nino Beridze", email: "nino@example.com", phone: "+995 555 12 34 56", level: "New to it", motivation: "Switch off from work and finally start moving again.", health: "Lower back pain after long days at the desk.", preference: "Weekend (2–3 nights)", status: "New", notes: "" },
+      { id: "a2", date: new Date(now - 1.5 * day).toISOString(), name: "Mariam K.", email: "mariam@example.com", phone: "+995 599 22 33 44", level: "Practise regularly", motivation: "Deepen my practice and get stronger.", health: "None", preference: "Week (5–7 nights), Abroad", status: "Contacted", notes: "Wants to come with her sister" },
+      { id: "a3", date: new Date(now - 4 * day).toISOString(), name: "Sophie Laurent", email: "sophie@example.com", phone: "+33 6 12 34 56 78", level: "Some experience", motivation: "Rest, sea air and time for myself.", health: "Pregnant, 14 weeks.", preference: "Week (5–7 nights)", status: "Booked", notes: "Prenatal modifications" },
+      { id: "a4", date: new Date(now - 9 * day).toISOString(), name: "Ana Gelashvili", email: "ana@example.com", phone: "+995 599 00 11 22", level: "Advanced", motivation: "Learn from a doctor how to avoid injuries.", health: "Old knee injury (left).", preference: "Weekend (2–3 nights)", status: "New", notes: "" }
     ];
   };
 
@@ -52,14 +52,14 @@
   var renderStats = function () {
     var weekAgo = Date.now() - 7 * 864e5;
     var count = function (fn) { return rows.filter(fn).length; };
-    var pref = function (word) { return count(function (r) { return String(r.preference).indexOf(word) > -1; }); };
+    var hasHealth = function (r) { return r.health && !/^\s*(none|no|nothing|-|нет|არა)\.?\s*$/i.test(r.health); };
     var cards = [
-      ["Total sign-ups", rows.length],
+      ["Registered", rows.length],
       ["New this week", count(function (r) { return new Date(r.date) > weekAgo; })],
       ["Not contacted yet", count(function (r) { return (r.status || "New") === "New"; })],
       ["Booked", count(function (r) { return r.status === "Booked"; })],
-      ["Prefer weekend", pref("Weekend")],
-      ["Prefer full week", pref("Week (")]
+      ["Beginners", count(function (r) { return r.level === "New to it"; })],
+      ["With health notes", count(hasHealth)]
     ];
     $("[data-stats]").innerHTML = cards.map(function (c) {
       return '<div class="stat"><span class="stat-num">' + c[1] + '</span><span class="stat-label">' + c[0] + "</span></div>";
@@ -68,25 +68,30 @@
 
   var renderRows = function () {
     var q = $("[data-search]").value.trim().toLowerCase();
-    var st = $("[data-filter-status]").value;
+    var st = $("[data-filter-status]").value, lv = $("[data-filter-level]").value;
     var list = rows.filter(function (r) {
       if (st && (r.status || "New") !== st) return false;
+      if (lv && r.level !== lv) return false;
       if (!q) return true;
-      return [r.name, r.email, r.phone].join(" ").toLowerCase().indexOf(q) > -1;
+      return [r.name, r.email, r.phone, r.motivation, r.health].join(" ").toLowerCase().indexOf(q) > -1;
     });
     $("[data-empty]").hidden = list.length > 0;
     $("[data-rows]").innerHTML = list.map(function (r) {
-      var wa = waLink(r.phone);
-      var status = r.status || "New";
+      var wa = waLink(r.phone), status = r.status || "New";
+      var health = r.health && !/^\s*(none|no|nothing|-)\.?\s*$/i.test(r.health);
       return '<tr data-id="' + esc(r.id) + '">' +
         '<td class="nowrap" data-label="Date">' + esc(fmtDate(r.date)) + "</td>" +
-        '<td data-label="Name"><strong>' + esc(r.name) + "</strong>" + (r.type && r.type !== "waitlist" ? '<br><span class="tag">' + esc(r.type) + "</span>" : "") + "</td>" +
-        '<td data-label="Contact"><a href="mailto:' + esc(r.email) + '">' + esc(r.email) + "</a>" +
-          (r.phone ? "<br>" + (wa ? '<a href="' + wa + '" target="_blank" rel="noopener">' + esc(r.phone) + " (WhatsApp)</a>" : esc(r.phone)) : "") + "</td>" +
-        '<td data-label="Prefers">' + esc(r.preference || "–") + "</td>" +
+        '<td data-label="Person"><strong>' + esc(r.name) + "</strong><br>" +
+          '<a href="mailto:' + esc(r.email) + '">' + esc(r.email) + "</a>" +
+          (r.phone ? '<br><a href="tel:' + esc(String(r.phone).replace(/[^\d+]/g, "")) + '">' + esc(r.phone) + "</a>" + (wa ? ' · <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' : "") : "") + "</td>" +
+        '<td data-label="Level">' + esc(r.level || "–") + "</td>" +
+        '<td data-label="About them" class="about-cell">' +
+          (r.motivation ? '<p><span class="cell-label">Wants</span>' + esc(r.motivation) + "</p>" : "") +
+          '<p class="' + (health ? "health-flag" : "") + '"><span class="cell-label">Health</span>' + esc(r.health || "–") + "</p>" +
+          (r.preference ? '<p><span class="cell-label">Prefers</span>' + esc(r.preference) + "</p>" : "") + "</td>" +
         '<td data-label="Status"><select class="status status-' + esc(status.toLowerCase().replace(/\s+/g, "-")) + '" data-field="status" aria-label="Status for ' + esc(r.name) + '">' +
           STATUSES.map(function (s) { return "<option" + (s === status ? " selected" : "") + ">" + s + "</option>"; }).join("") + "</select></td>" +
-        '<td data-label="Notes"><textarea rows="1" data-field="notes" placeholder="Add a note" aria-label="Notes for ' + esc(r.name) + '">' + esc(r.notes) + "</textarea></td>" +
+        '<td data-label="Notes"><textarea rows="2" data-field="notes" placeholder="Add a note" aria-label="Notes for ' + esc(r.name) + '">' + esc(r.notes) + "</textarea></td>" +
         "</tr>";
     }).join("");
   };
@@ -128,6 +133,7 @@
   $("[data-refresh]").addEventListener("click", function () { load().catch(function () { showLogin("Please log in again."); }); });
   $("[data-search]").addEventListener("input", renderRows);
   $("[data-filter-status]").addEventListener("change", renderRows);
+  $("[data-filter-level]").addEventListener("change", renderRows);
 
   $("[data-rows]").addEventListener("change", function (e) {
     var el = e.target, field = el.getAttribute("data-field");
@@ -146,7 +152,7 @@
   });
 
   $("[data-export]").addEventListener("click", function () {
-    var cols = ["date", "name", "email", "phone", "preference", "status", "notes", "type"];
+    var cols = ["date", "name", "email", "phone", "level", "motivation", "health", "preference", "status", "notes"];
     var csv = [cols.join(",")].concat(rows.map(function (r) {
       return cols.map(function (c) { return '"' + String(r[c] == null ? "" : r[c]).replace(/"/g, '""') + '"'; }).join(",");
     })).join("\n");

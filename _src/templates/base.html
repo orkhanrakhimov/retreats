@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
-{% from "macros.html" import insta_icon, mail_icon, wa_icon, wa_link %}
+{% from "macros.html" import insta_icon, mail_icon %}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
@@ -36,7 +36,7 @@
       <a href="/contact/"{% if path == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
     </nav>
     <div class="header-end">
-      {% if next_retreat %}<a class="btn btn-small" href="/retreats/{{ next_retreat.slug }}/#book">Book</a>{% else %}<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Join the waitlist</span><span class="show-sm">Waitlist</span></a>{% endif %}
+      {% if next_retreat %}<a class="btn btn-small" href="/retreats/{{ next_retreat.slug }}/#book">Book</a>{% else %}<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>{% endif %}
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
         <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>
@@ -62,7 +62,6 @@
         <a href="/contact/">Contact</a>
       </nav>
       <div class="footer-icons">
-        {% if site.whatsapp %}<a class="icon-btn" href="{{ wa_link(site) }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.whatsapp_display }}">{{ wa_icon(20) }}</a>{% endif %}
         <a class="icon-btn" href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram {{ site.instagram_handle }}">{{ insta_icon(20) }}</a>
         <a class="icon-btn" href="mailto:{{ site.email }}" aria-label="Email {{ site.email }}">{{ mail_icon(20) }}</a>
       </div>

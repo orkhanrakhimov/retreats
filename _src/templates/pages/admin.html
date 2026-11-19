@@ -7,7 +7,7 @@
 
     <div class="admin-login" data-login>
       <h1>Admin</h1>
-      <p class="muted">Sign-ups from the website: the retreat waitlist and anything else people fill in.</p>
+      <p class="muted">Everyone who registered interest in a retreat on the website.</p>
       <form class="form" data-login-form>
         <div class="field"><label for="a-key">Password</label><input id="a-key" type="password" required autocomplete="current-password"></div>
         <label class="check-row"><input type="checkbox" data-remember checked> Remember on this device</label>
@@ -37,6 +37,11 @@
         <label class="sr" for="a-search">Search</label>
         <input id="a-search" type="search" placeholder="Search name, email or phone" data-search>
         <label class="sr" for="a-status">Status</label>
+        <label class="sr" for="a-level">Level</label>
+        <select id="a-level" data-filter-level>
+          <option value="">All levels</option>
+          <option>New to it</option><option>Some experience</option><option>Practise regularly</option><option>Advanced</option>
+        </select>
         <select id="a-status" data-filter-status>
           <option value="">All statuses</option>
           <option>New</option><option>Contacted</option><option>Booked</option><option>Not interested</option>
@@ -45,7 +50,7 @@
 
       <div class="admin-table-wrap">
         <table class="admin-table">
-          <thead><tr><th>Date</th><th>Name</th><th>Contact</th><th>Prefers</th><th>Status</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Date</th><th>Person</th><th>Level</th><th>About them</th><th>Status</th><th>Notes</th></tr></thead>
           <tbody data-rows></tbody>
         </table>
         <p class="admin-empty muted" data-empty hidden>No sign-ups match.</p>

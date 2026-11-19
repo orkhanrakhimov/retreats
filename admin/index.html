@@ -33,7 +33,7 @@
       <a href="/contact/">Contact</a>
     </nav>
     <div class="header-end">
-<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Join the waitlist</span><span class="show-sm">Waitlist</span></a>      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
+<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
         <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>
     </div>
@@ -46,7 +46,7 @@
 
     <div class="admin-login" data-login>
       <h1>Admin</h1>
-      <p class="muted">Sign-ups from the website: the retreat waitlist and anything else people fill in.</p>
+      <p class="muted">Everyone who registered interest in a retreat on the website.</p>
       <form class="form" data-login-form>
         <div class="field"><label for="a-key">Password</label><input id="a-key" type="password" required autocomplete="current-password"></div>
         <label class="check-row"><input type="checkbox" data-remember checked> Remember on this device</label>
@@ -76,6 +76,11 @@
         <label class="sr" for="a-search">Search</label>
         <input id="a-search" type="search" placeholder="Search name, email or phone" data-search>
         <label class="sr" for="a-status">Status</label>
+        <label class="sr" for="a-level">Level</label>
+        <select id="a-level" data-filter-level>
+          <option value="">All levels</option>
+          <option>New to it</option><option>Some experience</option><option>Practise regularly</option><option>Advanced</option>
+        </select>
         <select id="a-status" data-filter-status>
           <option value="">All statuses</option>
           <option>New</option><option>Contacted</option><option>Booked</option><option>Not interested</option>
@@ -84,7 +89,7 @@
 
       <div class="admin-table-wrap">
         <table class="admin-table">
-          <thead><tr><th>Date</th><th>Name</th><th>Contact</th><th>Prefers</th><th>Status</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Date</th><th>Person</th><th>Level</th><th>About them</th><th>Status</th><th>Notes</th></tr></thead>
           <tbody data-rows></tbody>
         </table>
         <p class="admin-empty muted" data-empty hidden>No sign-ups match.</p>
@@ -110,7 +115,7 @@
         <a href="/contact/">Contact</a>
       </nav>
       <div class="footer-icons">
-<a class="icon-btn" href="https://wa.me/995591326326?text=Hello%20Anastasia%21%20I%20have%20a%20question%20about%20your%20retreats." target="_blank" rel="noopener" aria-label="WhatsApp +995 591 326 326"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.4-1.6-1-2-2l1-1-1-2z"/></svg></a>        <a class="icon-btn" href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener" aria-label="Instagram @anastasiamzhavia"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
+        <a class="icon-btn" href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener" aria-label="Instagram @anastasiamzhavia"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
         <a class="icon-btn" href="mailto:anastasiamzhavia@gmail.com" aria-label="Email anastasiamzhavia@gmail.com"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>
       </div>
     </div>
@@ -121,7 +126,7 @@
   </div>
 </footer>
 
-<script>window.SITE = {"currency": "\u20be", "deposit_percent": 30, "email": "anastasiamzhavia@gmail.com", "forms_endpoint": "", "host": "Anastasia Mzhavia", "instagram": "https://www.instagram.com/anastasiamzhavia/", "instagram_handle": "@anastasiamzhavia", "name": "retreats.ge", "tagline": "Yoga \u0026 Pilates retreats with Anastasia Mzhavia", "url": "https://retreats.ge", "whatsapp": "+995591326326", "whatsapp_display": "+995 591 326 326"};</script>
+<script>window.SITE = {"currency": "\u20be", "deposit_percent": 30, "email": "anastasiamzhavia@gmail.com", "forms_endpoint": "", "host": "Anastasia Mzhavia", "instagram": "https://www.instagram.com/anastasiamzhavia/", "instagram_handle": "@anastasiamzhavia", "name": "retreats.ge", "tagline": "Yoga \u0026 Pilates retreats with Anastasia Mzhavia", "url": "https://retreats.ge"};</script>
 <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
