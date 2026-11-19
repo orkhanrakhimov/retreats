@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Admin | retreats.ge{% endblock %}
+{% block head %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+{% block content %}
+<section class="admin" data-admin data-endpoint="{{ site.forms_endpoint }}">
+  <div class="wrap">
+
+    <div class="admin-login" data-login>
+      <h1>Admin</h1>
+      <p class="muted">Sign-ups from the website: the retreat waitlist and anything else people fill in.</p>
+      <form class="form" data-login-form>
+        <div class="field"><label for="a-key">Password</label><input id="a-key" type="password" required autocomplete="current-password"></div>
+        <label class="check-row"><input type="checkbox" data-remember checked> Remember on this device</label>
+        <button class="btn" type="submit">Open</button>
+        <p class="form-error" data-login-error role="alert" hidden></p>
+      </form>
+      <p class="small muted" data-not-connected hidden>The sign-up sheet isn't connected yet. <a href="?demo">Preview the admin panel with sample data</a>.</p>
+    </div>
+
+    <div class="admin-app" data-app hidden>
+      <div class="admin-head">
+        <div>
+          <h1>Sign-ups</h1>
+          <p class="muted" data-updated></p>
+        </div>
+        <div class="admin-tools">
+          <a class="btn btn-line btn-small" data-sheet-link target="_blank" rel="noopener" hidden>Open Google Sheet</a>
+          <button class="btn btn-line btn-small" type="button" data-export>Export CSV</button>
+          <button class="btn btn-line btn-small" type="button" data-refresh>Refresh</button>
+          <button class="btn btn-small" type="button" data-logout>Log out</button>
+        </div>
+      </div>
+
+      <div class="stats" data-stats></div>
+
+      <div class="admin-filters">
+        <label class="sr" for="a-search">Search</label>
+        <input id="a-search" type="search" placeholder="Search name, email or phone" data-search>
+        <label class="sr" for="a-status">Status</label>
+        <select id="a-status" data-filter-status>
+          <option value="">All statuses</option>
+          <option>New</option><option>Contacted</option><option>Booked</option><option>Not interested</option>
+        </select>
+      </div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Date</th><th>Name</th><th>Contact</th><th>Prefers</th><th>Status</th><th>Notes</th></tr></thead>
+          <tbody data-rows></tbody>
+        </table>
+        <p class="admin-empty muted" data-empty hidden>No sign-ups match.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script src="/assets/js/admin.js" defer></script>
+{% endblock %}

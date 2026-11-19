@@ -6,7 +6,7 @@
 <section class="page-top">
   <div class="wrap">
     <h1>Retreats</h1>
-    <p class="intro page-intro">A few days away in a beautiful hotel in Georgia, with yoga and Pilates every day, good food, rest, and a small group of women.</p>
+    <p class="intro page-intro">A few days away in a beautiful hotel, in Georgia and abroad, with yoga and Pilates every day, good food, rest, and a small group.</p>
   </div>
 </section>
 
@@ -35,6 +35,7 @@
         </ul>
       </div>
       <form class="form" data-waitlist>
+        <div class="hp" aria-hidden="true"><label for="w-website">Website</label><input id="w-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <div class="field"><label for="w-name">Name</label><input id="w-name" name="Name" type="text" required autocomplete="name"></div>
         <div class="field"><label for="w-email">Email</label><input id="w-email" name="Email" type="email" required autocomplete="email"></div>
         <div class="field"><label for="w-phone">Phone or WhatsApp <span class="muted">(optional)</span></label><input id="w-phone" name="Phone" type="tel" autocomplete="tel"></div>
@@ -47,8 +48,14 @@
           </div>
         </fieldset>
         <button class="btn" type="submit">Join the waitlist</button>
-        <p class="form-done" hidden>Thank you! Your email app should have opened with your sign-up. Send it, and you're on the list.</p>
+        <p class="form-error" role="alert" hidden>Something went wrong. Please try again, or write to Anastasia on WhatsApp.</p>
       </form>
+      <div class="form-success" data-success hidden tabindex="-1">
+        <p class="soon-badge">You're on the list</p>
+        <h3>Thank you, <span data-first-name></span>!</h3>
+        <p>You'll be the first to hear when the retreat is announced, and you'll get to book before anyone else.</p>
+        <p class="muted small">In the meantime, say hello on <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>.</p>
+      </div>
     </div>
     {% endfor %}
   </div>
@@ -60,8 +67,8 @@
     <ul class="includes">
       <li><h3>A beautiful place to stay</h3><p>Hand-picked boutique hotels with comfortable rooms and a spa, sauna or pool.</p></li>
       <li><h3>Yoga and Pilates every day</h3><p>Yoga in the morning, Pilates in the afternoon, both for all levels.</p></li>
-      <li><h3>All meals</h3><p>Fresh Georgian food from the hotel's kitchen. Tell us about any diet.</p></li>
-      <li><h3>Transfer from Tbilisi</h3><p>We pick you up in the city and bring you back.</p></li>
+      <li><h3>All meals</h3><p>Fresh local food from the hotel's kitchen. Tell us about any diet.</p></li>
+      <li><h3>Transfers</h3><p>We pick you up and bring you back: from Tbilisi, or from the airport for retreats abroad.</p></li>
       <li><h3>A doctor on hand</h3><p>Anastasia reads your health form before you arrive and adapts the classes to you.</p></li>
       <li><h3>Time for yourself</h3><p>Free hours every day to rest, walk or enjoy the spa.</p></li>
     </ul>

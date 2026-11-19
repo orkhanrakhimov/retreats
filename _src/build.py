@@ -23,6 +23,7 @@ PAGES = {
     "retreats.html": "retreats/index.html",
     "private.html": "private/index.html",
     "contact.html": "contact/index.html",
+    "admin.html": "admin/index.html",
 }
 
 

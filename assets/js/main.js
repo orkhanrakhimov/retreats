@@ -35,20 +35,35 @@
     });
   });
 
-  // Waitlist sign-up (opens email until a form service is connected)
+  // Waitlist sign-up: saved to the sign-ups sheet (falls back to email until it is connected)
   document.querySelectorAll("[data-waitlist]").forEach(function (form) {
+    var success = form.parentNode.querySelector("[data-success]");
+    var error = form.querySelector(".form-error");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
-      var lines = [], formats = [];
-      Array.prototype.forEach.call(form.elements, function (el) {
-        if (!el.name || !el.value) return;
-        if (el.type === "checkbox") { if (el.checked) formats.push(el.value); return; }
-        lines.push(el.name + ": " + el.value);
-      });
-      if (formats.length) lines.push("Prefers: " + formats.join(", "));
-      window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Retreat waitlist") + "&body=" + encodeURIComponent(lines.join("\n"));
-      form.querySelector(".form-done").hidden = false;
+      var f = form.elements, prefs = [];
+      form.querySelectorAll("input[name=Format]:checked").forEach(function (c) { prefs.push(c.value); });
+      var data = {
+        type: "waitlist", name: f.Name.value.trim(), email: f.Email.value.trim(), phone: f.Phone.value.trim(),
+        preference: prefs.join(", "), page: location.pathname, website: f.website ? f.website.value : ""
+      };
+      var done = function () {
+        success.querySelector("[data-first-name]").textContent = data.name.split(" ")[0];
+        form.hidden = true; success.hidden = false; success.focus();
+      };
+      if (!SITE.forms_endpoint) {
+        var body = ["Name: " + data.name, "Email: " + data.email, "Phone: " + (data.phone || "-"), "Prefers: " + (data.preference || "-")].join("\n");
+        window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Retreat waitlist") + "&body=" + encodeURIComponent(body);
+        done();
+        return;
+      }
+      var btn = form.querySelector("button[type=submit]");
+      btn.disabled = true; btn.textContent = "Sending…"; error.hidden = true;
+      fetch(SITE.forms_endpoint, { method: "POST", body: JSON.stringify(data) })
+        .then(function (r) { return r.json(); })
+        .then(function (res) { if (!res.ok) throw new Error(res.error); done(); })
+        .catch(function () { error.hidden = false; btn.disabled = false; btn.textContent = "Join the waitlist"; });
     });
   });
 

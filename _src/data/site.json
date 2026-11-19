@@ -1,7 +1,7 @@
 {
   "name": "retreats.ge",
   "host": "Anastasia Mzhavia",
-  "tagline": "Yoga & Pilates retreats for women in Georgia",
+  "tagline": "Yoga & Pilates retreats with Anastasia Mzhavia",
   "url": "https://retreats.ge",
   "email": "anastasiamzhavia@gmail.com",
   "instagram": "https://www.instagram.com/anastasiamzhavia/",
@@ -9,5 +9,6 @@
   "whatsapp": "+995591326326",
   "deposit_percent": 30,
   "currency": "₾",
-  "whatsapp_display": "+995 591 326 326"
+  "whatsapp_display": "+995 591 326 326",
+  "forms_endpoint": ""
 }
