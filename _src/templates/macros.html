@@ -79,6 +79,10 @@
 
 {% macro contact_buttons(site, tone="") -%}
 <div class="contact-btns {{ tone }}">
+  {% if site.whatsapp %}<a class="contact-btn" href="{{ wa_link(site) }}" target="_blank" rel="noopener">
+    <span class="contact-icon">{{ wa_icon(20) }}</span>
+    <span class="contact-text"><span class="contact-label">WhatsApp</span><span class="contact-value">{{ site.whatsapp_display }}</span></span>
+  </a>{% endif %}
   <a class="contact-btn" href="{{ site.instagram }}" target="_blank" rel="noopener">
     <span class="contact-icon">{{ insta_icon(20) }}</span>
     <span class="contact-text"><span class="contact-label">Instagram</span><span class="contact-value">{{ site.instagram_handle }}</span></span>
@@ -88,4 +92,13 @@
     <span class="contact-text"><span class="contact-label">Email</span><span class="contact-value">{{ site.email }}</span></span>
   </a>
 </div>
+{%- endmacro %}
+
+
+{% macro wa_icon(size=18) -%}
+<svg aria-hidden="true" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.4-1.6-1-2-2l1-1-1-2z"/></svg>
+{%- endmacro %}
+
+{% macro wa_link(site, text="Hello Anastasia! I have a question about your retreats.") -%}
+https://wa.me/{{ site.whatsapp|replace('+','')|replace(' ','') }}?text={{ text|urlencode }}
 {%- endmacro %}

@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
-{% from "macros.html" import insta_icon, mail_icon %}
+{% from "macros.html" import insta_icon, mail_icon, wa_icon, wa_link %}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
@@ -32,6 +32,7 @@
       <a href="/#retreats">Retreats</a>
       <a href="/about/"{% if path == '/about/' %} aria-current="page"{% endif %}>About Anastasia</a>
       <a href="/#questions">Questions</a>
+      <a href="/#more">Private &amp; corporate</a>
       <a href="/#contact">Contact</a>
       <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>
     </nav>
@@ -58,9 +59,11 @@
       <nav class="footer-nav" aria-label="Footer">
         <a href="/#retreats">Retreats</a>
         <a href="/about/">About Anastasia</a>
+        <a href="/#more">Private &amp; corporate</a>
         <a href="/#questions">Questions</a>
       </nav>
       <div class="footer-icons">
+        {% if site.whatsapp %}<a class="icon-btn" href="{{ wa_link(site) }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.whatsapp_display }}">{{ wa_icon(20) }}</a>{% endif %}
         <a class="icon-btn" href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram {{ site.instagram_handle }}">{{ insta_icon(20) }}</a>
         <a class="icon-btn" href="mailto:{{ site.email }}" aria-label="Email {{ site.email }}">{{ mail_icon(20) }}</a>
       </div>

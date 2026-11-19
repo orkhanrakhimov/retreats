@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, picture, insta_icon, schedule, faq_items, lotus, contact_buttons %}
+{% from "macros.html" import photo, picture, insta_icon, schedule, faq_items, lotus, contact_buttons, wa_icon, wa_link %}
 {% block content %}
 {% set r = next_retreat %}
 
@@ -84,6 +84,36 @@
   </div>
 </section>
 
+<section class="section" id="more">
+  <div class="wrap">
+    <h2 class="title">More ways to practise with Anastasia</h2>
+    <p class="lead more-lead">Besides the group retreats, Anastasia plans private and corporate retreats, and teaches one-to-one in Tbilisi.</p>
+    <div class="options">
+      <article class="option">
+        <span class="option-num">01</span>
+        <h3>Private retreat</h3>
+        <p>A retreat just for you and your friends: a birthday, a bride-to-be, or simply time away together. Your dates, a venue we choose together, a programme built around your group.</p>
+        <p class="option-meta">2 to 20 guests · weekend or week</p>
+        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I would like to plan a private retreat.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Plan a private retreat</a>
+      </article>
+      <article class="option">
+        <span class="option-num">02</span>
+        <h3>Corporate wellness</h3>
+        <p>Yoga and Pilates for teams, led by a doctor: posture, back health and stress. A wellness day at your office, or a full team retreat outside the city.</p>
+        <p class="option-meta">Teams of any size · on-site or away</p>
+        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I am interested in corporate wellness for our team.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Ask about corporate</a>
+      </article>
+      <article class="option">
+        <span class="option-num">03</span>
+        <h3>Private sessions</h3>
+        <p>One-to-one yoga or Pilates in Tbilisi, planned around your body and goals, including recovery after injury.</p>
+        <p class="option-meta">Tbilisi · in person</p>
+        <a class="btn btn-line" href="{{ wa_link(site, 'Hello Anastasia! I would like to book a private session.') }}" target="_blank" rel="noopener">{{ wa_icon() }} Book a private session</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap split">
     <div>
@@ -121,7 +151,7 @@
 <section class="section tint" id="contact">
   <div class="wrap contact">
     <h2 class="title">Get in touch</h2>
-    <p class="lead">Write to Anastasia on Instagram or by email. She answers every message herself.</p>
+    <p class="lead">Message Anastasia on WhatsApp or Instagram, or send an email. She answers every message herself.</p>
     {{ contact_buttons(site) }}
   </div>
 </section>
