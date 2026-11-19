@@ -3,57 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}{{ site.name }} — {{ site.tagline }}{% endblock %}</title>
-<meta name="description" content="{% block description %}Small-group yoga and Pilates retreats for women in Georgia's finest boutique hotels, guided by Anastasia Mzhavia, medical doctor and yoga and Pilates instructor.{% endblock %}">
+<title>{% block title %}Yoga & Pilates retreats for women in Georgia | Anastasia Mzhavia{% endblock %}</title>
+<meta name="description" content="{% block description %}Small-group yoga and Pilates retreats for women in Georgia's best boutique hotels, led by Anastasia Mzhavia, a medical doctor and certified yoga teacher.{% endblock %}">
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:description" content="{{ self.description() }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ path }}">
-<meta name="theme-color" content="#F7F3ED">
+<meta name="theme-color" content="#FAFAF7">
 <link rel="canonical" href="{{ site.url }}{{ path }}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231F1A17'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23C9A97E'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E4537'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23FAFAF7'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;500;600&family=Noto+Serif+Georgian:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+Georgian:wght@400;500&family=Noto+Serif+Georgian:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="{% block body_class %}{% endblock %}">
+<body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-header {% block header_class %}is-solid{% endblock %}" data-header>
-  <div class="container header-row">
-    <a class="logo" href="/" aria-label="retreats.ge home">
-      <span class="logo-name">retreats.ge</span>
-      <span class="logo-by">by Anastasia Mzhavia</span>
+<header class="header" data-header>
+  <div class="wrap header-row">
+    <a class="logo" href="/">
+      <span class="logo-main">retreats.ge</span>
+      <span class="logo-sub">Anastasia Mzhavia</span>
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="/retreats/"{% if path.startswith('/retreats/') %} aria-current="page"{% endif %}>Retreats</a>
-      <a href="/#stay">The Stay</a>
-      <a href="/anastasia/"{% if path == '/anastasia/' %} aria-current="page"{% endif %}>Anastasia</a>
-      <a href="/private/"{% if path == '/private/' %} aria-current="page"{% endif %}>Private</a>
-      <a href="/faq/"{% if path == '/faq/' %} aria-current="page"{% endif %}>FAQ</a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/#retreats">Retreats</a>
+      <a href="/about/"{% if path == '/about/' %} aria-current="page"{% endif %}>About Anastasia</a>
+      <a href="/#questions">Questions</a>
+      <a href="/#contact">Contact</a>
+      <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>
     </nav>
-    <div class="header-actions">
-      <div class="lang" aria-label="Language">
-        <a href="{{ path }}" aria-current="true">EN</a>
-        <span class="lang-soon" lang="ka" title="Georgian version coming soon">ქარ</span>
-      </div>
-      <a class="btn btn-small btn-light" href="/book/">Book a retreat</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
-        <span class="sr">Menu</span><span class="menu-lines" aria-hidden="true"></span>
+    <div class="header-end">
+      {% if next_retreat %}<a class="btn btn-small" href="/retreats/{{ next_retreat.slug }}/#book">Book</a>{% endif %}
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
+        <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>
     </div>
-  </div>
-  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
-    <nav aria-label="Mobile">
-      <a href="/retreats/">Retreats</a>
-      <a href="/#stay">The Stay</a>
-      <a href="/anastasia/">Anastasia</a>
-      <a href="/private/">Private &amp; Corporate</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-    <a class="btn btn-dark btn-block" href="/book/">Book a retreat</a>
   </div>
 </header>
 
@@ -61,53 +46,25 @@
 {% block content %}{% endblock %}
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-top">
-    <div class="footer-brand">
-      <span class="logo-name">retreats.ge</span>
-      <p>Yoga &amp; Pilates retreats for women in Georgia's finest places to stay, guided by Anastasia Mzhavia, MD.</p>
-      <form class="footer-signup" data-signup>
-        <label for="footer-email">Hear about new retreats first</label>
-        <div class="signup-row">
-          <input id="footer-email" type="email" name="email" placeholder="Your email" required autocomplete="email">
-          <button class="btn btn-champagne" type="submit">Join</button>
-        </div>
-        <p class="signup-done" hidden>Thank you. You're on the list.</p>
-      </form>
+<footer class="footer">
+  <div class="wrap footer-row">
+    <div>
+      <p class="logo-main">retreats.ge</p>
+      <p class="footer-text">Yoga &amp; Pilates retreats for women in Georgia,<br>led by Anastasia Mzhavia, MD.</p>
     </div>
-    <div class="footer-col">
-      <h2>Explore</h2>
-      <a href="/retreats/">Retreats</a>
-      <a href="/#stay">The Stay</a>
-      <a href="/anastasia/">Anastasia</a>
-      <a href="/private/">Private &amp; Corporate</a>
-    </div>
-    <div class="footer-col">
-      <h2>Help</h2>
-      <a href="/faq/">FAQ</a>
-      <a href="/terms/">Booking &amp; cancellation</a>
-      <a href="/contact/">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h2>Talk to us</h2>
-      <a href="/contact/" data-whatsapp-link>WhatsApp</a>
-      {% if site.instagram %}<a href="{{ site.instagram }}" rel="noopener" target="_blank">Instagram</a>{% else %}<span class="fill">[Instagram link]</span>{% endif %}
+    <div class="footer-links">
+      <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram {{ site.instagram_handle }}</a>
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="/about/">About Anastasia</a>
     </div>
   </div>
-  <div class="container footer-bottom">
-    <span>© <span data-year>2026</span> retreats.ge · Tbilisi, Georgia</span>
-    <span>Anastasia Mzhavia, MD · Yoga Alliance Level 3</span>
+  <div class="wrap footer-base">
+    <span>© <span data-year>2026</span> retreats.ge</span>
+    <span>Tbilisi, Georgia</span>
   </div>
 </footer>
 
-<a class="wa-float" href="/contact/" data-whatsapp-link aria-label="Ask Anastasia on WhatsApp">
-  <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.4-1.6-1-2-2l1-1-1-2z"/></svg>
-  <span class="wa-label">Ask Anastasia</span>
-</a>
-
 <script>window.SITE = {{ site|tojson }};</script>
 <script src="/assets/js/main.js" defer></script>
-{% block scripts %}{% endblock %}
 </body>
 </html>

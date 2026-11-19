@@ -1,14 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Page not found — retreats.ge{% endblock %}
+{% block title %}Page not found | retreats.ge{% endblock %}
 {% block content %}
-<section class="page-hero" style="min-height:70vh;display:flex;align-items:center">
-  <div class="container narrow" style="text-align:center">
-    <span class="eyebrow">404</span>
-    <h1 class="display" style="font-size:clamp(44px,6vw,84px)">This path leads nowhere.<br><em class="italic">Breathe, and try another.</em></h1>
-    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:40px">
-      <a class="btn btn-dark" href="/">Back home</a>
-      <a class="btn btn-outline" href="/retreats/">See retreats</a>
-    </div>
+<section class="page-top" style="min-height:60vh">
+  <div class="wrap">
+    <h1>Page not found</h1>
+    <p class="lead">This page doesn't exist, or it has moved.</p>
+    <div class="actions"><a class="btn" href="/">Go to the homepage</a></div>
   </div>
 </section>
 {% endblock %}

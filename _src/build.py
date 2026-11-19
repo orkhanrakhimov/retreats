@@ -18,14 +18,9 @@ ROOT = SRC.parent
 
 PAGES = {
     "index.html": "index.html",
-    "retreats.html": "retreats/index.html",
-    "anastasia.html": "anastasia/index.html",
-    "private.html": "private/index.html",
-    "faq.html": "faq/index.html",
-    "book.html": "book/index.html",
-    "contact.html": "contact/index.html",
-    "terms.html": "terms/index.html",
+    "about.html": "about/index.html",
     "404.html": "404.html",
+    "redirect.html": "retreats/index.html",
 }
 
 
@@ -46,6 +41,7 @@ def price(value, currency):
 def main():
     site = json.loads((SRC / "data/site.json").read_text())
     retreats = json.loads((SRC / "data/retreats.json").read_text())
+    credentials = json.loads((SRC / "data/credentials.json").read_text())
     open_retreats = [r for r in retreats if r["status"] == "open"]
 
     env = Environment(
@@ -62,7 +58,7 @@ def main():
     # Plain string, so Jinja escapes it safely inside HTML attributes.
     env.filters["json"] = lambda v: json.dumps(v, ensure_ascii=False)
 
-    common = dict(site=site, retreats=retreats, open_retreats=open_retreats,
+    common = dict(site=site, retreats=retreats, credentials=credentials, open_retreats=open_retreats,
                   next_retreat=open_retreats[0] if open_retreats else None)
 
     written = []
