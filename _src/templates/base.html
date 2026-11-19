@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
+{% from "macros.html" import insta_icon, mail_icon %}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
@@ -53,10 +54,16 @@
       <a class="logo footer-logo" href="/" aria-label="retreats.ge, home">{% include "logo.svg" %}</a>
       <p class="footer-text">Yoga &amp; Pilates retreats for women in Georgia,<br>led by Anastasia Mzhavia, MD.</p>
     </div>
-    <div class="footer-links">
-      <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram {{ site.instagram_handle }}</a>
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-      <a href="/about/">About Anastasia</a>
+    <div class="footer-side">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/#retreats">Retreats</a>
+        <a href="/about/">About Anastasia</a>
+        <a href="/#questions">Questions</a>
+      </nav>
+      <div class="footer-icons">
+        <a class="icon-btn" href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram {{ site.instagram_handle }}">{{ insta_icon(20) }}</a>
+        <a class="icon-btn" href="mailto:{{ site.email }}" aria-label="Email {{ site.email }}">{{ mail_icon(20) }}</a>
+      </div>
     </div>
   </div>
   <div class="wrap footer-base">

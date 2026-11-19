@@ -13,10 +13,11 @@
   // Mobile menu
   var btn = document.querySelector("[data-menu]"), nav = document.getElementById("nav");
   if (btn && nav) {
-    var set = function (open) { btn.setAttribute("aria-expanded", String(open)); nav.classList.toggle("open", open); };
+    var set = function (open) { btn.setAttribute("aria-expanded", String(open)); nav.classList.toggle("open", open); document.body.classList.toggle("menu-open", open); };
     btn.addEventListener("click", function () { set(btn.getAttribute("aria-expanded") !== "true"); });
     nav.addEventListener("click", function (e) { if (e.target.tagName === "A") set(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 900) set(false); });
   }
 
   // Booking request: opens the guest's email app with everything filled in

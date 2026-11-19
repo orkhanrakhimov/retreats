@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, picture, insta_icon %}
+{% from "macros.html" import photo, picture, insta_icon, contact_buttons %}
 {% block title %}About Anastasia Mzhavia, MD | retreats.ge{% endblock %}
 {% block description %}Anastasia Mzhavia is a medical doctor (BAU International University Batumi) and certified yoga teacher who teaches yoga and Pilates in Tbilisi.{% endblock %}
 {% block content %}
@@ -11,10 +11,7 @@
       <p class="intro">Medical doctor, yoga and Pilates teacher.</p>
       <p class="lead">Anastasia has taught yoga and Pilates for more than six years: group classes, private clients, fitness events and luxury hotels. Today she teaches at OkTopUs Fitness in Tbilisi and hosts her own retreats.</p>
       <p>She studied medicine at BAU International University Batumi, with a focus on rehabilitation and injury prevention. That is why her classes feel safe: she knows what is happening in your body and how to move it well.</p>
-      <div class="actions">
-        <a class="btn" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} {{ site.instagram_handle }}</a>
-        <a class="btn btn-line" href="mailto:{{ site.email }}">Email Anastasia</a>
-      </div>
+      {{ contact_buttons(site) }}
     </div>
     {{ picture("dancer", "(max-width: 860px) 100vw, 460px", "Anastasia Mzhavia, medical doctor and yoga teacher, in dancer pose", "portrait", eager=true) }}
   </div>

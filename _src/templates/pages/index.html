@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, picture, insta_icon, schedule, faq_items, lotus %}
+{% from "macros.html" import photo, picture, insta_icon, schedule, faq_items, lotus, contact_buttons %}
 {% block content %}
 {% set r = next_retreat %}
 
@@ -125,10 +125,7 @@
   <div class="wrap contact">
     <h2 class="title">Get in touch</h2>
     <p class="lead">Write to Anastasia on Instagram or by email. She answers every message herself.</p>
-    <div class="actions">
-      <a class="btn" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} {{ site.instagram_handle }}</a>
-      <a class="btn btn-line" href="mailto:{{ site.email }}">{{ site.email }}</a>
-    </div>
+    {{ contact_buttons(site) }}
   </div>
 </section>
 {% endblock %}
