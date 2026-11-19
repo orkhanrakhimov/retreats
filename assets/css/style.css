@@ -107,13 +107,15 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .pic { width: 100%; object-fit: cover; border-radius: 2px; background: #D9DDD3; }
 
 /* Hero */
-.hero { padding-top: clamp(32px, 5vw, 64px); }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
-.hero h1 { font-size: clamp(44px, 6.2vw, 84px); line-height: 1.02; }
-.hero .intro { margin-top: 26px; max-width: 30ch; }
-.hero-photo { aspect-ratio: 4 / 5; }
-.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.facts p { padding: 22px 0; font-size: 16px; color: var(--muted); }
+.hero { --hero-pad: clamp(48px, 6vw, 80px); position: relative; overflow: hidden; background: radial-gradient(90% 80% at 25% 100%, #3D5A48 0%, #2E4537 50%, #22352A 100%); color: #E4EAE1; padding-top: var(--hero-pad); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .9fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.hero-text { display: flex; flex-direction: column; align-self: stretch; }
+.hero-grid > .hero-photo { margin-bottom: var(--hero-pad); }
+.hero h1 { color: #fff; font-size: clamp(44px, 6.2vw, 84px); line-height: 1.02; }
+.hero .intro { margin-top: 26px; max-width: 30ch; color: #DCE4D8; }
+.hero-photo { aspect-ratio: 4 / 5; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .55); }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.facts p { padding: 24px 0; font-size: 16px; color: var(--muted); }
 .facts p + p { padding-left: 24px; border-left: 1px solid var(--line); }
 .facts strong { color: var(--ink); font-weight: 600; }
 @media (max-width: 820px) {
@@ -123,6 +125,46 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .facts p + p { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
   .facts p { padding: 16px 0; }
 }
+
+/* Lotus animation */
+.lotus { position: absolute; z-index: 0; left: 50%; bottom: 0; width: min(1240px, 104vw); transform: translateX(-50%); color: #E8DDBF; opacity: .42; pointer-events: none; overflow: visible; }
+.hero-text > :not(.lotus), .hero-photo { position: relative; z-index: 1; }
+.hero-grid > .hero-photo { margin-bottom: var(--hero-pad); }
+@media (max-width: 820px) {
+  .lotus { position: static; transform: none; width: 120%; margin: 8px 0 0 -10%; opacity: .7; }
+  .hero-grid { gap: 0; }
+}
+.lotus path, .lotus ellipse { fill: none; stroke: currentColor; vector-effect: non-scaling-stroke; }
+.petal { transform-box: view-box; transform-origin: 400px 430px; transform: rotate(var(--r)) scale(var(--s)); animation: bloom 3.4s cubic-bezier(.25, .7, .2, 1) var(--d) both; }
+.petal-shape { stroke-width: 1.3; fill: currentColor !important; fill-opacity: .07; stroke-dasharray: 1; stroke-dashoffset: 0; animation: draw 2.8s ease var(--d) both, tint 2.4s ease calc(var(--d) + 1.8s) both; }
+.petal.back .petal-shape { fill-opacity: .04; }
+.petal-vein { stroke-width: .8; opacity: .5; stroke-dasharray: 1; stroke-dashoffset: 0; animation: draw 2.2s ease calc(var(--d) + 1s) both; }
+.heart { fill: currentColor; opacity: .8; transform-box: view-box; transform-origin: 400px 420px; animation: heart 1.6s ease 2.6s both, pulse 5s ease-in-out 4.2s infinite; }
+.bloom { transform-box: view-box; transform-origin: 400px 430px; animation: breathe 8s ease-in-out 4.5s infinite; }
+.pads path { stroke-width: 1; opacity: .6; stroke-dasharray: 1; stroke-dashoffset: 0; animation: draw 3s ease .1s both; }
+.ripples ellipse { stroke-width: 1; opacity: 0; transform-box: view-box; transform-origin: 400px 440px; animation: ripple 7.5s ease-out infinite; }
+.ripples ellipse:nth-child(1) { animation-delay: 3s; }
+.ripples ellipse:nth-child(2) { animation-delay: 5.5s; }
+.ripples ellipse:nth-child(3) { animation-delay: 8s; }
+.motes circle { fill: currentColor; opacity: 0; animation: mote 10s ease-in-out infinite; }
+.motes circle:nth-child(1) { animation-delay: 4s; }
+.motes circle:nth-child(2) { animation-delay: 5.6s; animation-duration: 12s; }
+.motes circle:nth-child(3) { animation-delay: 7s; }
+.motes circle:nth-child(4) { animation-delay: 8.4s; animation-duration: 11s; }
+.motes circle:nth-child(5) { animation-delay: 9.5s; }
+.motes circle:nth-child(6) { animation-delay: 11s; animation-duration: 13s; }
+@keyframes bloom { 0% { transform: rotate(0deg) scale(.3); opacity: 0; } 20% { opacity: 1; } 100% { transform: rotate(var(--r)) scale(var(--s)); opacity: 1; } }
+@keyframes draw { from { stroke-dashoffset: 1; } }
+@keyframes tint { from { fill-opacity: 0; } }
+@keyframes heart { from { transform: scale(0); opacity: 0; } }
+@keyframes pulse { 50% { transform: scale(1.35); opacity: .45; } }
+@keyframes breathe { 50% { transform: translateY(-4px) scale(1.022); } }
+@keyframes ripple { 0% { transform: scale(.35); opacity: 0; } 15% { opacity: .55; } 100% { transform: scale(2.6); opacity: 0; } }
+@keyframes mote { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: .8; } 100% { transform: translateY(-190px); opacity: 0; } }
+
+/* Scroll reveal (only when JavaScript runs) */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
 
 /* Retreat card */
 .retreat-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: #fff; border: 1px solid var(--line); }
@@ -236,4 +278,9 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
 .footer-links a { color: var(--ink); }
 .footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding-block: 28px 32px; margin-top: 40px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+  .ripples, .motes { display: none; }
+}

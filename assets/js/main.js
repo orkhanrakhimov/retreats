@@ -34,6 +34,21 @@
     });
   });
 
+  // Gentle fade-in as sections scroll into view
+  var targets = document.querySelectorAll(".section .title, .section .lead, .retreat-card, .includes li, .schedule li, .faq details, .creds li, .price-row, .certs li, .styles li, .facts p, .two-lists > div, .form, .contact .actions");
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target, sibs = Array.prototype.indexOf.call(el.parentNode.children, el);
+        el.style.transitionDelay = Math.min(sibs, 5) * 70 + "ms";
+        el.classList.add("in");
+        io.unobserve(el);
+      });
+    }, { rootMargin: "0px 0px -6% 0px" });
+    targets.forEach(function (el) { el.classList.add("reveal"); io.observe(el); });
+  }
+
   // Certificate viewer
   var viewer = document.querySelector("[data-viewer]");
   if (viewer && viewer.showModal) {

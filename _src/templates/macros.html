@@ -33,3 +33,38 @@
 {% macro picture(name, sizes, alt, cls="", widths=(700, 1200), eager=false) -%}
 <img class="pic {{ cls }}" src="/assets/img/anastasia/{{ name }}-{{ widths[0] }}.jpg" srcset="{% for w in widths %}/assets/img/anastasia/{{ name }}-{{ w }}.jpg {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ sizes }}" alt="{{ alt }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
 {%- endmacro %}
+
+{% macro lotus() -%}
+{# Petals: (angle, scale, delay, layer) — all start closed and open from the base #}
+{% set petals = [
+  (-78, 0.78, 1.0, 'back'), (78, 0.78, 1.0, 'back'),
+  (-58, 0.9, 0.8, 'back'), (58, 0.9, 0.8, 'back'),
+  (-36, 1, 0.6, 'mid'), (36, 1, 0.6, 'mid'),
+  (-18, 0.95, 0.4, 'front'), (18, 0.95, 0.4, 'front'),
+  (0, 1.04, 0.2, 'front')
+] %}
+<svg class="lotus" viewBox="0 130 800 375" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMax meet">
+  <g class="ripples">
+    <ellipse cx="400" cy="440" rx="120" ry="16"/>
+    <ellipse cx="400" cy="440" rx="120" ry="16"/>
+    <ellipse cx="400" cy="440" rx="120" ry="16"/>
+  </g>
+  <g class="pads">
+    <path pathLength="1" d="M120,452 C200,430 300,428 360,440 M440,440 C500,428 600,430 680,452"/>
+    <path pathLength="1" d="M60,480 C220,462 580,462 740,480"/>
+  </g>
+  <g class="bloom">
+    {% for a, s, d, layer in petals %}
+    <g class="petal {{ layer }}" style="--r:{{ a }}deg;--s:{{ s }};--d:{{ d }}s">
+      <path class="petal-shape" pathLength="1" d="M400,430 C352,360 356,250 400,170 C444,250 448,360 400,430 Z"/>
+      <path class="petal-vein" pathLength="1" d="M400,420 C396,350 396,260 400,200"/>
+    </g>
+    {% endfor %}
+    <circle class="heart" cx="400" cy="420" r="9"/>
+  </g>
+  <g class="motes">
+    <circle cx="340" cy="330" r="2.2"/><circle cx="455" cy="300" r="1.8"/><circle cx="395" cy="250" r="2"/>
+    <circle cx="300" cy="360" r="1.6"/><circle cx="500" cy="350" r="2.2"/><circle cx="420" cy="320" r="1.5"/>
+  </g>
+</svg>
+{%- endmacro %}
