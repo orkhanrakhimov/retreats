@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Questions — retreats.ge{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container narrow">
+    <span class="eyebrow reveal">FAQ</span>
+    <h1 class="display reveal reveal-d1" style="font-size:clamp(48px,6.6vw,96px)">Questions, answered</h1>
+    <p class="lead reveal reveal-d2">Can't find yours? <a href="/contact/" data-whatsapp-link>Message Anastasia</a> and she'll reply personally.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container narrow">
+    <div class="faq-group reveal">
+      <span class="eyebrow">The retreats</span>
+      <div class="faq">
+        <details><summary>Who are the retreats for?</summary><div class="answer">Women who want to rest, move and feel looked after: from complete beginners to experienced practitioners. Groups are small, up to 12 guests.</div></details>
+        <details><summary>I've never done yoga. Can I join?</summary><div class="answer">Yes. Every class has gentler options, and Anastasia adapts the practice to each guest.</div></details>
+        <details><summary>Can I come alone?</summary><div class="answer">Most guests do. You can book a private room, or share a twin room and we'll pair you with another guest.</div></details>
+        <details><summary>What language are the classes in?</summary><div class="answer"><span class="fill">[Georgian, English, Russian?]</span></div></details>
+      </div>
+    </div>
+
+    <div class="faq-group reveal">
+      <span class="eyebrow">Health &amp; safety</span>
+      <div class="faq">
+        <details><summary>I have an injury or a health condition.</summary><div class="answer">After booking you'll fill in a short health questionnaire. Anastasia is a medical doctor specialising in rehabilitation, so she'll plan modifications for you, or tell you honestly if a retreat isn't right for you yet.</div></details>
+        <details><summary>Can I join if I'm pregnant?</summary><div class="answer"><span class="fill">[Anastasia's guidance on pregnancy]</span></div></details>
+        <details><summary>Is there medical help on site?</summary><div class="answer">Anastasia is a doctor with first-aid expertise and stays with the group throughout. For anything serious, we know the nearest clinic for every venue.</div></details>
+        <details><summary>Can the kitchen handle my diet?</summary><div class="answer">Yes. Tell us about allergies and preferences (vegetarian, vegan, gluten-free) when you book.</div></details>
+      </div>
+    </div>
+
+    <div class="faq-group reveal">
+      <span class="eyebrow">Booking &amp; payment</span>
+      <div class="faq">
+        <details><summary>How do I book?</summary><div class="answer">Choose your retreat and room on the <a href="/book/">booking page</a>. A {{ site.deposit_percent }}% deposit holds your place; the rest is due <span class="fill">[X weeks]</span> before the retreat.</div></details>
+        <details><summary>How can I pay?</summary><div class="answer"><span class="fill">[Card / bank transfer details]</span></div></details>
+        <details><summary>What if I need to cancel?</summary><div class="answer"><span class="fill">[Cancellation policy summary]</span> <a href="/terms/">Full terms</a>.</div></details>
+        <details><summary>Can I give a retreat as a gift?</summary><div class="answer">Yes. <a href="/contact/">Contact us</a> and we'll prepare a gift card.</div></details>
+      </div>
+    </div>
+
+    <div class="faq-group reveal">
+      <span class="eyebrow">Travel</span>
+      <div class="faq">
+        <details><summary>How do I get to the venue?</summary><div class="answer">A private transfer from Tbilisi is included in every retreat. The meeting point and time are on each retreat page.</div></details>
+        <details><summary>I'm flying in from abroad.</summary><div class="answer">Welcome! We'll help you plan your arrival and can recommend where to stay in Tbilisi before and after.</div></details>
+        <details><summary>What should I pack?</summary><div class="answer">You'll receive a packing list with your booking confirmation. Mats and props are provided.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

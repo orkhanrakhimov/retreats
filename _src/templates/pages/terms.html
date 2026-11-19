@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Booking & cancellation terms — retreats.ge{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container narrow">
+    <span class="eyebrow">Terms</span>
+    <h1 class="display" style="font-size:clamp(44px,6vw,84px)">Booking &amp; cancellation</h1>
+    <p class="lead">Clear, fair terms, so you can book with confidence.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container narrow prose">
+    <h2>Booking and deposit</h2>
+    <p>Your place is confirmed when we receive a {{ site.deposit_percent }}% deposit. <span class="fill">[When the balance is due, and how.]</span></p>
+    <h2>Cancellation by you</h2>
+    <p><span class="fill">[Refund rules by how far ahead you cancel, e.g. more than 60 days / 30–60 days / under 30 days. Whether a place can be transferred to a friend.]</span></p>
+    <h2>Cancellation by us</h2>
+    <p><span class="fill">[What happens if a retreat is cancelled or moved: full refund or a place on another retreat.]</span></p>
+    <h2>Health and responsibility</h2>
+    <p><span class="fill">[Guests confirm the health questionnaire is accurate; practice is at your own pace; recommendation to have travel insurance.]</span></p>
+    <h2>Privacy</h2>
+    <p><span class="fill">[How personal and health information is stored and used. Only for planning your retreat, never shared.]</span></p>
+  </div>
+</section>
+{% endblock %}

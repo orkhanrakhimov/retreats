@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% from "macros.html" import photo, icon %}
+{% block title %}Anastasia Mzhavia, MD — retreats.ge{% endblock %}
+{% block description %}Anastasia Mzhavia is a medical doctor and Yoga Alliance Level 3 instructor teaching Hatha, Ashtanga, Kundalini and Pilates in Tbilisi.{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container host">
+    <div class="reveal" style="display:flex;flex-direction:column;gap:24px">
+      <span class="eyebrow" style="margin:0">Meet your host</span>
+      <h1 class="display" style="font-size:clamp(52px,7vw,104px)">Anastasia Mzhavia</h1>
+      <p class="lead">Medical doctor. Yoga and Pilates teacher. The woman who will look after you, body and mind, for the whole retreat.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:10px">
+        <a class="btn btn-dark" href="/retreats/">See her retreats</a>
+        <a class="btn btn-outline" href="/contact/" data-whatsapp-link>Ask her a question</a>
+      </div>
+    </div>
+    <div class="reveal reveal-d1">{{ photo("Portrait of Anastasia", "ratio-45 tone-3") }}</div>
+  </div>
+</section>
+
+<section class="creds" aria-label="Credentials" style="border-top:1px solid var(--sand)">
+  <div class="container creds-row">
+    <span class="cred">Medical Doctor (MD)</span>
+    <span class="cred">Yoga Alliance Level 3</span>
+    <span class="cred">6+ years teaching</span>
+    <span class="cred">OkTopUs Fitness</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <span class="eyebrow reveal">Her story</span>
+    <h2 class="h2 reveal">Why a doctor teaches yoga</h2>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:20px;margin-top:32px">
+      <p class="lead"><span class="fill">[Her story, in her own voice: when she found yoga, why she combined it with medicine, and what she wants women to feel at her retreats. Three or four short paragraphs.]</span></p>
+      <p class="quote" style="margin-top:20px">“<span class="fill">[One line she'd like every guest to remember.]</span>”</p>
+      <span class="signature">Anastasia</span>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-linen">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Experience</span>
+      <h2 class="h2">Medicine, movement and hospitality</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><span class="card-icon">{{ icon('heart') }}</span><h3 class="h3" style="font-size:28px">Medical Doctor</h3><p>An MD with expertise in rehabilitation, injury prevention and first aid. She understands what is happening in your body, and how to move it safely.</p></div>
+      <div class="card reveal reveal-d1"><span class="card-icon">{{ icon('sun') }}</span><h3 class="h3" style="font-size:28px">Yoga Alliance Level 3</h3><p>Over six years teaching Hatha, Ashtanga, Kundalini, Hot Power Pilates and Mat &amp; Reformer Pilates, to groups and private clients.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-icon">{{ icon('spa') }}</span><h3 class="h3" style="font-size:28px">Luxury hospitality</h3><p>Years of private and group wellness sessions in luxury hospitality and professional fitness, including fitness events. Today she teaches at OkTopUs Fitness, one of Georgia's largest fitness clubs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How she teaches</span>
+      <h2 class="h2">Five styles, one approach: listen to the body</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Hatha</summary><div class="answer">Slow, steady postures and breath. The foundation of every retreat, and perfect for beginners.</div></details>
+      <details><summary>Ashtanga</summary><div class="answer">A dynamic, flowing practice that builds strength, heat and focus. Mornings, for those who want energy.</div></details>
+      <details><summary>Kundalini</summary><div class="answer">Breath, movement and meditation to release tension and calm the nervous system. Evenings, before deep sleep.</div></details>
+      <details><summary>Hot Power Pilates</summary><div class="answer">Strong, sculpting core work. Offered as an option on selected retreats.</div></details>
+      <details><summary>Mat &amp; Reformer Pilates</summary><div class="answer">Precise, posture-focused strength work, and a big part of her rehabilitation approach for backs, hips and pelvic floor.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="h2">Anastasia teaching</h2>
+    </div>
+    <div class="gallery reveal">
+      {{ photo("Teaching a group", "g1 tone-dark-2") }}
+      {{ photo("Reformer Pilates", "tone-dark") }}
+      {{ photo("Adjusting a pose", "tone-dark-2") }}
+      {{ photo("Meditation", "g4 tone-dark") }}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2 class="h2" style="font-size:clamp(30px,3.4vw,44px)">Practise with Anastasia</h2>
+        <p class="muted">Join a retreat, plan a private one, or book a session in Tbilisi.</p>
+      </div>
+      <div style="flex:0 1 auto;flex-direction:row;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-dark" href="/retreats/">Upcoming retreats</a>
+        <a class="btn btn-outline" href="/private/">Private sessions</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

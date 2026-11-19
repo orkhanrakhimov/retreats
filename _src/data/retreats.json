@@ -1,0 +1,59 @@
+[
+  {
+    "slug": "next-retreat",
+    "status": "open",
+    "name": "[Retreat name]",
+    "location": "[Location]",
+    "venue": "[Hotel or villa name]",
+    "dates": "[Dates]",
+    "start_date": "",
+    "nights": null,
+    "capacity": 12,
+    "spots_left": null,
+    "level": "All levels",
+    "focus": ["reset", "strength"],
+    "season": "[Season]",
+    "summary": "[Two sentences on the idea of this retreat: what she will feel, and what she will take home.]",
+    "intro": "[A short paragraph about this retreat: the place, the theme, why now. Written in Anastasia's voice.]",
+    "rooms": [
+      { "id": "shared", "name": "Shared twin room", "detail": "Share with a friend or another guest", "price": null, "sleeps": 2 },
+      { "id": "double", "name": "Private double room", "detail": "Your own room, king-size bed", "price": null, "sleeps": 1 },
+      { "id": "suite", "name": "Suite", "detail": "Larger room with a view and a bath", "price": null, "sleeps": 1 }
+    ],
+    "included": [
+      "[N] nights in a boutique hotel",
+      "Two practices a day with Anastasia",
+      "All meals by the hotel's chef",
+      "Spa, sauna or pool access",
+      "Private transfer from Tbilisi and back",
+      "Pre-retreat health questionnaire and personal guidance",
+      "One local experience: wine tasting or a guided hike"
+    ],
+    "not_included": [
+      "Flights to Georgia",
+      "Travel insurance",
+      "Spa treatments and massages (can be booked on site)",
+      "Alcohol outside the planned tasting"
+    ]
+  },
+  {
+    "slug": "coming-soon",
+    "status": "soon",
+    "name": "[Next retreat name]",
+    "location": "[Location]",
+    "venue": "",
+    "dates": "[Month, year]",
+    "start_date": "",
+    "nights": null,
+    "capacity": 12,
+    "spots_left": null,
+    "level": "All levels",
+    "focus": ["calm", "recovery"],
+    "season": "[Season]",
+    "summary": "[One sentence teaser.]",
+    "intro": "",
+    "rooms": [],
+    "included": [],
+    "not_included": []
+  }
+]

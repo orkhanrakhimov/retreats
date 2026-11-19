@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% from "macros.html" import photo, icon, day_schedule %}
+{% block header_class %}is-transparent{% endblock %}
+{% block content %}
+{% set r = next_retreat %}
+
+<section class="hero">
+  {{ photo("Video: sunrise practice on a hotel terrace, mountains behind", "hero-media tone-dark", video=true) }}
+  <div class="container hero-content">
+    <span class="eyebrow reveal">Women's wellness retreats · Georgia</span>
+    <h1 class="display reveal reveal-d1">Rest deeply.<br>Move well.<br><em class="italic">Stay beautifully.</em></h1>
+    <p class="lead reveal reveal-d2">Small-group retreats in Georgia's finest boutique hotels, guided by Anastasia Mzhavia, medical doctor and Yoga Alliance Level 3 instructor.</p>
+    <div class="hero-actions reveal reveal-d3">
+      <a class="btn btn-light" href="/retreats/">See upcoming retreats</a>
+      <a class="btn btn-ghost-light" href="/anastasia/">Meet Anastasia</a>
+    </div>
+  </div>
+  <span class="hero-scroll" aria-hidden="true"></span>
+</section>
+
+<section class="creds" aria-label="Anastasia's credentials">
+  <div class="container creds-row">
+    <span class="cred">Medical Doctor (MD)</span>
+    <span class="cred">Yoga Alliance Level 3</span>
+    <span class="cred">6+ years teaching</span>
+    <span class="cred">Instructor at OkTopUs Fitness</span>
+  </div>
+</section>
+
+{% if r %}
+<section class="section" id="next">
+  <div class="container">
+    <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;max-width:none">
+      <div>
+        <span class="eyebrow">Next retreat</span>
+        <h2 class="h2">Join us this season</h2>
+      </div>
+      <a class="link-arrow" href="/retreats/">All retreats</a>
+    </div>
+    <article class="featured reveal">
+      {{ photo("The hotel at golden hour", "tone-2") }}
+      <div class="featured-body">
+        <span class="meta-line">{{ r.location|ph }} · {{ r.dates|ph }}</span>
+        <h3 class="h2" style="font-size:clamp(36px,3.6vw,50px)">{{ r.name|ph }}</h3>
+        <p class="lead" style="font-size:17px">{{ r.summary|ph }}</p>
+        <ul class="check-list two-col">
+          <li>Boutique hotel stay</li>
+          <li>Twice-daily practice</li>
+          <li>All meals by the chef</li>
+          <li>Transfers from Tbilisi</li>
+        </ul>
+        <div class="countdown" data-countdown="{{ r.start_date }}" aria-label="Time until the retreat starts">
+          <div><b data-d>0</b><small>Days</small></div>
+          <div><b data-h>0</b><small>Hours</small></div>
+          <div><b data-m>0</b><small>Minutes</small></div>
+        </div>
+        <div class="price-row">
+          <div>
+            <div class="price-from">From, per person</div>
+            <div class="price-big">{{ r|from_price }}</div>
+          </div>
+          <div class="spots" data-spots="{{ r.spots_left if r.spots_left is not none else '' }}" data-capacity="{{ r.capacity }}">
+            <div class="spots-text">{% if r.spots_left is not none %}{{ r.spots_left }} of {{ r.capacity }} places left{% else %}<span class="fill">[X]</span> of {{ r.capacity }} places left{% endif %}</div>
+            <div class="spots-bar"><span></span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a class="btn btn-dark" href="/book/?retreat={{ r.slug }}">Reserve your place</a>
+          <a class="btn btn-outline" href="/retreats/{{ r.slug }}/">See the full retreat</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Every retreat, three promises</span>
+      <h2 class="h2">A beautiful place to stay. A practice that changes you. A doctor who looks after you.</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        {{ photo("Suite with a view", "ratio-45") }}
+        <span class="pillar-num">01</span>
+        <h3 class="h3">The Stay</h3>
+        <p>Hand-picked boutique hotels and private villas, comfortable rooms, spa and pool time, and a chef cooking seasonal Georgian food. You rest as well as you practise.</p>
+      </div>
+      <div class="pillar reveal reveal-d1">
+        {{ photo("Group practice outdoors", "ratio-45 tone-2") }}
+        <span class="pillar-num">02</span>
+        <h3 class="h3">The Practice</h3>
+        <p>Hatha, Ashtanga, Kundalini and Pilates in small groups of women. Mornings to energise, evenings to unwind, every level welcome.</p>
+      </div>
+      <div class="pillar reveal reveal-d2">
+        {{ photo("Anastasia adjusting a pose", "ratio-45 tone-3") }}
+        <span class="pillar-num">03</span>
+        <h3 class="h3">The Care</h3>
+        <p>Anastasia is a medical doctor with expertise in rehabilitation and injury prevention. She adapts every class to your body, and first aid is always on hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-dark" id="stay">
+  <div class="container stay">
+    <div class="stay-gallery reveal">
+      {{ photo("Pool or terrace", "wide ratio-1610 tone-dark-2") }}
+      {{ photo("Bedroom", "ratio-11 tone-dark") }}
+      {{ photo("Dinner table", "ratio-11 tone-dark-2") }}
+    </div>
+    <div class="reveal reveal-d1">
+      <span class="eyebrow">The Stay</span>
+      <h2 class="h2">Five-star comfort is part of the retreat</h2>
+      <p class="lead" style="margin-top:22px">We choose every venue ourselves, and only places we'd book for our own holiday.</p>
+      <ul class="amenities">
+        <li>{{ icon('bed') }}Your own room, or share with a friend</li>
+        <li>{{ icon('spa') }}Spa, sauna or pool time every day</li>
+        <li>{{ icon('chef') }}Seasonal Georgian menu from the hotel's chef</li>
+        <li>{{ icon('car') }}Private transfer from Tbilisi and back</li>
+        <li>{{ icon('wine') }}Wine tasting, hikes and local experiences</li>
+      </ul>
+      {% if r %}<a class="link-arrow" href="/retreats/{{ r.slug }}/#stay">See where we're staying next</a>{% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">A day at the retreat</span>
+      <h2 class="h2">Unhurried, nourishing and yours</h2>
+    </div>
+    <div class="reveal">{{ day_schedule() }}</div>
+  </div>
+</section>
+
+<section class="section bg-linen" id="anastasia">
+  <div class="container host">
+    <div class="reveal">{{ photo("Portrait of Anastasia in natural light", "ratio-45 tone-3") }}</div>
+    <div class="reveal reveal-d1" style="display:flex;flex-direction:column;gap:26px">
+      <span class="eyebrow" style="margin:0">Meet your host</span>
+      <h2 class="h2" style="font-size:clamp(44px,5.4vw,76px)">Anastasia Mzhavia</h2>
+      <p class="quote">“<span class="fill">[A sentence in Anastasia's own words: why she started hosting retreats.]</span>”</p>
+      <p style="color:var(--cocoa)">A medical doctor and Yoga Alliance Level 3 instructor, Anastasia has taught Hatha, Ashtanga, Kundalini, Hot Power Pilates and Mat &amp; Reformer Pilates for over six years. Her background in rehabilitation and injury prevention means every class is safe, and adapted to you.</p>
+      <div class="stats">
+        <div class="stat"><b>MD</b><span>Rehabilitation and injury prevention</span></div>
+        <div class="stat"><b>6+ years</b><span>Teaching yoga and Pilates</span></div>
+        <div class="stat"><b>5 styles</b><span>Hatha, Ashtanga, Kundalini, Pilates</span></div>
+      </div>
+      <a class="link-arrow" href="/anastasia/">Read her story</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">In their words</span>
+      <h2 class="h2">Women who came, and came back</h2>
+    </div>
+    <div class="slider reveal" data-slider>
+      <div class="slides" aria-live="polite">
+        {% for n in range(3) %}
+        <figure class="slide{% if loop.first %} is-active{% endif %}">
+          <blockquote>“<span class="fill">[Real guest quote {{ loop.index }}]</span>”</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true"></span><span><span class="fill">[Name]</span>, <span class="fill">[City]</span></span></figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+      <div class="slider-controls">
+        <button class="round-btn" type="button" data-prev aria-label="Previous story">{{ icon('arrow-left', 18) }}</button>
+        <div class="dots"></div>
+        <button class="round-btn" type="button" data-next aria-label="Next story">{{ icon('arrow-right', 18) }}</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band dark reveal">
+      <div>
+        <span class="eyebrow" style="margin:0">Not sure which retreat?</span>
+        <h2 class="h2" style="font-size:clamp(32px,3.6vw,48px)">Answer three questions and we'll suggest one</h2>
+      </div>
+      <a class="btn btn-champagne" href="/retreats/#find">Find your retreat</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container grid-2">
+    <a class="card reveal" href="/private/" style="text-decoration:none;color:inherit">
+      <span class="card-icon">{{ icon('users') }}</span>
+      <h3 class="h3">Private retreats</h3>
+      <p>A retreat just for you and your friends, on your dates, at a venue we choose together.</p>
+      <span class="link-arrow">Plan yours</span>
+    </a>
+    <a class="card reveal reveal-d1" href="/private/#corporate" style="text-decoration:none;color:inherit">
+      <span class="card-icon">{{ icon('briefcase') }}</span>
+      <h3 class="h3">Corporate wellness</h3>
+      <p>Wellness days and retreats for teams: movement, posture and recovery, led by a doctor.</p>
+      <span class="link-arrow">Talk to us</span>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container gift">
+    <div class="reveal">{{ photo("Video still: Anastasia's morning routine", "ratio-32 tone-2", video=true) }}</div>
+    <div class="reveal reveal-d1" style="display:flex;flex-direction:column;gap:20px">
+      <span class="eyebrow" style="margin:0">A gift from Anastasia</span>
+      <h2 class="h2" style="font-size:clamp(36px,4vw,54px)">A 10-minute morning routine, free</h2>
+      <p class="lead">Join the list to get the video, and hear about new retreats before anyone else.</p>
+      <form data-signup>
+        <label class="sr" for="gift-email">Email address</label>
+        <div class="signup-row">
+          <input id="gift-email" type="email" name="email" placeholder="Your email" required autocomplete="email">
+          <button class="btn btn-dark" type="submit">Send me the video</button>
+        </div>
+        <p class="signup-done" style="color:var(--bronze)" hidden>Thank you. Check your inbox for the video.</p>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
