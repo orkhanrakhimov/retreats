@@ -35,7 +35,7 @@
       <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>
     </nav>
     <div class="header-end">
-      {% if next_retreat %}<a class="btn btn-small" href="/retreats/{{ next_retreat.slug }}/#book">Book</a>{% endif %}
+      {% if next_retreat %}<a class="btn btn-small" href="/retreats/{{ next_retreat.slug }}/#book">Book</a>{% else %}<a class="btn btn-small" href="/#waitlist"><span class="hide-sm">Join the waitlist</span><span class="show-sm">Waitlist</span></a>{% endif %}
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
         <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>

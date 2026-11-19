@@ -9,7 +9,7 @@
       <h1>Yoga &amp; Pilates retreats for women in Georgia</h1>
       <p class="intro">Small groups, beautiful hotels, good food, and a teacher who is also a medical doctor.</p>
       <div class="actions">
-        {% if r %}<a class="btn btn-light" href="/retreats/{{ r.slug }}/">See the next retreat</a>{% endif %}
+        {% if r %}<a class="btn btn-light" href="/retreats/{{ r.slug }}/">See the next retreat</a>{% else %}<a class="btn btn-light" href="/#waitlist">Join the waitlist</a>{% endif %}
         <a class="btn btn-line-light" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} Follow on Instagram</a>
       </div>
       {{ lotus() }}
@@ -27,27 +27,48 @@
 <section class="section" id="retreats">
   <div class="wrap">
     <h2 class="title">Upcoming retreats</h2>
-    {% for x in retreats %}
-      {% if x.status == "open" %}
-      <article class="retreat-card">
-        {{ photo("The hotel", "retreat-photo") }}
-        <div class="retreat-body">
-          <p class="meta">{{ x.location|ph }} · {{ x.dates|ph }}</p>
-          <h3>{{ x.name|ph }}</h3>
-          <p>{{ x.summary|ph }}</p>
-          <dl class="mini-facts">
-            <div><dt>Stay</dt><dd>{{ x.venue|ph }}</dd></div>
-            <div><dt>Nights</dt><dd>{% if x.nights %}{{ x.nights }}{% else %}<span class="fill">[N]</span>{% endif %}</dd></div>
-            <div><dt>From</dt><dd>{{ x|from_price }}</dd></div>
-          </dl>
-          <div class="actions">
-            <a class="btn" href="/retreats/{{ x.slug }}/">Details and booking</a>
+    {% for x in open_retreats %}
+    <article class="retreat-card">
+      {{ photo("The hotel", "retreat-photo") }}
+      <div class="retreat-body">
+        <p class="meta">{{ x.location|ph }} · {{ x.dates|ph }}</p>
+        <h3>{{ x.name|ph }}</h3>
+        <p>{{ x.summary|ph }}</p>
+        <dl class="mini-facts">
+          <div><dt>Stay</dt><dd>{{ x.venue|ph }}</dd></div>
+          <div><dt>From</dt><dd>{{ x|from_price }}</dd></div>
+        </dl>
+        <div class="actions"><a class="btn" href="/retreats/{{ x.slug }}/">Details and booking</a></div>
+      </div>
+    </article>
+    {% else %}
+    <div class="soon-card" id="waitlist">
+      <div class="soon-text">
+        <p class="soon-badge">Announcing soon</p>
+        <h3>The first retreat is being planned now</h3>
+        <p>Dates, place and prices will be announced here and on Instagram. Join the waitlist and you'll hear first, with early access to book before places open to everyone.</p>
+        <ul class="ticks">
+          <li>Up to 12 places per retreat</li>
+          <li>The waitlist can book before anyone else</li>
+          <li>No payment or commitment now</li>
+        </ul>
+      </div>
+      <form class="form" data-waitlist>
+        <div class="field"><label for="w-name">Name</label><input id="w-name" name="Name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="w-email">Email</label><input id="w-email" name="Email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="w-phone">Phone or WhatsApp <span class="muted">(optional)</span></label><input id="w-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <fieldset class="field">
+          <legend>Which would suit you?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="Format" value="Weekend (2–3 nights)"><span>Weekend</span></label>
+            <label class="chip"><input type="checkbox" name="Format" value="Week (5–7 nights)"><span>Full week</span></label>
+            <label class="chip"><input type="checkbox" name="Format" value="Either"><span>Either</span></label>
           </div>
-        </div>
-      </article>
-      {% else %}
-      <p class="soon">Next: {{ x.name|ph }}, {{ x.dates|ph }}. Follow <a href="{{ site.instagram }}" target="_blank" rel="noopener">{{ site.instagram_handle }}</a> to hear first.</p>
-      {% endif %}
+        </fieldset>
+        <button class="btn" type="submit">Join the waitlist</button>
+        <p class="form-done" hidden>Thank you! Your email app should have opened with your sign-up. Send it, and you're on the list.</p>
+      </form>
+    </div>
     {% endfor %}
   </div>
 </section>

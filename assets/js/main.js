@@ -34,8 +34,25 @@
     });
   });
 
+  // Waitlist sign-up (opens email until a form service is connected)
+  document.querySelectorAll("[data-waitlist]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var lines = [], formats = [];
+      Array.prototype.forEach.call(form.elements, function (el) {
+        if (!el.name || !el.value) return;
+        if (el.type === "checkbox") { if (el.checked) formats.push(el.value); return; }
+        lines.push(el.name + ": " + el.value);
+      });
+      if (formats.length) lines.push("Prefers: " + formats.join(", "));
+      window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Retreat waitlist") + "&body=" + encodeURIComponent(lines.join("\n"));
+      form.querySelector(".form-done").hidden = false;
+    });
+  });
+
   // Gentle fade-in as sections scroll into view
-  var targets = document.querySelectorAll(".section .title, .section .lead, .retreat-card, .includes li, .schedule li, .faq details, .creds li, .price-row, .certs li, .styles li, .facts p, .two-lists > div, .form, .contact .actions");
+  var targets = document.querySelectorAll(".section .title, .section .lead, .retreat-card, .soon-card, .includes li, .schedule li, .faq details, .creds li, .price-row, .certs li, .styles li, .facts p, .two-lists > div, .form, .contact .actions");
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {

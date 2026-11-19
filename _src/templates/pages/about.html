@@ -60,7 +60,7 @@
   <div class="wrap contact">
     <h2 class="title">Practise with Anastasia</h2>
     <div class="actions">
-      {% if next_retreat %}<a class="btn btn-light" href="/retreats/{{ next_retreat.slug }}/">See the next retreat</a>{% endif %}
+      {% if next_retreat %}<a class="btn btn-light" href="/retreats/{{ next_retreat.slug }}/">See the next retreat</a>{% else %}<a class="btn btn-light" href="/#waitlist">Join the waitlist</a>{% endif %}
       <a class="btn btn-line-light" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ insta_icon() }} Instagram</a>
     </div>
   </div>
