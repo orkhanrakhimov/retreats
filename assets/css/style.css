@@ -103,6 +103,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .dark .ph { background: #4A5F51; }
 .dark .ph figcaption { background: rgba(25, 27, 24, .35); color: #E4EAE1; }
 
+/* Real photos */
+.pic { width: 100%; object-fit: cover; border-radius: 2px; background: #D9DDD3; }
+
 /* Hero */
 .hero { padding-top: clamp(32px, 5vw, 64px); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }

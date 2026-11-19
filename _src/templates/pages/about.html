@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, insta_icon %}
+{% from "macros.html" import photo, picture, insta_icon %}
 {% block title %}About Anastasia Mzhavia, MD | retreats.ge{% endblock %}
 {% block description %}Anastasia Mzhavia is a medical doctor (BAU International University Batumi) and certified yoga teacher who teaches yoga and Pilates in Tbilisi.{% endblock %}
 {% block content %}
@@ -16,7 +16,7 @@
         <a class="btn btn-line" href="mailto:{{ site.email }}">Email Anastasia</a>
       </div>
     </div>
-    {{ photo("Portrait of Anastasia", "portrait") }}
+    {{ picture("dancer", "(max-width: 860px) 100vw, 460px", "Anastasia Mzhavia, medical doctor and yoga teacher, in dancer pose", "portrait", eager=true) }}
   </div>
 </section>
 

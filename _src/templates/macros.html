@@ -29,3 +29,7 @@
   <details><summary>Is transport included?</summary><p>Yes, a transfer from Tbilisi and back is included in every retreat.</p></details>
 </div>
 {%- endmacro %}
+
+{% macro picture(name, sizes, alt, cls="", widths=(700, 1200), eager=false) -%}
+<img class="pic {{ cls }}" src="/assets/img/anastasia/{{ name }}-{{ widths[0] }}.jpg" srcset="{% for w in widths %}/assets/img/anastasia/{{ name }}-{{ w }}.jpg {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ sizes }}" alt="{{ alt }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+{%- endmacro %}
