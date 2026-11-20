@@ -674,10 +674,13 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
 
 /* Georgian: Georgian fonts first, a little smaller headings (words are longer) */
 html[lang="ka"] body { font-family: "Noto Sans Georgian", "DM Sans", system-ui, sans-serif; }
-html[lang="ka"] h1, html[lang="ka"] h2, html[lang="ka"] .styles h3, html[lang="ka"] .pillar h3, html[lang="ka"] .parts strong, html[lang="ka"] .option-link h3 { font-family: "Noto Serif Georgian", "Bodoni Moda", Georgia, serif; letter-spacing: 0; }
-html[lang="ka"] .hero h1 { font-size: clamp(34px, 4.6vw, 64px); max-width: 18ch; line-height: 1.15; }
-html[lang="ka"] .title { font-size: clamp(28px, 3.6vw, 46px); line-height: 1.2; }
-html[lang="ka"] .bleed-text h1, html[lang="ka"] .page-top h1 { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.15; }
+@font-face { font-family: "Mosheneba"; src: url("/assets/fonts/mosheneba.woff") format("woff"); font-display: swap; }
+html[lang="ka"] h1, html[lang="ka"] h2, html[lang="ka"] .styles h3, html[lang="ka"] .pillar h3, html[lang="ka"] .parts strong, html[lang="ka"] .option-link h3 { font-family: "Mosheneba", "Noto Serif Georgian", Georgia, serif; font-weight: 400; letter-spacing: .01em; line-height: 1.08; }
+html[lang="ka"] .hero h1 { font-size: clamp(40px, 5.4vw, 80px); max-width: 920px; }
+html[lang="ka"] .title { font-size: clamp(32px, 4vw, 54px); }
+html[lang="ka"] .bleed-text h1, html[lang="ka"] .page-top h1 { font-size: clamp(44px, 5.2vw, 80px); }
+html[lang="ka"] .styles h3, html[lang="ka"] .pillar h3, html[lang="ka"] .option-link h3 { font-size: clamp(22px, 2vw, 28px); }
+html[lang="ka"] .parts strong { font-size: 20px; }
 html[lang="ka"] .eyebrow { letter-spacing: .08em; }
 html[lang="ka"] .nav { gap: 22px; }
 html[lang="ka"] .nav a { font-size: 14px; }
