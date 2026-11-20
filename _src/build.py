@@ -19,6 +19,9 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup, escape
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from i18n import Translator  # noqa: E402
+
 SRC = Path(__file__).resolve().parent
 ROOT = SRC.parent
 
@@ -34,7 +37,14 @@ PAGES = {
     "404.html": "404.html",
     "redirect-private.html": "private/index.html",
 }
-NOT_IN_SITEMAP = {"404.html", "admin/index.html", "private/index.html"}
+NOT_IN_SITEMAP = {"404.html", "admin/index.html", "private/index.html", "ka/404.html"}
+# Pages that get a Georgian version under /ka/
+NO_TRANSLATION = {"admin.html", "redirect-private.html"}
+# Strings used by main.js, sent to Georgian pages
+JS_STRINGS = ["Please tick the box to agree.", "Please check your email address.", "Please fill in the highlighted fields.",
+              "Something went wrong. Please try again, or email {email}.", "Link copied", "Copy link", "Copy this link:",
+              "Play video", "Pause video", "Sending…"]
+EXTRA_KA = {"Sending…": "იგზავნება…"}
 LIST_FIELDS = ("included", "not_included", "gallery")
 
 
@@ -114,28 +124,50 @@ def main():
     common = dict(site=site, retreats=retreats, credentials=credentials,
                   next_retreat=retreats[0] if retreats else None)
 
-    written = []
-    for tpl, out in PAGES.items():
-        html = env.get_template(f"pages/{tpl}").render(**common, path="/" + out.replace("index.html", ""))
+    tr = Translator()
+    tr.d.update(EXTRA_KA)
+    i18n_js = {k: tr.d[k] for k in JS_STRINGS if k in tr.d}
+
+    def write(out, html):
         dest = ROOT / out
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(html)
+
+    def georgian(html):
+        html = tr.page(html)
+        # Internal links stay on the Georgian side
+        return re.sub(r'href="/(?!ka/|assets/|admin/|ka"|")', 'href="/ka/', html).replace('href="/"', 'href="/ka/"').replace("/ka/__en__/", "/")
+
+    written = []
+    for tpl, out in PAGES.items():
+        path = "/" + out.replace("index.html", "")
+        alt = tpl not in NO_TRANSLATION and tpl != "404.html"
+        tmpl = env.get_template(f"pages/{tpl}")
+        write(out, tmpl.render(**common, path=path, lang="en", pre="", alternates=alt))
         written.append(out)
+        if tpl not in NO_TRANSLATION:
+            ka = tmpl.render(**common, path=path, lang="ka", pre="/ka", alternates=alt, i18n_js=i18n_js)
+            write("ka/" + out, georgian(ka))
+            written.append("ka/" + out)
 
     # One page per published retreat; remove pages of retreats that are no longer published
     keep = {r["slug"] for r in retreats}
-    for d in (ROOT / "retreats").iterdir():
-        if d.is_dir() and d.name not in keep:
-            for f in d.iterdir():
-                f.unlink()
-            d.rmdir()
+    for base in (ROOT / "retreats", ROOT / "ka" / "retreats"):
+        for d in base.iterdir():
+            if d.is_dir() and d.name not in keep:
+                for f in d.iterdir():
+                    f.unlink()
+                d.rmdir()
+    tmpl = env.get_template("pages/retreat.html")
     for r in retreats:
-        out = f"retreats/{r['slug']}/index.html"
-        html = env.get_template("pages/retreat.html").render(**common, r=r, path=f"/retreats/{r['slug']}/")
-        dest = ROOT / out
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(html)
-        written.append(out)
+        path = f"/retreats/{r['slug']}/"
+        write(path[1:] + "index.html", tmpl.render(**common, r=r, path=path, lang="en", pre="", alternates=True))
+        ka = tmpl.render(**common, r=r, path=path, lang="ka", pre="/ka", alternates=True, i18n_js=i18n_js)
+        write("ka" + path + "index.html", georgian(ka))
+        written += [path[1:] + "index.html", "ka" + path + "index.html"]
+
+    if tr.missing:
+        print("Not translated:", "; ".join(sorted(tr.missing))[:2000])
 
     urls = [site["url"] + "/" + w.replace("index.html", "") for w in written if w not in NOT_IN_SITEMAP]
     (ROOT / "sitemap.xml").write_text(

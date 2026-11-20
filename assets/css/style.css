@@ -667,3 +667,34 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
   .video-split .video-frame { order: -1; width: 100%; max-width: 440px; justify-self: center; }
 }
 .video-split .styles { margin-top: 8px; }
+
+/* Language switch */
+.lang-switch { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; height: 42px; padding: 0 8px; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: .04em; }
+.lang-switch:hover { color: var(--green); }
+
+/* Georgian: Georgian fonts first, a little smaller headings (words are longer) */
+html[lang="ka"] body { font-family: "Noto Sans Georgian", "DM Sans", system-ui, sans-serif; }
+html[lang="ka"] h1, html[lang="ka"] h2, html[lang="ka"] .styles h3, html[lang="ka"] .pillar h3, html[lang="ka"] .parts strong, html[lang="ka"] .option-link h3 { font-family: "Noto Serif Georgian", "Bodoni Moda", Georgia, serif; letter-spacing: 0; }
+html[lang="ka"] .hero h1 { font-size: clamp(34px, 4.6vw, 64px); max-width: 18ch; line-height: 1.15; }
+html[lang="ka"] .title { font-size: clamp(28px, 3.6vw, 46px); line-height: 1.2; }
+html[lang="ka"] .bleed-text h1, html[lang="ka"] .page-top h1 { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.15; }
+html[lang="ka"] .eyebrow { letter-spacing: .08em; }
+html[lang="ka"] .nav { gap: 22px; }
+html[lang="ka"] .nav a { font-size: 14px; }
+html[lang="ka"] h1, html[lang="ka"] h2, html[lang="ka"] h3 { overflow-wrap: break-word; }
+.lang-in-nav { display: none; }
+@media (max-width: 900px) { .nav .lang-in-nav { display: block; color: var(--green); } }
+@media (max-width: 480px) { .header-end .lang-switch { display: none; } .header-row { gap: 12px; } }
+
+/* Georgian menu labels are longer: short header button, and the menu folds earlier */
+html[lang="ka"] .nav a, html[lang="ka"] .btn-small { white-space: nowrap; }
+html[lang="ka"] .header-end .hide-sm { display: none; }
+html[lang="ka"] .header-end .show-sm { display: inline; }
+@media (max-width: 1180px) {
+  html[lang="ka"] .menu-btn { display: block; }
+  html[lang="ka"] .nav { display: none; position: absolute; left: 0; right: 0; top: 76px; height: calc(100vh - 76px); height: calc(100dvh - 76px); flex-direction: column; gap: 0; padding: 8px var(--pad) 32px; background: var(--paper); overflow-y: auto; }
+  html[lang="ka"] .nav.open { display: flex; }
+  html[lang="ka"] .nav a { font-size: 19px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  html[lang="ka"] .nav a:hover, html[lang="ka"] .nav a[aria-current] { border-color: var(--line); color: var(--green); }
+  html[lang="ka"] .nav .lang-in-nav { display: block; color: var(--green); }
+}

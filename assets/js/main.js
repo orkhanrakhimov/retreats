@@ -1,3 +1,6 @@
+// Georgian pages set window.I18N; English text is the key
+function T(s) { return (window.I18N && window.I18N[s]) || s; }
+
 (function () {
   "use strict";
   var SITE = window.SITE || {};
@@ -40,7 +43,7 @@
         }
       });
       if (first) {
-        showError(first.name === "consent" ? "Please tick the box to agree." : first.type === "email" && first.value ? "Please check your email address." : "Please fill in the highlighted fields.");
+        showError(first.name === "consent" ? T("Please tick the box to agree.") : first.type === "email" && first.value ? T("Please check your email address.") : T("Please fill in the highlighted fields."));
         first.focus();
         return false;
       }
@@ -62,12 +65,12 @@
         success.querySelector("[data-first-name]").textContent = data.name.split(" ")[0];
         form.hidden = true; success.hidden = false; success.focus();
       };
-      btn.disabled = true; btn.textContent = "Sending…"; showError("");
+      btn.disabled = true; btn.textContent = T("Sending…"); showError("");
       fetch(SITE.forms_endpoint, { method: "POST", body: JSON.stringify(data) })
         .then(function (r) { return r.json(); })
         .then(function (res) { if (!res.ok) throw new Error(res.error); done(); })
         .catch(function () {
-          showError("Something went wrong. Please try again, or email " + SITE.email + ".");
+          showError(T("Something went wrong. Please try again, or email {email}.").replace("{email}", SITE.email));
           btn.disabled = false; btn.textContent = btn.getAttribute("data-label");
         });
     });
@@ -88,9 +91,9 @@
     });
     box.querySelector("[data-copy]").addEventListener("click", function (e) {
       var b = e.currentTarget;
-      var ok = function () { b.textContent = "Link copied"; setTimeout(function () { b.textContent = "Copy link"; close(); }, 1400); };
-      if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok, function () { window.prompt("Copy this link:", url); });
-      else window.prompt("Copy this link:", url);
+      var ok = function () { b.textContent = T("Link copied"); setTimeout(function () { b.textContent = T("Copy link"); close(); }, 1400); };
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok, function () { window.prompt(T("Copy this link:"), url); });
+      else window.prompt(T("Copy this link:"), url);
     });
     document.addEventListener("click", function (e) { if (!box.contains(e.target)) close(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
@@ -163,7 +166,7 @@
   document.querySelectorAll(".video-frame").forEach(function (frame) {
     var v = frame.querySelector("video"), b = frame.querySelector("[data-video-toggle]");
     if (!v || !b) return;
-    function sync() { var p = v.paused; b.classList.toggle("paused", p); b.setAttribute("aria-label", p ? "Play video" : "Pause video"); }
+    function sync() { var p = v.paused; b.classList.toggle("paused", p); b.setAttribute("aria-label", p ? T("Play video") : T("Pause video")); }
     if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); }
     b.addEventListener("click", function () { v.paused ? v.play() : v.pause(); });
     v.addEventListener("play", sync); v.addEventListener("pause", sync); sync();

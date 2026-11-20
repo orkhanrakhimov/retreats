@@ -1,0 +1,1778 @@
+[
+ {
+  "id": 1,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Yoga and Pilates retreats in Georgia and abroad, led by Anastasia Mzhavia, a medical doctor and certified yoga teacher.",
+  "ka": "იოგისა და პილატესის რეტრიტები საქართველოში და მის ფარგლებს გარეთ, რომლებსაც უძღვება ექიმი და სერტიფიცირებული იოგის მასწავლებელი ანასტასია მჟავია."
+ },
+ {
+  "id": 2,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Skip to content",
+  "ka": "შინაარსზე გადასვლა"
+ },
+ {
+  "id": 3,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "by Anastasia Mzhavia",
+  "ka": "ანასტასია მჟავიასგან"
+ },
+ {
+  "id": 4,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Retreats",
+  "ka": "რეტრიტები"
+ },
+ {
+  "id": 5,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "About Anastasia",
+  "ka": "ანასტასიას შესახებ"
+ },
+ {
+  "id": 6,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Online sessions",
+  "ka": "ონლაინ გაკვეთილები"
+ },
+ {
+  "id": 7,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Corporate",
+  "ka": "კორპორატიული პროგრამები"
+ },
+ {
+  "id": 8,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Contact",
+  "ka": "კონტაქტი"
+ },
+ {
+  "id": 9,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Register your interest",
+  "ka": "დაინტერესების დაფიქსირება"
+ },
+ {
+  "id": 10,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Register",
+  "ka": "რეგისტრაცია"
+ },
+ {
+  "id": 11,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Menu",
+  "ka": "მენიუ"
+ },
+ {
+  "id": 12,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Yoga & Pilates retreats in Georgia and abroad, led by Anastasia Mzhavia, MD.",
+  "ka": "იოგისა და პილატესის რეტრიტები საქართველოში და საზღვარგარეთ, ექიმ ანასტასია მჟავიას ხელმძღვანელობით."
+ },
+ {
+  "id": 13,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Tbilisi, Georgia",
+  "ka": "თბილისი, საქართველო"
+ },
+ {
+  "id": 14,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Privacy policy",
+  "ka": "კონფიდენციალურობის პოლიტიკა"
+ },
+ {
+  "id": 15,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Please tick the box to agree.",
+  "ka": "თანხმობის დასადასტურებლად მონიშნეთ ველი."
+ },
+ {
+  "id": 16,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Please check your email address.",
+  "ka": "გთხოვთ, შეამოწმოთ ელფოსტის მისამართი."
+ },
+ {
+  "id": 17,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Please fill in the highlighted fields.",
+  "ka": "გთხოვთ, შეავსოთ მონიშნული ველები."
+ },
+ {
+  "id": 18,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Something went wrong. Please try again, or email {email}.",
+  "ka": "დაფიქსირდა შეცდომა. სცადეთ ხელახლა ან მოგვწერეთ: {email}."
+ },
+ {
+  "id": 19,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Link copied",
+  "ka": "ბმული დაკოპირებულია"
+ },
+ {
+  "id": 20,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Copy link",
+  "ka": "ბმულის კოპირება"
+ },
+ {
+  "id": 21,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Copy this link:",
+  "ka": "დააკოპირეთ ეს ბმული:"
+ },
+ {
+  "id": 22,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Play video",
+  "ka": "ვიდეოს ჩართვა"
+ },
+ {
+  "id": 23,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Pause video",
+  "ka": "ვიდეოს შეჩერება"
+ },
+ {
+  "id": 24,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Full name",
+  "ka": "სახელი და გვარი"
+ },
+ {
+  "id": 25,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Email",
+  "ka": "ელფოსტა"
+ },
+ {
+  "id": 26,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Phone number",
+  "ka": "ტელეფონის ნომერი"
+ },
+ {
+  "id": 27,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Thank you, {name}!",
+  "ka": "გმადლობთ, {name}!"
+ },
+ {
+  "id": 28,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "In the meantime, say hello on Instagram.",
+  "ka": "მანამდე შეგიძლიათ ინსტაგრამზე მოგვწეროთ."
+ },
+ {
+  "id": 29,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Share",
+  "ka": "გაზიარება"
+ },
+ {
+  "id": 30,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Which retreat?",
+  "ka": "რომელი რეტრიტი?"
+ },
+ {
+  "id": 31,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Any upcoming retreat",
+  "ka": "ნებისმიერი მომავალი რეტრიტი"
+ },
+ {
+  "id": 32,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "Tell me about any upcoming retreat",
+  "ka": "მსურს ინფორმაცია ნებისმიერი მომავალი რეტრიტის შესახებ"
+ },
+ {
+  "id": 33,
+  "page": "Shared (header, footer, forms, FAQ)",
+  "en": "+995 …",
+  "ka": "+995 …"
+ },
+ {
+  "id": 34,
+  "page": "Home",
+  "en": "Yoga & Pilates retreats with Anastasia Mzhavia, MD",
+  "ka": "იოგისა და პილატესის რეტრიტები ექიმ ანასტასია მჟავიასთან ერთად"
+ },
+ {
+  "id": 35,
+  "page": "Home",
+  "en": "Yoga & Pilates retreats in Georgia and abroad",
+  "ka": "იოგისა და პილატესის რეტრიტები საქართველოში და საზღვარგარეთ"
+ },
+ {
+  "id": 36,
+  "page": "Home",
+  "en": "Led by Anastasia Mzhavia, a medical doctor and yoga and Pilates teacher.",
+  "ka": "რეტრიტებს უძღვება ანასტასია მჟავია, ექიმი და იოგისა და პილატესის მასწავლებელი."
+ },
+ {
+  "id": 37,
+  "page": "Home",
+  "en": "About the retreats",
+  "ka": "რეტრიტების შესახებ"
+ },
+ {
+  "id": 38,
+  "page": "Home",
+  "en": "Yoga & Pilates in one retreat",
+  "ka": "იოგა და პილატესი ერთ რეტრიტში"
+ },
+ {
+  "id": 39,
+  "page": "Home",
+  "en": "Comfortable places in Georgia and abroad",
+  "ka": "კომფორტული გარემო საქართველოში და საზღვარგარეთ"
+ },
+ {
+  "id": 40,
+  "page": "Home",
+  "en": "Led by a doctor who knows the body",
+  "ka": "ექიმის ხელმძღვანელობით, რომელიც კარგად იცნობს ადამიანის სხეულს"
+ },
+ {
+  "id": 41,
+  "page": "Home",
+  "en": "The retreats",
+  "ka": "რეტრიტები"
+ },
+ {
+  "id": 42,
+  "page": "Home",
+  "en": "A retreat with Anastasia",
+  "ka": "რეტრიტი ანასტასიასთან ერთად"
+ },
+ {
+  "id": 43,
+  "page": "Home",
+  "en": "A comfortable place to stay",
+  "ka": "კომფორტული საცხოვრებელი"
+ },
+ {
+  "id": 44,
+  "page": "Home",
+  "en": "A comfortable room and time to rest between classes.",
+  "ka": "მყუდრო ოთახი და დასვენების დრო გაკვეთილებს შორის."
+ },
+ {
+  "id": 45,
+  "page": "Home",
+  "en": "Yoga and Pilates",
+  "ka": "იოგა და პილატესი"
+ },
+ {
+  "id": 46,
+  "page": "Home",
+  "en": "Both in one retreat, for every level, from complete beginners to experienced.",
+  "ka": "ორივე ერთ რეტრიტში, ნებისმიერი დონისთვის, დამწყებიდან გამოცდილ მონაწილემდე."
+ },
+ {
+  "id": 47,
+  "page": "Home",
+  "en": "Care from a doctor",
+  "ka": "ექიმის ყურადღება"
+ },
+ {
+  "id": 48,
+  "page": "Home",
+  "en": "Anastasia is a medical doctor. She learns about your health before you arrive and adapts the classes to you.",
+  "ka": "ანასტასია ექიმია. ჩამოსვლამდე გაეცნობა თქვენს ჯანმრთელობის მდგომარეობას და გაკვეთილებს თქვენს საჭიროებებს მოარგებს."
+ },
+ {
+  "id": 49,
+  "page": "Home",
+  "en": "More about the retreats",
+  "ka": "მეტი რეტრიტების შესახებ"
+ },
+ {
+  "id": 50,
+  "page": "Home",
+  "en": "In class",
+  "ka": "გაკვეთილზე"
+ },
+ {
+  "id": 51,
+  "page": "Home",
+  "en": "More than stretching",
+  "ka": "მეტი, ვიდრე გაწელვა"
+ },
+ {
+  "id": 52,
+  "page": "Home",
+  "en": "Yoga and Pilates train much more than flexibility. A class with Anastasia works on all of this:",
+  "ka": "იოგა და პილატესი მხოლოდ მოქნილობას არ ავითარებს. ანასტასიასთან გაკვეთილებზე იმუშავებთ შემდეგ მიმართულებებზე:"
+ },
+ {
+  "id": 53,
+  "page": "Home",
+  "en": "Strength",
+  "ka": "ძალა"
+ },
+ {
+  "id": 54,
+  "page": "Home",
+  "en": "Holding poses and Pilates exercises strengthen your core, back and legs.",
+  "ka": "იოგის პოზები და პილატესის ვარჯიშები აძლიერებს სხეულის ცენტრალურ კუნთებს, ზურგსა და ფეხებს."
+ },
+ {
+  "id": 55,
+  "page": "Home",
+  "en": "Flexibility",
+  "ka": "მოქნილობა"
+ },
+ {
+  "id": 56,
+  "page": "Home",
+  "en": "Slow stretching for the hips, shoulders and spine.",
+  "ka": "თეძოების, მხრებისა და ხერხემლის ნაზი, ნელი გაწელვა."
+ },
+ {
+  "id": 57,
+  "page": "Home",
+  "en": "Balance",
+  "ka": "ბალანსი"
+ },
+ {
+  "id": 58,
+  "page": "Home",
+  "en": "Standing poses improve your balance and posture.",
+  "ka": "დგომითი პოზები აუმჯობესებს წონასწორობასა და სხეულის სწორ პოზიციას."
+ },
+ {
+  "id": 59,
+  "page": "Home",
+  "en": "Breathing",
+  "ka": "სუნთქვა"
+ },
+ {
+  "id": 60,
+  "page": "Home",
+  "en": "Breathing exercises that help you relax and focus.",
+  "ka": "სუნთქვითი ვარჯიშები, რომლებიც მოდუნებასა და კონცენტრაციაში გეხმარებათ."
+ },
+ {
+  "id": 61,
+  "page": "Home",
+  "en": "Sound",
+  "ka": "ბგერა"
+ },
+ {
+  "id": 62,
+  "page": "Home",
+  "en": "Relaxation with Tibetan singing bowls and other instruments.",
+  "ka": "რელაქსაცია ტიბეტური მომღერალი თასებისა და სხვა ინსტრუმენტების თანხლებით."
+ },
+ {
+  "id": 63,
+  "page": "Home",
+  "en": "More on Instagram",
+  "ka": "მეტი ინსტაგრამზე"
+ },
+ {
+  "id": 64,
+  "page": "Home",
+  "en": "Anastasia leading a yoga class outdoors",
+  "ka": "ანასტასია ღია ცის ქვეშ იოგის გაკვეთილს ატარებს"
+ },
+ {
+  "id": 65,
+  "page": "Home",
+  "en": "Announcing soon",
+  "ka": "მალე გამოცხადდება"
+ },
+ {
+  "id": 66,
+  "page": "Home",
+  "en": "The first retreat is being planned",
+  "ka": "პირველი რეტრიტი იგეგმება"
+ },
+ {
+  "id": 67,
+  "page": "Home",
+  "en": "Dates, place and prices will be announced on the site and on Instagram. Register your interest and Anastasia will contact you personally.",
+  "ka": "თარიღები, ადგილი და ფასები გამოქვეყნდება ვებსაიტსა და ინსტაგრამზე. დააფიქსირეთ ინტერესი და ანასტასია პირადად დაგიკავშირდებათ."
+ },
+ {
+  "id": 68,
+  "page": "Home",
+  "en": "Follow on Instagram",
+  "ka": "გამოგვყევით ინსტაგრამზე"
+ },
+ {
+  "id": 69,
+  "page": "Home",
+  "en": "Anastasia Mzhavia in dancer pose on a beach",
+  "ka": "ანასტასია მჟავია პლაჟზე, მოცეკვავის პოზაში"
+ },
+ {
+  "id": 70,
+  "page": "Home",
+  "en": "Your teacher",
+  "ka": "თქვენი მასწავლებელი"
+ },
+ {
+  "id": 71,
+  "page": "Home",
+  "en": "Meet Anastasia",
+  "ka": "გაიცანით ანასტასია"
+ },
+ {
+  "id": 72,
+  "page": "Home",
+  "en": "A medical doctor and a yoga and Pilates teacher with more than six years of experience. She teaches at OkTopUs Fitness in Tbilisi.",
+  "ka": "ექიმი და იოგისა და პილატესის მასწავლებელი ექვს წელზე მეტი გამოცდილებით. ასწავლის თბილისის OkTopUs Fitness-ში."
+ },
+ {
+  "id": 73,
+  "page": "Home",
+  "en": "Medical Doctor",
+  "ka": "ექიმი"
+ },
+ {
+  "id": 74,
+  "page": "Home",
+  "en": "BAU International University Batumi",
+  "ka": "BAU საერთაშორისო უნივერსიტეტი, ბათუმი"
+ },
+ {
+  "id": 75,
+  "page": "Home",
+  "en": "500 hours of yoga teacher training",
+  "ka": "იოგის მასწავლებლის მომზადების 500 საათი"
+ },
+ {
+  "id": 76,
+  "page": "Home",
+  "en": "Hatha Yoga Institute, India",
+  "ka": "Hatha Yoga Institute, ინდოეთი"
+ },
+ {
+  "id": 77,
+  "page": "Home",
+  "en": "Yoga & Pilates teacher",
+  "ka": "იოგისა და პილატესის მასწავლებელი"
+ },
+ {
+  "id": 78,
+  "page": "Home",
+  "en": "6+ years",
+  "ka": "6 წელზე მეტი გამოცდილება"
+ },
+ {
+  "id": 79,
+  "page": "Home",
+  "en": "Her story and certificates",
+  "ka": "მისი ისტორია და სერტიფიკატები"
+ },
+ {
+  "id": 80,
+  "page": "Home",
+  "en": "Beyond the retreats",
+  "ka": "რეტრიტების მიღმა"
+ },
+ {
+  "id": 81,
+  "page": "Home",
+  "en": "More ways to practise with Anastasia",
+  "ka": "ანასტასიასთან ვარჯიშის სხვა შესაძლებლობები"
+ },
+ {
+  "id": 82,
+  "page": "Home",
+  "en": "One-to-one yoga or Pilates by video call, wherever you are, planned around your body and goals.",
+  "ka": "ინდივიდუალური იოგისა თუ პილატესის გაკვეთილები ვიდეოზარით, სადაც არ უნდა იყოთ, თქვენი სხეულისა და მიზნების გათვალისწინებით."
+ },
+ {
+  "id": 83,
+  "page": "Home",
+  "en": "Learn more",
+  "ka": "გაიგეთ მეტი"
+ },
+ {
+  "id": 84,
+  "page": "Home",
+  "en": "Corporate wellness",
+  "ka": "კორპორატიული კეთილდღეობის პროგრამები"
+ },
+ {
+  "id": 85,
+  "page": "Home",
+  "en": "Yoga and Pilates for teams, led by a doctor: wellness days at your office and team retreats.",
+  "ka": "იოგა და პილატესი გუნდებისთვის, ექიმის ხელმძღვანელობით: კეთილდღეობის დღეები ოფისში და გუნდური რეტრიტები."
+ },
+ {
+  "id": 86,
+  "page": "About",
+  "en": "About Anastasia Mzhavia, MD | retreats.ge",
+  "ka": "ანასტასია მჟავიას შესახებ, ექიმი | retreats.ge"
+ },
+ {
+  "id": 87,
+  "page": "About",
+  "en": "Anastasia Mzhavia is a medical doctor (BAU International University Batumi) and certified yoga teacher who teaches yoga and Pilates in Tbilisi.",
+  "ka": "ანასტასია მჟავია არის ექიმი (BAU საერთაშორისო უნივერსიტეტი, ბათუმი) და სერტიფიცირებული იოგის მასწავლებელი, რომელიც თბილისში იოგასა და პილატესს ასწავლის."
+ },
+ {
+  "id": 88,
+  "page": "About",
+  "en": "Anastasia Mzhavia, medical doctor and yoga teacher, in dancer pose on a beach",
+  "ka": "ანასტასია მჟავია, ექიმი და იოგის მასწავლებელი, პლაჟზე მოცეკვავის პოზაში"
+ },
+ {
+  "id": 89,
+  "page": "About",
+  "en": "Medical doctor and yoga teacher",
+  "ka": "ექიმი და იოგის მასწავლებელი"
+ },
+ {
+  "id": 90,
+  "page": "About",
+  "en": "Anastasia Mzhavia",
+  "ka": "ანასტასია მჟავია"
+ },
+ {
+  "id": 91,
+  "page": "About",
+  "en": "Anastasia has taught yoga and Pilates for more than six years: group classes, private clients and fitness events. Today she teaches at OkTopUs Fitness in Tbilisi and hosts her own retreats.",
+  "ka": "ანასტასია ექვს წელზე მეტია ასწავლის იოგასა და პილატესს: ჯგუფებს, ინდივიდუალურ მოსწავლეებსა და ფიტნესღონისძიებებზე. დღეს ის თბილისის OkTopUs Fitness-ში ასწავლის და საკუთარ რეტრიტებს მასპინძლობს."
+ },
+ {
+  "id": 92,
+  "page": "About",
+  "en": "She studied medicine at BAU International University Batumi, with a focus on rehabilitation and injury prevention. She knows how the body works and adapts every exercise to your health and level.",
+  "ka": "ანასტასიამ მედიცინა BAU საერთაშორისო უნივერსიტეტში, ბათუმში შეისწავლა, განსაკუთრებული ყურადღებით რეაბილიტაციასა და ტრავმების პრევენციაზე. მას კარგად ესმის სხეულის მუშაობა და თითოეულ ვარჯიშს თქვენს ჯანმრთელობასა და მომზადების დონეს არგებს."
+ },
+ {
+  "id": 93,
+  "page": "About",
+  "en": "Certificates",
+  "ka": "სერტიფიკატები"
+ },
+ {
+  "id": 94,
+  "page": "About",
+  "en": "Practice",
+  "ka": "პრაქტიკა"
+ },
+ {
+  "id": 95,
+  "page": "About",
+  "en": "What she teaches",
+  "ka": "რას ასწავლის"
+ },
+ {
+  "id": 96,
+  "page": "About",
+  "en": "Hatha yoga",
+  "ka": "ჰათჰა იოგა"
+ },
+ {
+  "id": 97,
+  "page": "About",
+  "en": "Slow poses and breathing. Good for beginners.",
+  "ka": "ნელი პოზები და სუნთქვითი ვარჯიშები. შესაფერისია დამწყებთათვის."
+ },
+ {
+  "id": 98,
+  "page": "About",
+  "en": "Ashtanga yoga",
+  "ka": "აშთანგა იოგა"
+ },
+ {
+  "id": 99,
+  "page": "About",
+  "en": "A strong, dynamic practice that moves from pose to pose.",
+  "ka": "ენერგიული, დინამიკური პრაქტიკა, პოზიდან პოზაში გადასვლით."
+ },
+ {
+  "id": 100,
+  "page": "About",
+  "en": "Kundalini yoga",
+  "ka": "კუნდალინი იოგა"
+ },
+ {
+  "id": 101,
+  "page": "About",
+  "en": "Breathing, movement and meditation.",
+  "ka": "სუნთქვა, მოძრაობა და მედიტაცია."
+ },
+ {
+  "id": 102,
+  "page": "About",
+  "en": "Mat and Reformer Pilates",
+  "ka": "პილატესი ხალიჩაზე და რეფორმერზე"
+ },
+ {
+  "id": 103,
+  "page": "About",
+  "en": "Core strength, posture and a healthy back.",
+  "ka": "სხეულის ცენტრალური კუნთების გაძლიერება, სწორი პოზა და ზურგის ჯანმრთელობა."
+ },
+ {
+  "id": 104,
+  "page": "About",
+  "en": "Hot Power Pilates",
+  "ka": "ცხელი პაუერ პილატესი"
+ },
+ {
+  "id": 105,
+  "page": "About",
+  "en": "A fast, intense Pilates workout.",
+  "ka": "სწრაფი და ინტენსიური პილატესის ვარჯიში."
+ },
+ {
+  "id": 106,
+  "page": "About",
+  "en": "Sound sessions",
+  "ka": "ხმოვანი სესიები"
+ },
+ {
+  "id": 107,
+  "page": "About",
+  "en": "Relaxation with Tibetan singing bowls and other sound instruments.",
+  "ka": "რელაქსაცია ტიბეტური მომღერალი თასებითა და სხვა ხმოვანი ინსტრუმენტებით."
+ },
+ {
+  "id": 108,
+  "page": "About",
+  "en": "Anastasia practising yoga in a studio",
+  "ka": "ანასტასია იოგას სტუდიაში ვარჯიშობს"
+ },
+ {
+  "id": 109,
+  "page": "About",
+  "en": "Credentials",
+  "ka": "კვალიფიკაცია"
+ },
+ {
+  "id": 110,
+  "page": "About",
+  "en": "Education and certificates",
+  "ka": "განათლება და სერტიფიკატები"
+ },
+ {
+  "id": 111,
+  "page": "About",
+  "en": "Tap a certificate to see it full size.",
+  "ka": "სერტიფიკატის სრულ ზომაზე სანახავად შეეხეთ მას."
+ },
+ {
+  "id": 112,
+  "page": "About",
+  "en": "Medical Doctor's diploma, BAU International University Batumi, English version",
+  "ka": "ექიმის დიპლომი, BAU საერთაშორისო უნივერსიტეტი, ბათუმი, ინგლისურენოვანი ვერსია"
+ },
+ {
+  "id": 113,
+  "page": "About",
+  "en": "BAU International University Batumi, 2023",
+  "ka": "BAU საერთაშორისო უნივერსიტეტი, ბათუმი, 2023"
+ },
+ {
+  "id": 114,
+  "page": "About",
+  "en": "Medical Doctor's diploma, BAU International University Batumi, Georgian version",
+  "ka": "ექიმის დიპლომი, BAU საერთაშორისო უნივერსიტეტი, ბათუმი, ქართულენოვანი ვერსია"
+ },
+ {
+  "id": 115,
+  "page": "About",
+  "en": "Medical Doctor's diploma (Georgian)",
+  "ka": "ექიმის დიპლომი (ქართულად)"
+ },
+ {
+  "id": 116,
+  "page": "About",
+  "en": "Hatha Yoga Institute certificate, 300 hours, Level 3",
+  "ka": "Hatha Yoga Institute-ის სერტიფიკატი, 300 საათი, მე-3 დონე"
+ },
+ {
+  "id": 117,
+  "page": "About",
+  "en": "300-hour Yoga Teacher & Evaluator, Level 3",
+  "ka": "იოგის მასწავლებელი და შემფასებელი, 300 საათი, მე-3 დონე"
+ },
+ {
+  "id": 118,
+  "page": "About",
+  "en": "Hatha Yoga Institute, India, 2025",
+  "ka": "Hatha Yoga Institute, ინდოეთი, 2025"
+ },
+ {
+  "id": 119,
+  "page": "About",
+  "en": "Hatha Yoga Institute certificate, 200 hours, Level 1",
+  "ka": "Hatha Yoga Institute-ის სერტიფიკატი, 200 საათი, 1-ლი დონე"
+ },
+ {
+  "id": 120,
+  "page": "About",
+  "en": "200-hour Yoga Instructor, Level 1",
+  "ka": "იოგის ინსტრუქტორი, 200 საათი, 1-ლი დონე"
+ },
+ {
+  "id": 121,
+  "page": "About",
+  "en": "Georgian Yoga National Federation certificate, 200-hour teacher training",
+  "ka": "საქართველოს იოგის ეროვნული ფედერაციის სერტიფიკატი, მასწავლებლის მომზადების 200-საათიანი კურსი"
+ },
+ {
+  "id": 122,
+  "page": "About",
+  "en": "200-hour Yoga Teacher Training",
+  "ka": "იოგის მასწავლებლის მომზადების 200-საათიანი კურსი"
+ },
+ {
+  "id": 123,
+  "page": "About",
+  "en": "Georgian Yoga National Federation, 2020",
+  "ka": "საქართველოს იოგის ეროვნული ფედერაცია, 2020"
+ },
+ {
+  "id": 124,
+  "page": "About",
+  "en": "Certificate of appreciation from the Embassy of India for the 10th International Day of Yoga in Tbilisi",
+  "ka": "ინდოეთის საელჩოს მადლობის სიგელი თბილისში იოგის მე-10 საერთაშორისო დღის აღსანიშნავად"
+ },
+ {
+  "id": 125,
+  "page": "About",
+  "en": "Certificate of Appreciation, International Day of Yoga",
+  "ka": "მადლობის სიგელი, იოგის საერთაშორისო დღე"
+ },
+ {
+  "id": 126,
+  "page": "About",
+  "en": "Embassy of India, Tbilisi, 2024",
+  "ka": "ინდოეთის საელჩო, თბილისი, 2024"
+ },
+ {
+  "id": 127,
+  "page": "About",
+  "en": "Certificate of participation, ICMS Sofia 2021",
+  "ka": "მონაწილეობის სერტიფიკატი, ICMS Sofia 2021"
+ },
+ {
+  "id": 128,
+  "page": "About",
+  "en": "19th International Congress of Medical Sciences",
+  "ka": "სამედიცინო მეცნიერებათა მე-19 საერთაშორისო კონგრესი"
+ },
+ {
+  "id": 129,
+  "page": "About",
+  "en": "Medical University of Sofia, 2021",
+  "ka": "სოფიის სამედიცინო უნივერსიტეტი, 2021"
+ },
+ {
+  "id": 130,
+  "page": "About",
+  "en": "Certificate, CNS Conference III, 2020",
+  "ka": "სერტიფიკატი, CNS Conference III, 2020"
+ },
+ {
+  "id": 131,
+  "page": "About",
+  "en": "CNS Conference III",
+  "ka": "CNS Conference III"
+ },
+ {
+  "id": 132,
+  "page": "About",
+  "en": "Youth Scientific Union, 2020",
+  "ka": "ახალგაზრდა მეცნიერთა კავშირი, 2020"
+ },
+ {
+  "id": 133,
+  "page": "About",
+  "en": "Close",
+  "ka": "დახურვა"
+ },
+ {
+  "id": 134,
+  "page": "About",
+  "en": "Practise with Anastasia",
+  "ka": "ივარჯიშეთ ანასტასიასთან"
+ },
+ {
+  "id": 135,
+  "page": "About",
+  "en": "Register your interest in her next retreat, or write to her directly.",
+  "ka": "დააფიქსირეთ ინტერესი მისი შემდეგი რეტრიტის მიმართ ან პირდაპირ მისწერეთ."
+ },
+ {
+  "id": 136,
+  "page": "Retreats",
+  "en": "Retreats | retreats.ge",
+  "ka": "რეტრიტები | retreats.ge"
+ },
+ {
+  "id": 137,
+  "page": "Retreats",
+  "en": "Yoga and Pilates retreats with Anastasia, in Georgia and abroad.",
+  "ka": "იოგისა და პილატესის რეტრიტები ანასტასიასთან ერთად, საქართველოში და საზღვარგარეთ."
+ },
+ {
+  "id": 138,
+  "page": "Retreats",
+  "en": "The first retreat is being planned now",
+  "ka": "პირველი რეტრიტი უკვე იგეგმება"
+ },
+ {
+  "id": 139,
+  "page": "Retreats",
+  "en": "Dates, place and prices will be announced here and on Instagram. Register your interest and Anastasia will contact you personally.",
+  "ka": "თარიღები, ადგილი და ფასები აქ და ინსტაგრამზე გამოქვეყნდება. დააფიქსირეთ ინტერესი და ანასტასია პირადად დაგიკავშირდებათ."
+ },
+ {
+  "id": 140,
+  "page": "Retreats",
+  "en": "Anastasia contacts you personally",
+  "ka": "ანასტასია პირადად დაგიკავშირდებათ"
+ },
+ {
+  "id": 141,
+  "page": "Retreats",
+  "en": "No payment or commitment now",
+  "ka": "ახლა გადახდა ან ვალდებულების აღება საჭირო არ არის"
+ },
+ {
+  "id": 142,
+  "page": "Retreats",
+  "en": "About you",
+  "ka": "თქვენ შესახებ"
+ },
+ {
+  "id": 143,
+  "page": "Retreats",
+  "en": "Your practice",
+  "ka": "თქვენი პრაქტიკა"
+ },
+ {
+  "id": 144,
+  "page": "Retreats",
+  "en": "Your level of yoga or Pilates",
+  "ka": "თქვენი დონე იოგასა თუ პილატესში"
+ },
+ {
+  "id": 145,
+  "page": "Retreats",
+  "en": "New to it",
+  "ka": "დამწყები ვარ"
+ },
+ {
+  "id": 146,
+  "page": "Retreats",
+  "en": "Some experience",
+  "ka": "გარკვეული გამოცდილება მაქვს"
+ },
+ {
+  "id": 147,
+  "page": "Retreats",
+  "en": "Practise regularly",
+  "ka": "რეგულარულად ვვარჯიშობ"
+ },
+ {
+  "id": 148,
+  "page": "Retreats",
+  "en": "Advanced",
+  "ka": "მაღალი დონე"
+ },
+ {
+  "id": 149,
+  "page": "Retreats",
+  "en": "What would you like from a retreat?",
+  "ka": "რას ელით რეტრიტისგან?"
+ },
+ {
+  "id": 150,
+  "page": "Retreats",
+  "en": "For example: rest and switch off, get stronger, help with back pain, time for myself",
+  "ka": "მაგალითად: დასვენება და განტვირთვა, გაძლიერება, ზურგის ტკივილის შემსუბუქება, დრო საკუთარი თავისთვის"
+ },
+ {
+  "id": 151,
+  "page": "Retreats",
+  "en": "Anything medical Anastasia should know?",
+  "ka": "არის რაიმე სამედიცინო ინფორმაცია, რომელიც ანასტასიამ უნდა იცოდეს?"
+ },
+ {
+  "id": 152,
+  "page": "Retreats",
+  "en": "Injuries, back or joint pain, conditions, pregnancy, medication. Write \"None\" if nothing.",
+  "ka": "ტრავმები, ზურგის ან სახსრების ტკივილი, დაავადებები, ორსულობა, მედიკამენტები. თუ არაფერი გაქვთ აღსანიშნავი, დაწერეთ „არაფერი“."
+ },
+ {
+  "id": 153,
+  "page": "Retreats",
+  "en": "Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.",
+  "ka": "ამ ინფორმაციას მხოლოდ ანასტასია ნახავს. როგორც ექიმი, ის მას თქვენთვის უსაფრთხო გაკვეთილების დაგეგმვისთვის გამოიყენებს."
+ },
+ {
+  "id": 154,
+  "page": "Retreats",
+  "en": "I agree that Anastasia keeps these details to contact me and plan safe classes, as described in the privacy policy.",
+  "ka": "ვეთანხმები, რომ ანასტასიამ შეინახოს ეს მონაცემები ჩემთან დასაკავშირებლად და უსაფრთხო გაკვეთილების დასაგეგმად, კონფიდენციალურობის პოლიტიკის შესაბამისად."
+ },
+ {
+  "id": 155,
+  "page": "Retreats",
+  "en": "Register my interest",
+  "ka": "ინტერესის დაფიქსირება"
+ },
+ {
+  "id": 156,
+  "page": "Retreats",
+  "en": "You're on the list",
+  "ka": "თქვენ სიაში ხართ"
+ },
+ {
+  "id": 157,
+  "page": "Retreats",
+  "en": "Anastasia will be in touch personally about the retreat.",
+  "ka": "ანასტასია რეტრიტის შესახებ პირადად დაგიკავშირდებათ."
+ },
+ {
+  "id": 158,
+  "page": "Retreats",
+  "en": "What to expect",
+  "ka": "რას უნდა ელოდოთ"
+ },
+ {
+  "id": 159,
+  "page": "Retreats",
+  "en": "Every retreat is different. The details of each one, where you'll stay, the programme and the price, are on its own page.",
+  "ka": "ყველა რეტრიტი განსხვავებულია. თითოეულის დეტალები, საცხოვრებელი, პროგრამა და ფასი, მოცემულია მის ცალკე გვერდზე."
+ },
+ {
+  "id": 160,
+  "page": "Retreats",
+  "en": "Both in one retreat, for every level.",
+  "ka": "ორივე ერთ რეტრიტში, ნებისმიერი დონისთვის."
+ },
+ {
+  "id": 161,
+  "page": "Retreats",
+  "en": "Anastasia learns about your health before you arrive and adapts the classes to you.",
+  "ka": "ჩამოსვლამდე ანასტასია გაეცნობა თქვენს ჯანმრთელობის მდგომარეობას და გაკვეთილებს მოგარგებთ."
+ },
+ {
+  "id": 162,
+  "page": "Retreats",
+  "en": "Questions",
+  "ka": "კითხვები"
+ },
+ {
+  "id": 163,
+  "page": "Retreats",
+  "en": "I've never done yoga or Pilates. Can I come?",
+  "ka": "იოგა ან პილატესი არასდროს მიცდია. შემიძლია მონაწილეობა?"
+ },
+ {
+  "id": 164,
+  "page": "Retreats",
+  "en": "Yes. Classes are for every level, and Anastasia adapts the exercises to you.",
+  "ka": "დიახ. გაკვეთილები ნებისმიერი დონისთვისაა და ანასტასია ვარჯიშებს თქვენს შესაძლებლობებს მოარგებს."
+ },
+ {
+  "id": 165,
+  "page": "Retreats",
+  "en": "I have an injury or back pain.",
+  "ka": "ტრავმა ან ზურგის ტკივილი მაქვს."
+ },
+ {
+  "id": 166,
+  "page": "Retreats",
+  "en": "Tell us when you book. Anastasia is a medical doctor with a background in rehabilitation, so she'll adapt the classes for you, or tell you honestly if a retreat isn't right for you yet.",
+  "ka": "გვაცნობეთ რეგისტრაციისას. ანასტასია ექიმია, რეაბილიტაციის მიმართულებით გამოცდილებით, ამიტომ ვარჯიშებს თქვენს მდგომარეობას მოარგებს ან გულწრფელად გეტყვით, თუ რეტრიტში მონაწილეობა ჯერ არ არის თქვენთვის მიზანშეწონილი."
+ },
+ {
+  "id": 167,
+  "page": "Retreats",
+  "en": "Can I come on my own?",
+  "ka": "მარტო შემიძლია წამოსვლა?"
+ },
+ {
+  "id": 168,
+  "page": "Retreats",
+  "en": "Of course. You're welcome on your own or with friends.",
+  "ka": "რა თქმა უნდა. შეგიძლიათ მოხვიდეთ როგორც მარტო, ისე მეგობრებთან ერთად."
+ },
+ {
+  "id": 169,
+  "page": "Retreats",
+  "en": "How do I book and pay?",
+  "ka": "როგორ დავჯავშნო ადგილი და გადავიხადო?"
+ },
+ {
+  "id": 170,
+  "page": "Retreats",
+  "en": "Register your interest on the Retreats page. Anastasia contacts you personally to confirm your place. Payment is by bank transfer.",
+  "ka": "რეტრიტების გვერდზე დააფიქსირეთ ინტერესი. ანასტასია პირადად დაგიკავშირდებათ ადგილის დასადასტურებლად. გადახდა საბანკო გადარიცხვით ხდება."
+ },
+ {
+  "id": 171,
+  "page": "Retreats",
+  "en": "What if I need to cancel?",
+  "ka": "რა მოხდება, თუ გაუქმება მომიწევს?"
+ },
+ {
+  "id": 172,
+  "page": "Retreats",
+  "en": "[Cancellation policy]",
+  "ka": "[გაუქმების პირობები]"
+ },
+ {
+  "id": 173,
+  "page": "Retreats",
+  "en": "How do I get there?",
+  "ka": "როგორ მივიდე ადგილზე?"
+ },
+ {
+  "id": 174,
+  "page": "Retreats",
+  "en": "Travel to the venue isn't included, so you can drive or come the way that suits you. Each retreat page has the location and directions, and for retreats abroad, flights aren't included either.",
+  "ka": "ადგილამდე მგზავრობა ფასში არ შედის. შეგიძლიათ საკუთარი მანქანით ან თქვენთვის მოსახერხებელი სხვა გზით ჩამოხვიდეთ. თითოეული რეტრიტის გვერდზე მითითებულია მდებარეობა და მისასვლელი გზა. საზღვარგარეთის რეტრიტებში ავიაბილეთებიც არ შედის."
+ },
+ {
+  "id": 175,
+  "page": "Retreats",
+  "en": "Have a question?",
+  "ka": "გაქვთ შეკითხვა?"
+ },
+ {
+  "id": 176,
+  "page": "Retreats",
+  "en": "Write to Anastasia on Instagram or by email.",
+  "ka": "მისწერეთ ანასტასიას ინსტაგრამზე ან ელფოსტით."
+ },
+ {
+  "id": 177,
+  "page": "Online sessions",
+  "en": "Online sessions with Anastasia | retreats.ge",
+  "ka": "ონლაინ გაკვეთილები ანასტასიასთან | retreats.ge"
+ },
+ {
+  "id": 178,
+  "page": "Online sessions",
+  "en": "One-to-one online yoga and Pilates sessions by video call with Anastasia Mzhavia, a medical doctor, wherever you are.",
+  "ka": "ინდივიდუალური ონლაინ იოგისა და პილატესის გაკვეთილები ვიდეოზარით, ექიმ ანასტასია მჟავიასთან, სადაც არ უნდა იყოთ."
+ },
+ {
+  "id": 179,
+  "page": "Online sessions",
+  "en": "One-to-one yoga or Pilates with Anastasia by video call, wherever you are. Planned around your body and your goals.",
+  "ka": "ინდივიდუალური იოგა ან პილატესი ანასტასიასთან ვიდეოზარით, სადაც არ უნდა იყოთ. გაკვეთილები თქვენს სხეულსა და მიზნებზეა მორგებული."
+ },
+ {
+  "id": 180,
+  "page": "Online sessions",
+  "en": "Book a session",
+  "ka": "გაკვეთილის დაჯავშნა"
+ },
+ {
+  "id": 181,
+  "page": "Online sessions",
+  "en": "Who it's for",
+  "ka": "ვისთვისაა"
+ },
+ {
+  "id": 182,
+  "page": "Online sessions",
+  "en": "Starting out",
+  "ka": "დამწყებთათვის"
+ },
+ {
+  "id": 183,
+  "page": "Online sessions",
+  "en": "Learn the basics properly and safely, with full attention on you.",
+  "ka": "ისწავლეთ საფუძვლები სწორად და უსაფრთხოდ, ინდივიდუალური ყურადღებით."
+ },
+ {
+  "id": 184,
+  "page": "Online sessions",
+  "en": "Back, neck or joint pain",
+  "ka": "ზურგის, კისრის ან სახსრების ტკივილი"
+ },
+ {
+  "id": 185,
+  "page": "Online sessions",
+  "en": "Anastasia is a doctor with a background in rehabilitation. She plans exercises that are safe for your body.",
+  "ka": "ანასტასია ექიმია, რეაბილიტაციის მიმართულებით გამოცდილებით. ის გეგმავს თქვენი სხეულისთვის უსაფრთხო ვარჯიშებს."
+ },
+ {
+  "id": 186,
+  "page": "Online sessions",
+  "en": "Recovering after injury",
+  "ka": "ტრავმის შემდეგ აღდგენა"
+ },
+ {
+  "id": 187,
+  "page": "Online sessions",
+  "en": "Gentle, step-by-step work to regain strength and confidence.",
+  "ka": "ნაზი, ეტაპობრივი ვარჯიში ძალისა და თავდაჯერების დასაბრუნებლად."
+ },
+ {
+  "id": 188,
+  "page": "Online sessions",
+  "en": "Going deeper",
+  "ka": "ცოდნის გაღრმავება"
+ },
+ {
+  "id": 189,
+  "page": "Online sessions",
+  "en": "Refine your yoga or Pilates technique and build a routine you can keep at home.",
+  "ka": "დახვეწეთ იოგისა თუ პილატესის ტექნიკა და შეიმუშავეთ რუტინა, რომელსაც სახლშიც შეინარჩუნებთ."
+ },
+ {
+  "id": 190,
+  "page": "Online sessions",
+  "en": "How it works",
+  "ka": "როგორ მუშაობს"
+ },
+ {
+  "id": 191,
+  "page": "Online sessions",
+  "en": "Send a request",
+  "ka": "გამოგზავნეთ მოთხოვნა"
+ },
+ {
+  "id": 192,
+  "page": "Online sessions",
+  "en": "Fill in the short form below with your goals and any health issues.",
+  "ka": "ქვემოთ მოცემულ მოკლე ფორმაში მიუთითეთ თქვენი მიზნები და ჯანმრთელობასთან დაკავშირებული საკითხები."
+ },
+ {
+  "id": 193,
+  "page": "Online sessions",
+  "en": "Choose a time",
+  "ka": "შეარჩიეთ დრო"
+ },
+ {
+  "id": 194,
+  "page": "Online sessions",
+  "en": "She suggests times and sends you a video-call link.",
+  "ka": "ანასტასია შემოგთავაზებთ დროს და გამოგიგზავნით ვიდეოზარის ბმულს."
+ },
+ {
+  "id": 195,
+  "page": "Online sessions",
+  "en": "Practise from home",
+  "ka": "ივარჯიშეთ სახლიდან"
+ },
+ {
+  "id": 196,
+  "page": "Online sessions",
+  "en": "All you need is a mat, a little space and your phone or laptop.",
+  "ka": "საჭიროა მხოლოდ ხალიჩა, ცოტა თავისუფალი სივრცე და ტელეფონი ან ლეპტოპი."
+ },
+ {
+  "id": 197,
+  "page": "Online sessions",
+  "en": "Request an online session",
+  "ka": "ონლაინ გაკვეთილის მოთხოვნა"
+ },
+ {
+  "id": 198,
+  "page": "Online sessions",
+  "en": "Tell Anastasia a little about yourself and she'll contact you personally to arrange a time.",
+  "ka": "მოკლედ მოუყევით ანასტასიას თქვენ შესახებ და ის დროის შესათანხმებლად პირადად დაგიკავშირდებათ."
+ },
+ {
+  "id": 199,
+  "page": "Online sessions",
+  "en": "Prefer to write directly?",
+  "ka": "გირჩევნიათ პირდაპირ მისწეროთ?"
+ },
+ {
+  "id": 200,
+  "page": "Online sessions",
+  "en": "What would you like to work on?",
+  "ka": "რაზე გსურთ მუშაობა?"
+ },
+ {
+  "id": 201,
+  "page": "Online sessions",
+  "en": "For example: learn the basics, help with back pain, get stronger, a routine for home",
+  "ka": "მაგალითად: საფუძვლების შესწავლა, ზურგის ტკივილის შემსუბუქება, გაძლიერება, სახლში სავარჯიშო რუტინა"
+ },
+ {
+  "id": 202,
+  "page": "Online sessions",
+  "en": "Request a session",
+  "ka": "გაკვეთილის მოთხოვნა"
+ },
+ {
+  "id": 203,
+  "page": "Online sessions",
+  "en": "Request sent",
+  "ka": "მოთხოვნა გაგზავნილია"
+ },
+ {
+  "id": 204,
+  "page": "Online sessions",
+  "en": "Anastasia will be in touch personally to arrange your session.",
+  "ka": "ანასტასია გაკვეთილის დროის შესათანხმებლად პირადად დაგიკავშირდებათ."
+ },
+ {
+  "id": 205,
+  "page": "Corporate",
+  "en": "Corporate wellness | retreats.ge",
+  "ka": "კორპორატიული კეთილდღეობის პროგრამები | retreats.ge"
+ },
+ {
+  "id": 206,
+  "page": "Corporate",
+  "en": "Yoga and Pilates for teams, led by Anastasia Mzhavia, a medical doctor: wellness days at your office and team retreats.",
+  "ka": "იოგა და პილატესი გუნდებისთვის, ექიმ ანასტასია მჟავიას ხელმძღვანელობით: კეთილდღეობის დღეები ოფისში და გუნდური რეტრიტები."
+ },
+ {
+  "id": 207,
+  "page": "Corporate",
+  "en": "Yoga and Pilates for your team, led by a medical doctor. Better posture, healthier backs and less stress, at your office or away.",
+  "ka": "იოგა და პილატესი თქვენი გუნდისთვის, ექიმის ხელმძღვანელობით. უკეთესი პოზა, ზურგის ჯანმრთელობა და ნაკლები სტრესი, ოფისში ან მის გარეთ."
+ },
+ {
+  "id": 208,
+  "page": "Corporate",
+  "en": "Send an enquiry",
+  "ka": "მოთხოვნის გაგზავნა"
+ },
+ {
+  "id": 209,
+  "page": "Corporate",
+  "en": "Wellness day at your office",
+  "ka": "კეთილდღეობის დღე თქვენს ოფისში"
+ },
+ {
+  "id": 210,
+  "page": "Corporate",
+  "en": "Yoga and Pilates sessions at your workplace, with a short talk from Anastasia on posture, back health and preventing the aches that come with desk work.",
+  "ka": "იოგისა და პილატესის გაკვეთილები სამუშაო ადგილზე, ანასტასიას მოკლე საუბრით სხეულის სწორ პოზაზე, ზურგის ჯანმრთელობასა და მჯდომარე სამუშაოსთან დაკავშირებული ტკივილების პრევენციაზე."
+ },
+ {
+  "id": 211,
+  "page": "Corporate",
+  "en": "At your office",
+  "ka": "თქვენს ოფისში"
+ },
+ {
+  "id": 212,
+  "page": "Corporate",
+  "en": "Team retreat",
+  "ka": "გუნდური რეტრიტი"
+ },
+ {
+  "id": 213,
+  "page": "Corporate",
+  "en": "A few days away for your team with daily yoga and Pilates, planned around your dates and goals.",
+  "ka": "რამდენიმედღიანი გასვლა თქვენი გუნდისთვის, ყოველდღიური იოგითა და პილატესით, თქვენს თარიღებსა და მიზნებზე მორგებული პროგრამით."
+ },
+ {
+  "id": 214,
+  "page": "Corporate",
+  "en": "In Georgia or abroad, planned for your team",
+  "ka": "საქართველოში ან საზღვარგარეთ, თქვენი გუნდისთვის დაგეგმილი"
+ },
+ {
+  "id": 215,
+  "page": "Corporate",
+  "en": "Why a doctor-led programme",
+  "ka": "რატომ ექიმის ხელმძღვანელობით?"
+ },
+ {
+  "id": 216,
+  "page": "Corporate",
+  "en": "Safe for every body",
+  "ka": "უსაფრთხო ვარჯიში ყველასთვის"
+ },
+ {
+  "id": 217,
+  "page": "Corporate",
+  "en": "Anastasia is a medical doctor with a background in rehabilitation. Every exercise has an option for beginners, sore backs and old injuries.",
+  "ka": "ანასტასია ექიმია, რეაბილიტაციის მიმართულებით გამოცდილებით. თითოეულ ვარჯიშს აქვს ადაპტირებული ვარიანტი დამწყებთათვის, ზურგის ტკივილის ან ძველი ტრავმების მქონე ადამიანებისთვის."
+ },
+ {
+  "id": 218,
+  "page": "Corporate",
+  "en": "Built for office life",
+  "ka": "ოფისის ცხოვრების წესზე მორგებული"
+ },
+ {
+  "id": 219,
+  "page": "Corporate",
+  "en": "Focus on posture, neck, shoulders and lower back: the places long hours at a desk affect most.",
+  "ka": "ყურადღება ექცევა პოზას, კისერს, მხრებსა და წელის არეს, რომლებზეც ხანგრძლივი მჯდომარე მუშაობა ყველაზე მეტად მოქმედებს."
+ },
+ {
+  "id": 220,
+  "page": "Corporate",
+  "en": "Less stress",
+  "ka": "ნაკლები სტრესი"
+ },
+ {
+  "id": 221,
+  "page": "Corporate",
+  "en": "Breathing and relaxation your team can keep using at their desks.",
+  "ka": "სუნთქვისა და რელაქსაციის ტექნიკები, რომელთა გამოყენებას თქვენი გუნდი სამუშაო მაგიდასთანაც შეძლებს."
+ },
+ {
+  "id": 222,
+  "page": "Corporate",
+  "en": "Tell us about your team",
+  "ka": "მოგვიყევით თქვენი გუნდის შესახებ"
+ },
+ {
+  "id": 223,
+  "page": "Corporate",
+  "en": "Send the enquiry form below with the size of your team, what you have in mind and roughly when.",
+  "ka": "შეავსეთ ქვემოთ მოცემული ფორმა: მიუთითეთ გუნდის ზომა, თქვენი იდეა და სავარაუდო თარიღი."
+ },
+ {
+  "id": 224,
+  "page": "Corporate",
+  "en": "We plan it together",
+  "ka": "ერთად დავგეგმოთ"
+ },
+ {
+  "id": 225,
+  "page": "Corporate",
+  "en": "She suggests a programme and a price, and adjusts it until it fits.",
+  "ka": "ანასტასია შემოგთავაზებთ პროგრამასა და ფასს და საჭიროების მიხედვით თქვენს მოთხოვნებს მოარგებს."
+ },
+ {
+  "id": 226,
+  "page": "Corporate",
+  "en": "Your team just shows up",
+  "ka": "თქვენს გუნდს მხოლოდ მოსვლა დარჩება"
+ },
+ {
+  "id": 227,
+  "page": "Corporate",
+  "en": "Anastasia runs the classes on the agreed dates.",
+  "ka": "ანასტასია შეთანხმებულ თარიღებში გაკვეთილებს ჩაატარებს."
+ },
+ {
+  "id": 228,
+  "page": "Corporate",
+  "en": "Enquire",
+  "ka": "მოგვწერეთ"
+ },
+ {
+  "id": 229,
+  "page": "Corporate",
+  "en": "Plan something for your team",
+  "ka": "დავგეგმოთ რაიმე თქვენი გუნდისთვის"
+ },
+ {
+  "id": 230,
+  "page": "Corporate",
+  "en": "Tell Anastasia about your team and she'll contact you personally.",
+  "ka": "მოუყევით ანასტასიას თქვენი გუნდის შესახებ და ის პირადად დაგიკავშირდებათ."
+ },
+ {
+  "id": 231,
+  "page": "Corporate",
+  "en": "Prefer email?",
+  "ka": "გირჩევნიათ ელფოსტა?"
+ },
+ {
+  "id": 232,
+  "page": "Corporate",
+  "en": "Your company",
+  "ka": "თქვენი კომპანია"
+ },
+ {
+  "id": 233,
+  "page": "Corporate",
+  "en": "Company",
+  "ka": "კომპანია"
+ },
+ {
+  "id": 234,
+  "page": "Corporate",
+  "en": "Team size",
+  "ka": "გუნდის ზომა"
+ },
+ {
+  "id": 235,
+  "page": "Corporate",
+  "en": "Roughly how many people",
+  "ka": "დაახლოებით რამდენი ადამიანი"
+ },
+ {
+  "id": 236,
+  "page": "Corporate",
+  "en": "Interested in",
+  "ka": "გაინტერესებთ"
+ },
+ {
+  "id": 237,
+  "page": "Corporate",
+  "en": "Wellness day at the office",
+  "ka": "კეთილდღეობის დღე ოფისში"
+ },
+ {
+  "id": 238,
+  "page": "Corporate",
+  "en": "Not sure yet",
+  "ka": "ჯერ არ გადამიწყვეტია"
+ },
+ {
+  "id": 239,
+  "page": "Corporate",
+  "en": "Contact person",
+  "ka": "საკონტაქტო პირი"
+ },
+ {
+  "id": 240,
+  "page": "Corporate",
+  "en": "What do you have in mind?",
+  "ka": "რა გაქვთ ჩაფიქრებული?"
+ },
+ {
+  "id": 241,
+  "page": "Corporate",
+  "en": "Dates, place, goals for your team, anything else",
+  "ka": "თარიღები, ადგილი, გუნდის მიზნები და სხვა დეტალები"
+ },
+ {
+  "id": 242,
+  "page": "Corporate",
+  "en": "I agree that Anastasia keeps these details to contact me, as described in the privacy policy.",
+  "ka": "ვეთანხმები, რომ ანასტასიამ შეინახოს ეს მონაცემები ჩემთან დასაკავშირებლად, კონფიდენციალურობის პოლიტიკის შესაბამისად."
+ },
+ {
+  "id": 243,
+  "page": "Corporate",
+  "en": "Send enquiry",
+  "ka": "მოთხოვნის გაგზავნა"
+ },
+ {
+  "id": 244,
+  "page": "Corporate",
+  "en": "Enquiry sent",
+  "ka": "მოთხოვნა გაგზავნილია"
+ },
+ {
+  "id": 245,
+  "page": "Corporate",
+  "en": "Anastasia will be in touch personally to plan it with you.",
+  "ka": "ანასტასია დაგიკავშირდებათ, რათა ყველაფერი ერთად დაგეგმოთ."
+ },
+ {
+  "id": 246,
+  "page": "Contact",
+  "en": "Contact | retreats.ge",
+  "ka": "კონტაქტი | retreats.ge"
+ },
+ {
+  "id": 247,
+  "page": "Contact",
+  "en": "Questions about a retreat, online sessions, corporate wellness, or your health and fitness level? Write to Anastasia on Instagram or by email.",
+  "ka": "გაქვთ შეკითხვები რეტრიტის, ონლაინ გაკვეთილების, კორპორატიული პროგრამების ან თქვენი ჯანმრთელობისა და ფიზიკური მომზადების დონის შესახებ? მისწერეთ ანასტასიას ინსტაგრამზე ან ელფოსტით."
+ },
+ {
+  "id": 248,
+  "page": "Contact",
+  "en": "Based in Tbilisi, Georgia.",
+  "ka": "ვიმყოფებით თბილისში, საქართველოში."
+ },
+ {
+  "id": 249,
+  "page": "Privacy policy",
+  "en": "Privacy policy | retreats.ge",
+  "ka": "კონფიდენციალურობის პოლიტიკა | retreats.ge"
+ },
+ {
+  "id": 250,
+  "page": "Privacy policy",
+  "en": "How retreats.ge collects, uses and protects your personal information.",
+  "ka": "როგორ აგროვებს, იყენებს და იცავს retreats.ge თქვენს პერსონალურ ინფორმაციას."
+ },
+ {
+  "id": 251,
+  "page": "Privacy policy",
+  "en": "What we collect, why, and how you stay in control of it.",
+  "ka": "რა მონაცემებს ვაგროვებთ, რატომ და როგორ შეგიძლიათ მათი კონტროლი."
+ },
+ {
+  "id": 252,
+  "page": "Privacy policy",
+  "en": "Last updated: 20 November 2026",
+  "ka": "ბოლო განახლება: 2026 წლის 20 ნოემბერი"
+ },
+ {
+  "id": 253,
+  "page": "Privacy policy",
+  "en": "Who we are",
+  "ka": "ვინ ვართ"
+ },
+ {
+  "id": 254,
+  "page": "Privacy policy",
+  "en": "retreats.ge is run by Anastasia Mzhavia in Tbilisi, Georgia. For anything about your data, write to anastasiamzhavia@gmail.com.",
+  "ka": "retreats.ge-ს მართავს ანასტასია მჟავია თბილისში, საქართველოში. მონაცემებთან დაკავშირებულ ნებისმიერ საკითხზე მოგვწერეთ: anastasiamzhavia@gmail.com."
+ },
+ {
+  "id": 255,
+  "page": "Privacy policy",
+  "en": "What we collect",
+  "ka": "რა მონაცემებს ვაგროვებთ"
+ },
+ {
+  "id": 256,
+  "page": "Privacy policy",
+  "en": "Only what you choose to send us through the forms on this site:",
+  "ka": "მხოლოდ იმ ინფორმაციას, რომელსაც თავად გვაწვდით ამ ვებსაიტის ფორმების მეშვეობით:"
+ },
+ {
+  "id": 257,
+  "page": "Privacy policy",
+  "en": "Your name, email address and phone number",
+  "ka": "თქვენი სახელი, ელფოსტის მისამართი და ტელეფონის ნომერი"
+ },
+ {
+  "id": 258,
+  "page": "Privacy policy",
+  "en": "Which retreat or service you are interested in",
+  "ka": "რომელი რეტრიტი ან მომსახურება გაინტერესებთ"
+ },
+ {
+  "id": 259,
+  "page": "Privacy policy",
+  "en": "Your experience with yoga or Pilates and what you would like to work on",
+  "ka": "თქვენი გამოცდილება იოგასა თუ პილატესში და რაზე გსურთ მუშაობა"
+ },
+ {
+  "id": 260,
+  "page": "Privacy policy",
+  "en": "Health information you give us, such as injuries, pain, conditions or pregnancy",
+  "ka": "თქვენ მიერ მოწოდებული ინფორმაცია ჯანმრთელობის შესახებ, მათ შორის ტრავმები, ტკივილი, დაავადებები ან ორსულობა"
+ },
+ {
+  "id": 261,
+  "page": "Privacy policy",
+  "en": "For corporate enquiries: your company, team size and message",
+  "ka": "კორპორატიული მოთხოვნებისთვის: კომპანია, გუნდის ზომა და შეტყობინება"
+ },
+ {
+  "id": 262,
+  "page": "Privacy policy",
+  "en": "Why we collect it",
+  "ka": "რატომ ვაგროვებთ მონაცემებს"
+ },
+ {
+  "id": 263,
+  "page": "Privacy policy",
+  "en": "To contact you about the retreat or session you asked about, and, as a medical doctor, so that Anastasia can plan classes that are safe for you. We do not use your information for anything else, and we never sell it.",
+  "ka": "იმისთვის, რომ დაგიკავშირდეთ თქვენთვის საინტერესო რეტრიტის ან გაკვეთილის შესახებ და ანასტასიამ, როგორც ექიმმა, თქვენთვის უსაფრთხო გაკვეთილები დაგეგმოს. თქვენს ინფორმაციას სხვა მიზნით არ ვიყენებთ და არასდროს ვყიდით."
+ },
+ {
+  "id": 264,
+  "page": "Privacy policy",
+  "en": "Health information",
+  "ka": "ინფორმაცია ჯანმრთელობის შესახებ"
+ },
+ {
+  "id": 265,
+  "page": "Privacy policy",
+  "en": "Health details are sensitive. We only collect them with your explicit consent, which you give by ticking the box on the form. Only Anastasia reads them, and only to keep your practice safe. You can withdraw your consent at any time by writing to us.",
+  "ka": "ჯანმრთელობის მონაცემები სენსიტიურია. მათ მხოლოდ თქვენი აშკარა თანხმობით ვაგროვებთ, რომელსაც ფორმაში შესაბამისი ველის მონიშვნით გვაძლევთ. ამ ინფორმაციას მხოლოდ ანასტასია კითხულობს და მხოლოდ თქვენი ვარჯიშის უსაფრთხოების უზრუნველსაყოფად იყენებს. თანხმობის გაუქმება ნებისმიერ დროს შეგიძლიათ, თუ მოგვწერთ."
+ },
+ {
+  "id": 266,
+  "page": "Privacy policy",
+  "en": "Where it is stored and who sees it",
+  "ka": "სად ინახება მონაცემები და ვის აქვს მათზე წვდომა"
+ },
+ {
+  "id": 267,
+  "page": "Privacy policy",
+  "en": "Form submissions are stored in a private Google Sheet in our Google account, and Anastasia receives an email notification for each one. Google stores this data on our behalf as our service provider. Only Anastasia and the person who manages this website have access. We do not share your information with anyone else unless the law requires it.",
+  "ka": "ფორმით გამოგზავნილი მონაცემები ინახება ჩვენს Google ანგარიშში არსებულ დახურულ Google Sheets ცხრილში, ხოლო ანასტასია თითოეულ მოთხოვნაზე ელფოსტით იღებს შეტყობინებას. Google, როგორც ჩვენი მომსახურების მომწოდებელი, ამ მონაცემებს ჩვენი სახელით ინახავს. წვდომა მხოლოდ ანასტასიასა და ვებსაიტის ადმინისტრატორს აქვთ. სხვებს თქვენს ინფორმაციას არ ვუზიარებთ, გარდა კანონით გათვალისწინებული შემთხვევებისა."
+ },
+ {
+  "id": 268,
+  "page": "Privacy policy",
+  "en": "How long we keep it",
+  "ka": "რამდენ ხანს ვინახავთ მონაცემებს"
+ },
+ {
+  "id": 269,
+  "page": "Privacy policy",
+  "en": "We keep your details while they are useful for the retreats and sessions you are interested in. You can ask us to delete them at any time, and we will.",
+  "ka": "თქვენს მონაცემებს ვინახავთ მანამ, სანამ ისინი საჭიროა თქვენთვის საინტერესო რეტრიტებსა და გაკვეთილებთან დაკავშირებით. მათი წაშლის მოთხოვნა ნებისმიერ დროს შეგიძლიათ და ჩვენ მათ წავშლით."
+ },
+ {
+  "id": 270,
+  "page": "Privacy policy",
+  "en": "Your rights",
+  "ka": "თქვენი უფლებები"
+ },
+ {
+  "id": 271,
+  "page": "Privacy policy",
+  "en": "You can ask to see the information we hold about you, to correct it, or to delete it. Write to anastasiamzhavia@gmail.com and we will reply as soon as we can.",
+  "ka": "შეგიძლიათ მოითხოვოთ თქვენ შესახებ შენახული ინფორმაციის ნახვა, შესწორება ან წაშლა. მოგვწერეთ მისამართზე anastasiamzhavia@gmail.com და შეძლებისდაგვარად მალე გიპასუხებთ."
+ },
+ {
+  "id": 272,
+  "page": "Privacy policy",
+  "en": "Visitor statistics",
+  "ka": "ვიზიტორთა სტატისტიკა"
+ },
+ {
+  "id": 273,
+  "page": "Privacy policy",
+  "en": "To understand how the site is used, we count page visits. For each visit we record the page, where the visitor came from (for example Instagram or Google), the type of device, and the time zone set in the browser. We do not use cookies for this, do not store IP addresses, and cannot identify you from it.",
+  "ka": "ვებსაიტის გამოყენების გასაგებად ვითვლით გვერდების ნახვებს. თითოეული ვიზიტისას აღვრიცხავთ ნანახ გვერდს, საიდან მოვიდა ვიზიტორი (მაგალითად, ინსტაგრამიდან თუ Google-იდან), მოწყობილობის ტიპსა და ბრაუზერში მითითებულ დროის სარტყელს. ამისთვის ქუქი-ფაილებს არ ვიყენებთ, IP მისამართებს არ ვინახავთ და ამ მონაცემებით თქვენი იდენტიფიცირება შეუძლებელია."
+ },
+ {
+  "id": 274,
+  "page": "Privacy policy",
+  "en": "Other services",
+  "ka": "სხვა სერვისები"
+ },
+ {
+  "id": 275,
+  "page": "Privacy policy",
+  "en": "The site loads its fonts from Google Fonts, and links to Instagram. When you use those, Google and Instagram process data under their own privacy policies.",
+  "ka": "ვებსაიტი შრიფტებს Google Fonts-იდან ტვირთავს და შეიცავს ინსტაგრამის ბმულებს. ამ სერვისების გამოყენებისას Google და Instagram მონაცემებს საკუთარი კონფიდენციალურობის პოლიტიკის შესაბამისად ამუშავებენ."
+ },
+ {
+  "id": 276,
+  "page": "Privacy policy",
+  "en": "Changes",
+  "ka": "ცვლილებები"
+ },
+ {
+  "id": 277,
+  "page": "Privacy policy",
+  "en": "If we change this policy, we will update it on this page and change the date at the top.",
+  "ka": "თუ ამ პოლიტიკას შევცვლით, განახლებულ ვერსიას ამ გვერდზე გამოვაქვეყნებთ და ზემოთ მითითებულ თარიღსაც შევცვლით."
+ },
+ {
+  "id": 278,
+  "page": "Page not found",
+  "en": "Page not found | retreats.ge",
+  "ka": "გვერდი ვერ მოიძებნა | retreats.ge"
+ },
+ {
+  "id": 279,
+  "page": "Page not found",
+  "en": "Page not found",
+  "ka": "გვერდი ვერ მოიძებნა"
+ },
+ {
+  "id": 280,
+  "page": "Page not found",
+  "en": "This page doesn't exist, or it has moved.",
+  "ka": "ეს გვერდი არ არსებობს ან სხვა მისამართზე გადავიდა."
+ },
+ {
+  "id": 281,
+  "page": "Page not found",
+  "en": "Go to the homepage",
+  "ka": "მთავარ გვერდზე დაბრუნება"
+ },
+ {
+  "id": 282,
+  "page": "Retreats",
+  "en": "Choose a retreat, or \"any upcoming retreat\" to hear about new ones. Anastasia will contact you personally.",
+  "ka": "აირჩიეთ რეტრიტი ან „ნებისმიერი მომავალი რეტრიტი“, რათა ახალი რეტრიტების შესახებ შეიტყოთ. ანასტასია პირადად დაგიკავშირდებათ."
+ },
+ {
+  "id": 283,
+  "page": "Retreats",
+  "en": "Register for a retreat, or hear about the next ones",
+  "ka": "დარეგისტრირდით რეტრიტზე ან მიიღეთ ინფორმაცია მომავალი რეტრიტების შესახებ"
+ },
+ {
+  "id": 284,
+  "page": "Retreats",
+  "en": "Registration open",
+  "ka": "რეგისტრაცია გახსნილია"
+ },
+ {
+  "id": 285,
+  "page": "Retreats",
+  "en": "Coming soon",
+  "ka": "მალე"
+ },
+ {
+  "id": 286,
+  "page": "Retreats",
+  "en": "See the retreat",
+  "ka": "რეტრიტის ნახვა"
+ },
+ {
+  "id": 287,
+  "page": "Home",
+  "en": "All retreats",
+  "ka": "ყველა რეტრიტი"
+ },
+ {
+  "id": 288,
+  "page": "Each retreat page",
+  "en": "Yoga & Pilates retreat with Anastasia Mzhavia, MD",
+  "ka": "იოგისა და პილატესის რეტრიტი ექიმ ანასტასია მჟავიასთან ერთად"
+ },
+ {
+  "id": 289,
+  "page": "Each retreat page",
+  "en": "Where",
+  "ka": "ადგილი"
+ },
+ {
+  "id": 290,
+  "page": "Each retreat page",
+  "en": "Dates",
+  "ka": "თარიღები"
+ },
+ {
+  "id": 291,
+  "page": "Each retreat page",
+  "en": "Price",
+  "ka": "ფასი"
+ },
+ {
+  "id": 292,
+  "page": "Each retreat page",
+  "en": "Register for this retreat",
+  "ka": "ამ რეტრიტზე რეგისტრაცია"
+ },
+ {
+  "id": 293,
+  "page": "Each retreat page",
+  "en": "About this retreat",
+  "ka": "ამ რეტრიტის შესახებ"
+ },
+ {
+  "id": 294,
+  "page": "Each retreat page",
+  "en": "Programme",
+  "ka": "პროგრამა"
+ },
+ {
+  "id": 295,
+  "page": "Each retreat page",
+  "en": "Included",
+  "ka": "ფასში შედის"
+ },
+ {
+  "id": 296,
+  "page": "Each retreat page",
+  "en": "Not included",
+  "ka": "ფასში არ შედის"
+ }
+]

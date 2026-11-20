@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://retreats.ge/</loc></url>
+  <url><loc>https://retreats.ge/ka/</loc></url>
   <url><loc>https://retreats.ge/about/</loc></url>
+  <url><loc>https://retreats.ge/ka/about/</loc></url>
   <url><loc>https://retreats.ge/retreats/</loc></url>
+  <url><loc>https://retreats.ge/ka/retreats/</loc></url>
   <url><loc>https://retreats.ge/online/</loc></url>
+  <url><loc>https://retreats.ge/ka/online/</loc></url>
   <url><loc>https://retreats.ge/corporate/</loc></url>
+  <url><loc>https://retreats.ge/ka/corporate/</loc></url>
   <url><loc>https://retreats.ge/contact/</loc></url>
+  <url><loc>https://retreats.ge/ka/contact/</loc></url>
   <url><loc>https://retreats.ge/privacy/</loc></url>
+  <url><loc>https://retreats.ge/ka/privacy/</loc></url>
 </urlset>

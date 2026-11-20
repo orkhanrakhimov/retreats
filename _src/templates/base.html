@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,12 +8,16 @@
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:description" content="{{ self.description() }}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ site.url }}{{ path }}">
+<meta property="og:url" content="{{ site.url }}{{ pre }}{{ path }}">
+<meta property="og:locale" content="{{ 'ka_GE' if lang == 'ka' else 'en_US' }}">
 <meta property="og:site_name" content="retreats.ge">
 <meta property="og:image" content="{% block og_image %}{{ site.url }}/assets/img/og-image.jpg{% endblock %}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FAFAF7">
-<link rel="canonical" href="{{ site.url }}{{ path }}">
+<link rel="canonical" href="{{ site.url }}{{ pre }}{{ path }}">
+{% if alternates %}<link rel="alternate" hreflang="en" href="{{ site.url }}{{ path }}">
+<link rel="alternate" hreflang="ka" href="{{ site.url }}/ka{{ path }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ path }}">{% endif %}
 {% block head %}{% endblock %}
 <script type="application/ld+json">{{ {
   "@context": "https://schema.org",
@@ -49,8 +53,10 @@
       <a href="/online/"{% if path == '/online/' %} aria-current="page"{% endif %}>Online sessions</a>
       <a href="/corporate/"{% if path == '/corporate/' %} aria-current="page"{% endif %}>Corporate</a>
       <a href="/contact/"{% if path == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
+      {% if alternates %}<a class="lang-in-nav" href="{{ '/__en__' if lang == 'ka' else '/ka' }}{{ path }}" lang="{{ 'en' if lang == 'ka' else 'ka' }}" hreflang="{{ 'en' if lang == 'ka' else 'ka' }}">{{ 'English' if lang == 'ka' else 'ქართული' }}</a>{% endif %}
     </nav>
     <div class="header-end">
+      {% if alternates %}<a class="lang-switch" href="{{ '/__en__' if lang == 'ka' else '/ka' }}{{ path }}" lang="{{ 'en' if lang == 'ka' else 'ka' }}" hreflang="{{ 'en' if lang == 'ka' else 'ka' }}" data-lang-switch>{{ 'EN' if lang == 'ka' else 'ქარ' }}</a>{% endif %}
       <a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
         <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
@@ -89,7 +95,7 @@
   </div>
 </footer>
 
-<script>window.SITE = {{ site|tojson }};</script>
+<script>window.SITE = {{ site|tojson }};{% if lang == "ka" %} window.I18N = {{ i18n_js|tojson }};{% endif %}</script>
 <script src="/assets/js/main.js?v={{ v }}" defer></script>
 </body>
 </html>
