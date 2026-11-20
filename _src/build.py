@@ -82,6 +82,14 @@ def main():
         dest.write_text(html)
         written.append(out)
 
+    # Sitemap and robots.txt for search engines (admin and redirects left out)
+    skip = {"404.html", "admin/index.html", "private/index.html"}
+    urls = [site["url"] + "/" + w.replace("index.html", "") for w in written if w not in skip]
+    (ROOT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nDisallow: /admin/\nSitemap: {site['url']}/sitemap.xml\n")
+
     print("Built:", ", ".join(written))
 
 
