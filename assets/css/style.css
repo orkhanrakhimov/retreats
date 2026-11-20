@@ -701,3 +701,31 @@ html[lang="ka"] .header-end .show-sm { display: inline; }
   html[lang="ka"] .nav a:hover, html[lang="ka"] .nav a[aria-current] { border-color: var(--line); color: var(--green); }
   html[lang="ka"] .nav .lang-in-nav { display: block; color: var(--green); }
 }
+
+/* Georgian: short text (menus, buttons, labels) in Mosheneba capitals too; paragraphs stay readable */
+html[lang="ka"] .nav a, html[lang="ka"] .footer-nav a, html[lang="ka"] .btn, html[lang="ka"] .eyebrow, html[lang="ka"] .soon-badge,
+html[lang="ka"] .link-more, html[lang="ka"] .form-step, html[lang="ka"] .contact-label, html[lang="ka"] .facts strong,
+html[lang="ka"] .creds strong, html[lang="ka"] .certs li p strong, html[lang="ka"] .chip span, html[lang="ka"] .logo-sub,
+html[lang="ka"] .lang-in-nav, html[lang="ka"] .meta, html[lang="ka"] .faq summary {
+  font-family: "Mosheneba", "Noto Sans Georgian", sans-serif; font-weight: 400; letter-spacing: .04em; text-transform: none;
+}
+html[lang="ka"] .nav a { font-size: 16px; }
+html[lang="ka"] .btn { font-size: 17px; }
+html[lang="ka"] .btn-small { font-size: 16px; }
+html[lang="ka"] .eyebrow { font-size: 15px; letter-spacing: .08em; }
+html[lang="ka"] .facts strong, html[lang="ka"] .creds strong, html[lang="ka"] .certs li p strong { font-size: 17px; }
+html[lang="ka"] .faq summary { font-size: 19px; }
+html[lang="ka"] .logo-sub { font-size: 13px; letter-spacing: .06em; }
+@media (max-width: 1180px) { html[lang="ka"] .nav a { font-size: 22px; } }
+/* Mosheneba runs small: lift the short labels */
+html[lang="ka"] .nav a { font-size: 19px; }
+html[lang="ka"] .btn { font-size: 19px; }
+html[lang="ka"] .btn-small { font-size: 18px; }
+html[lang="ka"] .eyebrow, html[lang="ka"] .form-step, html[lang="ka"] .meta { font-size: 17px; }
+html[lang="ka"] .soon-badge, html[lang="ka"] .contact-label { font-size: 15px; }
+html[lang="ka"] .logo-sub { font-size: 15px; }
+html[lang="ka"] .chip span, html[lang="ka"] .link-more, html[lang="ka"] .footer-nav a { font-size: 18px; }
+html[lang="ka"] .facts strong, html[lang="ka"] .creds strong, html[lang="ka"] .certs li p strong { font-size: 19px; }
+html[lang="ka"] .faq summary { font-size: 21px; }
+html[lang="ka"] .includes h3 { font-family: "Mosheneba", "Noto Sans Georgian", sans-serif; font-weight: 400; font-size: 24px; letter-spacing: .02em; }
+@media (max-width: 1180px) { html[lang="ka"] .nav a { font-size: 24px; } }
