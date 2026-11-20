@@ -35,7 +35,7 @@ PLACEHOLDERS = {"{name}": "data-first-name"}
 # has no Mtavruli. All other Georgian text is written in Mtavruli (capitals).
 DISPLAY = ("h1, h2, .styles h3, .pillar h3, .parts strong, .option-link h3, .includes h3, .nav a, "
            ".footer-nav a, .btn, .eyebrow, .soon-badge, .link-more, .form-step, .contact-label, "
-           ".facts strong, .creds strong, .certs li p strong, .chip span, .lang-in-nav, .meta, .faq summary")
+           ".facts strong, .creds strong, .certs li p strong, .chip span, .lang-in-nav, .meta, .faq summary, .lang")
 
 
 def caps(s):

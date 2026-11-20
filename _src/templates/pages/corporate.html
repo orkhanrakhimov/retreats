@@ -1,67 +1,24 @@
 {% extends "base.html" %}
 {% from "macros.html" import mail_icon, signup_form %}
-{% block title %}Corporate wellness | retreats.ge{% endblock %}
-{% block description %}Yoga and Pilates for teams, led by Anastasia Mzhavia, a medical doctor: wellness days at your office and team retreats.{% endblock %}
+{% block title %}Corporate events | retreats.ge{% endblock %}
+{% block description %}Yoga and Pilates sessions for company events, led by Anastasia Mzhavia, a medical doctor.{% endblock %}
 {% block content %}
 
 <section class="page-top">
   <div class="wrap">
-    <h1>Corporate wellness</h1>
-    <p class="intro page-intro">Yoga and Pilates for your team, led by a medical doctor. Better posture, healthier backs and less stress, at your office or away.</p>
-    <div class="actions"><a class="btn" href="#get-in-touch">Send an enquiry</a></div>
+    <h1>Yoga and Pilates for your company event</h1>
+    <p class="intro page-intro">Planning a team event, an office day or a company retreat? Anastasia can lead a yoga or Pilates session for your team. Tell her about the event and she'll get back to you.</p>
   </div>
 </section>
 
-<section class="section tight-top">
-  <div class="wrap">
-    <div class="options options-2">
-      <article class="option">
-        <span class="option-num">01</span>
-        <h2>Wellness day at your office</h2>
-        <p>Yoga and Pilates sessions at your workplace, with a short talk from Anastasia on posture, back health and preventing the aches that come with desk work.</p>
-        <p class="option-meta">At your office</p>
-      </article>
-      <article class="option">
-        <span class="option-num">02</span>
-        <h2>Team retreat</h2>
-        <p>A few days away for your team with daily yoga and Pilates, planned around your dates and goals.</p>
-        <p class="option-meta">In Georgia or abroad, planned for your team</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section tint">
-  <div class="wrap split">
-    <h2 class="title">Why a doctor-led programme</h2>
-    <ul class="styles">
-      <li><h3>Safe for every body</h3><p>Anastasia is a medical doctor with a background in rehabilitation. Every exercise has an option for beginners, sore backs and old injuries.</p></li>
-      <li><h3>Built for office life</h3><p>Focus on posture, neck, shoulders and lower back: the places long hours at a desk affect most.</p></li>
-      <li><h3>Less stress</h3><p>Breathing and relaxation your team can keep using at their desks.</p></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap split">
-    <h2 class="title">How it works</h2>
-    <ol class="steps">
-      <li><span class="step-num">1</span><div><h3>Tell us about your team</h3><p>Send the enquiry form below with the size of your team, what you have in mind and roughly when.</p></div></li>
-      <li><span class="step-num">2</span><div><h3>We plan it together</h3><p>She suggests a programme and a price, and adjusts it until it fits.</p></div></li>
-      <li><span class="step-num">3</span><div><h3>Your team just shows up</h3><p>Anastasia runs the classes on the agreed dates.</p></div></li>
-    </ol>
-  </div>
-</section>
-
-<section class="section tint" id="get-in-touch">
+<section class="section tight-top" id="get-in-touch">
   <div class="wrap">
     <div class="soon-card">
       <div class="soon-text">
-        <p class="soon-badge">Enquire</p>
-        <h2>Plan something for your team</h2>
-        <p>Tell Anastasia about your team and she'll contact you personally.</p>
+        <h2>Tell us about your event</h2>
+        <p>Write a few lines about the event, the date and how many people. Anastasia will reply personally.</p>
         <p class="small muted">Prefer email?</p>
-        <div class="actions"><a class="btn btn-line" href="mailto:{{ site.email }}?subject={{ 'Corporate wellness enquiry'|urlencode }}">{{ mail_icon() }} {{ site.email }}</a></div>
+        <div class="actions"><a class="btn btn-line" href="mailto:{{ site.email }}?subject={{ 'Corporate event enquiry'|urlencode }}">{{ mail_icon() }} {{ site.email }}</a></div>
       </div>
       <div>{{ signup_form(site, "corporate") }}</div>
     </div>

@@ -730,3 +730,15 @@ html[lang="ka"] .faq summary { font-size: 21px; }
 html[lang="ka"] .includes h3 { font-family: "Mosheneba", "Noto Sans Georgian", sans-serif; font-weight: 400; font-size: 24px; letter-spacing: .02em; }
 @media (max-width: 1180px) { html[lang="ka"] .nav a { font-size: 24px; } }
 html[lang="ka"] body { letter-spacing: .02em; }
+
+/* Language toggle: EN | ქარ, the current one filled */
+.lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); }
+.header .lang a { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 32px; padding: 0 11px; border: 0; border-radius: 999px; font: 500 13px/1 "DM Sans", "Noto Sans Georgian", sans-serif; letter-spacing: .05em; color: var(--muted); text-decoration: none; text-transform: none; transition: background .2s, color .2s; }
+.header .lang a:hover { color: var(--ink); }
+.header .lang a[aria-current] { background: var(--ink); color: #fff; }
+.header-end { gap: 14px; }
+.nav-lang { display: none; }
+@media (max-width: 900px) { .nav .nav-lang { display: block; padding-top: 24px; } }
+@media (max-width: 1180px) { html[lang="ka"] .nav .nav-lang { display: block; padding-top: 24px; } }
+@media (max-width: 480px) { .header-end > .lang { display: none; } }
+.nav .nav-lang .lang a { padding: 0 16px; height: 38px; font-size: 15px; }

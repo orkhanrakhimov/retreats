@@ -39,7 +39,7 @@
   "id": 7,
   "page": "Shared (header, footer, forms, FAQ)",
   "en": "Corporate",
-  "ka": "კორპორატიული პროგრამები"
+  "ka": "კორპორატიული"
  },
  {
   "id": 8,
@@ -1478,8 +1478,8 @@
  {
   "id": 247,
   "page": "Contact",
-  "en": "Questions about a retreat, online sessions, corporate wellness, or your health and fitness level? Write to Anastasia on Instagram or by email.",
-  "ka": "გაქვთ შეკითხვები რეტრიტის, ონლაინ გაკვეთილების, კორპორატიული პროგრამების ან თქვენი ჯანმრთელობისა და ფიზიკური მომზადების დონის შესახებ? მისწერეთ ანასტასიას ინსტაგრამზე ან ელფოსტით."
+  "en": "Questions about a retreat, online sessions, a corporate event, or your health and fitness level? Write to Anastasia on Instagram or by email.",
+  "ka": "გაქვთ შეკითხვები რეტრიტის, ონლაინ გაკვეთილების, კორპორატიული ღონისძიების ან თქვენი ჯანმრთელობისა და ფიზიკური მომზადების დონის შესახებ? მისწერეთ ანასტასიას ინსტაგრამზე ან ელფოსტით."
  },
  {
   "id": 248,
@@ -1774,5 +1774,65 @@
   "page": "Each retreat page",
   "en": "Not included",
   "ka": "ფასში არ შედის"
+ },
+ {
+  "id": 297,
+  "page": "Corporate",
+  "en": "Corporate events | retreats.ge",
+  "ka": "კორპორატიული ღონისძიებები | retreats.ge"
+ },
+ {
+  "id": 298,
+  "page": "Corporate",
+  "en": "Yoga and Pilates sessions for company events, led by Anastasia Mzhavia, a medical doctor.",
+  "ka": "იოგისა და პილატესის სესიები კომპანიის ღონისძიებებისთვის, ექიმ ანასტასია მჟავიას ხელმძღვანელობით."
+ },
+ {
+  "id": 299,
+  "page": "Corporate",
+  "en": "Yoga and Pilates for your company event",
+  "ka": "იოგა და პილატესი თქვენი კომპანიის ღონისძიებისთვის"
+ },
+ {
+  "id": 300,
+  "page": "Corporate",
+  "en": "Planning a team event, an office day or a company retreat? Anastasia can lead a yoga or Pilates session for your team. Tell her about the event and she'll get back to you.",
+  "ka": "გეგმავთ გუნდურ ღონისძიებას, დღეს ოფისში ან კორპორატიულ რეტრიტს? ანასტასიას შეუძლია თქვენი გუნდისთვის იოგის ან პილატესის სესია ჩაატაროს. მოგვწერეთ ღონისძიების შესახებ და ის დაგიკავშირდებათ."
+ },
+ {
+  "id": 301,
+  "page": "Corporate",
+  "en": "Tell us about your event",
+  "ka": "მოგვიყევით თქვენი ღონისძიების შესახებ"
+ },
+ {
+  "id": 302,
+  "page": "Corporate",
+  "en": "Write a few lines about the event, the date and how many people. Anastasia will reply personally.",
+  "ka": "მოკლედ მოგვწერეთ ღონისძიების, თარიღისა და მონაწილეების რაოდენობის შესახებ. ანასტასია პირადად გიპასუხებთ."
+ },
+ {
+  "id": 303,
+  "page": "Corporate",
+  "en": "Tell us about the event",
+  "ka": "ღონისძიების შესახებ"
+ },
+ {
+  "id": 304,
+  "page": "Corporate",
+  "en": "The event, date, place, number of people",
+  "ka": "ღონისძიება, თარიღი, ადგილი, მონაწილეების რაოდენობა"
+ },
+ {
+  "id": 305,
+  "page": "Home",
+  "en": "Corporate events",
+  "ka": "კორპორატიული ღონისძიებები"
+ },
+ {
+  "id": 306,
+  "page": "Home",
+  "en": "Yoga or Pilates sessions for your company event, team day or company retreat.",
+  "ka": "იოგის ან პილატესის სესიები თქვენი კომპანიის ღონისძიებისთვის, გუნდური დღისთვის ან კორპორატიული რეტრიტისთვის."
  }
 ]
