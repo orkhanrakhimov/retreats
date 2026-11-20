@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% from "macros.html" import contact_buttons %}
+{% block title %}Online sessions with Anastasia | retreats.ge{% endblock %}
+{% block description %}One-to-one online yoga and Pilates sessions by video call with Anastasia Mzhavia, a medical doctor, wherever you are.{% endblock %}
+{% block content %}
+
+<section class="page-top">
+  <div class="wrap">
+    <h1>Online sessions</h1>
+    <p class="intro page-intro">One-to-one yoga or Pilates with Anastasia by video call, wherever you are. Planned around your body and your goals.</p>
+    <div class="actions"><a class="btn" href="#get-in-touch">Book a session</a></div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap split">
+    <h2 class="title">Who it's for</h2>
+    <ul class="styles">
+      <li><h3>Starting out</h3><p>Learn the basics properly and safely, with full attention on you.</p></li>
+      <li><h3>Back, neck or joint pain</h3><p>As a doctor with a background in rehabilitation, Anastasia builds a practice that helps rather than hurts.</p></li>
+      <li><h3>Recovering after injury</h3><p>Gentle, step-by-step work to regain strength and confidence.</p></li>
+      <li><h3>Going deeper</h3><p>Refine your yoga or Pilates technique and build a routine you can keep at home.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <h2 class="title">How it works</h2>
+    <ol class="steps">
+      <li><span class="step-num">1</span><div><h3>Write to Anastasia</h3><p>Tell her a little about yourself, your goals and any health issues.</p></div></li>
+      <li><span class="step-num">2</span><div><h3>Choose a time</h3><p>She suggests times and sends you a video-call link.</p></div></li>
+      <li><span class="step-num">3</span><div><h3>Practise from home</h3><p>All you need is a mat, a little space and your phone or laptop.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section tint" id="get-in-touch">
+  <div class="wrap contact">
+    <h2 class="title">Book a session</h2>
+    <p class="lead">Message Anastasia on Instagram or by email, and she'll reply personally.</p>
+    {{ contact_buttons(site) }}
+  </div>
+</section>
+{% endblock %}
