@@ -20,7 +20,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup, escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from i18n import Translator  # noqa: E402
+from i18n import Translator, caps  # noqa: E402
 
 SRC = Path(__file__).resolve().parent
 ROOT = SRC.parent
@@ -126,7 +126,7 @@ def main():
 
     tr = Translator()
     tr.d.update(EXTRA_KA)
-    i18n_js = {k: tr.d[k] for k in JS_STRINGS if k in tr.d}
+    i18n_js = {k: caps(tr.d[k]) for k in JS_STRINGS if k in tr.d}
 
     def write(out, html):
         dest = ROOT / out

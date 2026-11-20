@@ -729,3 +729,4 @@ html[lang="ka"] .facts strong, html[lang="ka"] .creds strong, html[lang="ka"] .c
 html[lang="ka"] .faq summary { font-size: 21px; }
 html[lang="ka"] .includes h3 { font-family: "Mosheneba", "Noto Sans Georgian", sans-serif; font-weight: 400; font-size: 24px; letter-spacing: .02em; }
 @media (max-width: 1180px) { html[lang="ka"] .nav a { font-size: 24px; } }
+html[lang="ka"] body { letter-spacing: .02em; }

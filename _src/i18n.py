@@ -31,6 +31,24 @@ FRAGMENTS = {
 PLACEHOLDERS = {"{name}": "data-first-name"}
 
 
+# Text in these elements uses Mosheneba, which draws its letters as capitals and
+# has no Mtavruli. All other Georgian text is written in Mtavruli (capitals).
+DISPLAY = ("h1, h2, .styles h3, .pillar h3, .parts strong, .option-link h3, .includes h3, .nav a, "
+           ".footer-nav a, .btn, .eyebrow, .soon-badge, .link-more, .form-step, .contact-label, "
+           ".facts strong, .creds strong, .certs li p strong, .chip span, .lang-in-nav, .meta, .faq summary")
+
+
+def caps(s):
+    """Capitals: Mkhedruli to Mtavruli, Latin to upper case (not emails or web addresses)."""
+    out = []
+    for tok in re.split(r"(\s+)", s):
+        if "@" in tok or "retreats.ge" in tok or "http" in tok:
+            out.append("".join(c.upper() if "\u10d0" <= c <= "\u10fa" else c for c in tok))
+        else:
+            out.append("".join(c.upper() if ("\u10d0" <= c <= "\u10fa" or c.isascii()) else c for c in tok))
+    return "".join(out)
+
+
 def norm(s):
     return " ".join(s.split())
 
@@ -172,4 +190,18 @@ class Translator:
             self.attrs(m)
         if soup.body:
             self.element(soup.body)
+            self.capitals(soup.body)
         return str(soup)
+
+    def capitals(self, body):
+        skip = {id(e) for e in body.select(DISPLAY)}
+        for node in body.find_all(string=True):
+            if type(node) is not NavigableString:
+                continue
+            if any(p.name in SKIP or id(p) in skip for p in node.parents):
+                continue
+            up = caps(str(node))
+            if up != str(node):
+                node.replace_with(up)
+        for el in body.select("[placeholder]"):
+            el["placeholder"] = caps(el["placeholder"])
