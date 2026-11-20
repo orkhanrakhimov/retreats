@@ -652,3 +652,4 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
 .video-toggle.paused span { left: 17px; width: 0; height: 0; background: none; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent #fff; }
 .video-toggle.paused span::after { display: none; }
 @media (max-width: 860px) { .bleed-video { grid-template-columns: 1fr; } }
+.footer-privacy { margin-left: 20px; }

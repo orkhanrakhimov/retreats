@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% from "macros.html" import faq_items, signup_form, share_button %}
-{% block title %}{{ r.name }}{% if r.dates %} · {{ r.dates }}{% endif %} | retreats.ge{% endblock %}
+{% block title %}{{ r.name }}{% if r.dates %}, {{ r.dates }}{% endif %} | retreats.ge{% endblock %}
 {% block description %}{{ r.summary or ("Yoga & Pilates retreat with Anastasia Mzhavia, MD" ~ (" in " ~ r.location if r.location else "") ~ (", " ~ r.dates if r.dates else "") ~ ".") }}{% endblock %}
 {% block og_image %}{{ r.cover or (site.url ~ "/assets/img/og-image.jpg") }}{% endblock %}
 {% block content %}
@@ -17,7 +17,7 @@
     </dl>
     <div class="actions">
       <a class="btn {{ 'btn-light' if r.cover else '' }}" href="#register">{{ "Register for this retreat" if r.status == "open" else "Register your interest" }}</a>
-      {{ share_button(site.url ~ "/retreats/" ~ r.slug ~ "/", r.name ~ (" · " ~ r.dates if r.dates else "")) }}
+      {{ share_button(site.url ~ "/retreats/" ~ r.slug ~ "/", r.name ~ (", " ~ r.dates if r.dates else "")) }}
     </div>
   </div>
 </section>

@@ -20,13 +20,13 @@
       </a>
       <div class="retreat-body">
         <p class="soon-badge">{{ "Registration open" if x.status == "open" else "Coming soon" }}</p>
-        <p class="meta">{{ x.location }}{% if x.location and x.dates %} · {% endif %}{{ x.dates }}</p>
+        <p class="meta">{{ x.location }}{% if x.location and x.dates %}, {% endif %}{{ x.dates }}</p>
         <h2><a href="/retreats/{{ x.slug }}/">{{ x.name }}</a></h2>
         {% if x.summary %}<p>{{ x.summary }}</p>{% endif %}
         {% if x.price %}<p class="retreat-price">{{ x.price }}</p>{% endif %}
         <div class="actions">
           <a class="btn" href="/retreats/{{ x.slug }}/">See the retreat</a>
-          {{ share_button(site.url ~ "/retreats/" ~ x.slug ~ "/", x.name ~ (" · " ~ x.dates if x.dates else "")) }}
+          {{ share_button(site.url ~ "/retreats/" ~ x.slug ~ "/", x.name ~ (", " ~ x.dates if x.dates else "")) }}
         </div>
       </div>
     </article>

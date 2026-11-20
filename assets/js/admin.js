@@ -126,7 +126,7 @@
         '<td class="nowrap" data-label="Date">' + esc(fmtDate(r.date)) + "</td>" +
         '<td data-label="Person"><strong>' + esc(r.name) + "</strong>" + (r.company ? "<br>" + esc(r.company) : "") + "<br>" +
           '<a href="mailto:' + esc(r.email) + '">' + esc(r.email) + "</a>" +
-          (r.phone ? '<br><a href="tel:' + esc(String(r.phone).replace(/[^\d+]/g, "")) + '">' + esc(r.phone) + "</a>" + (wa ? ' · <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' : "") : "") + "</td>" +
+          (r.phone ? '<br><a href="tel:' + esc(String(r.phone).replace(/[^\d+]/g, "")) + '">' + esc(r.phone) + "</a>" + (wa ? ' <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' : "") : "") + "</td>" +
         '<td data-label="Type"><span class="type-tag type-' + esc(type.split(" ")[0]) + '">' + esc(TYPE_LABEL[type] || type) + "</span>" + (r.level ? '<br><span class="muted small-text">' + esc(r.level) + "</span>" : "") + "</td>" +
         '<td data-label="Details" class="about-cell">' +
           detail("Retreat", r.retreat) + detail("Team size", r.team_size) + detail("Interested in", r.interest) +
@@ -189,7 +189,7 @@
       var live = r.status === "open" || r.status === "soon";
       return '<div class="retreat-row">' +
         '<div class="retreat-thumb">' + (r.cover ? '<img src="' + esc(r.cover) + '" alt="">' : "") + "</div>" +
-        '<div class="retreat-info"><strong>' + esc(r.name) + '</strong><span class="muted">' + esc([r.location, r.dates].filter(Boolean).join(" · ") || "No dates yet") + "</span></div>" +
+        '<div class="retreat-info"><strong>' + esc(r.name) + '</strong><span class="muted">' + esc([r.location, r.dates].filter(Boolean).join(", ") || "No dates yet") + "</span></div>" +
         '<span class="r-status r-' + esc(r.status) + '">' + esc(R_STATUS[r.status] || r.status) + "</span>" +
         '<span class="muted nowrap">' + regCount(r) + " registered</span>" +
         '<div class="retreat-row-actions">' + (live ? '<a class="btn btn-line btn-small" href="' + siteUrl + "/retreats/" + esc(r.slug) + '/" target="_blank" rel="noopener">View</a>' : "") +
@@ -348,7 +348,7 @@
       rows = res.rows || []; retreats = res.retreats || []; stats = res.stats || null;
       if (demo && stats) stats.days = days;
       if (res.sheet) { var a = $("[data-sheet-link]"); a.href = res.sheet; a.hidden = false; }
-      $("[data-updated]").textContent = (demo ? "Sample data · " : "") + "Updated " + new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+      $("[data-updated]").textContent = (demo ? "Sample data. " : "") + "Updated " + new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
       renderSignupStats(); renderRows(); renderRetreats(); renderVisitors();
       return true;
     });
