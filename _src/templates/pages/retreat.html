@@ -11,7 +11,6 @@
     <dl class="mini-facts big">
       <div><dt>Dates</dt><dd>{{ r.dates|ph }}</dd></div>
       <div><dt>Where</dt><dd>{{ r.venue|ph }}, {{ r.location|ph }}</dd></div>
-      <div><dt>Group</dt><dd>Up to {{ r.capacity }} guests</dd></div>
       <div><dt>From</dt><dd>{{ r|from_price }}</dd></div>
     </dl>
     <div class="actions"><a class="btn" href="#book">Request a place</a></div>
@@ -19,7 +18,7 @@
   <div class="wrap gallery">
     {{ photo("The hotel", "g-main") }}
     {{ photo("A room") }}
-    {{ photo("Spa or pool") }}
+    {{ photo("The surroundings") }}
   </div>
 </section>
 
@@ -38,12 +37,7 @@
     <h2 class="title">Where you'll stay</h2>
     <div class="stack">
       <p class="lead"><span class="fill">[About the hotel: the setting, the rooms, the spa or pool, the view.]</span></p>
-      <ul class="ticks">
-        <li>Comfortable rooms with a private bathroom</li>
-        <li>Spa, sauna or pool</li>
-        <li>All meals from the hotel's kitchen, vegetarian options</li>
-        <li>Quiet setting in nature</li>
-      </ul>
+      <p><span class="fill">[What the place offers: rooms, food, spa, surroundings]</span></p>
     </div>
   </div>
 </section>
@@ -52,7 +46,7 @@
   <div class="wrap split">
     <div>
       <h2 class="title">A day here</h2>
-      <p class="lead">Yoga in the morning, Pilates in the afternoon, rest in between.</p>
+      
     </div>
     <div>{{ schedule() }}</div>
   </div>
@@ -61,7 +55,7 @@
 <section class="section tint" id="prices">
   <div class="wrap">
     <h2 class="title">Rooms and prices</h2>
-    <p class="lead">Price per person for the whole retreat. A {{ site.deposit_percent }}% deposit holds your place.</p>
+    <p class="lead">Price per person for the whole retreat. Payment is by bank transfer.</p>
     <div class="price-table">
       {% for room in r.rooms %}
       <div class="price-row">
@@ -94,7 +88,7 @@
   <div class="wrap split">
     <div>
       <h2 class="title">Request a place</h2>
-      <p class="lead">Fill this in and Anastasia will contact you personally to confirm your place and the deposit.</p>
+      <p class="lead">Fill this in and Anastasia will contact you personally to confirm your place.</p>
       <p class="small">Prefer Instagram? <a href="{{ site.instagram }}" target="_blank" rel="noopener">Message {{ site.instagram_handle }}</a></p>
     </div>
     <div class="form-wrap">{{ interest_form(site, open_retreats, r.slug) }}</div>
