@@ -90,3 +90,50 @@
 </div>
 {%- endmacro %}
 
+
+
+{% macro interest_form(site, open_retreats, selected=None) -%}
+<form class="form" data-waitlist novalidate>
+  <div class="hp" aria-hidden="true"><label for="w-website">Website</label><input id="w-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+  {% if open_retreats %}
+  <div class="field">
+    <label for="w-retreat">Which retreat?</label>
+    <select id="w-retreat" name="retreat" required>
+      {% for x in open_retreats %}<option value="{{ x.name }} ({{ x.dates }})"{% if selected == x.slug %} selected{% endif %}>{{ x.name }}, {{ x.dates }}</option>{% endfor %}
+      <option value="Any upcoming retreat"{% if not selected %} selected{% endif %}>Tell me about any upcoming retreat</option>
+    </select>
+  </div>
+  {% else %}
+  <input type="hidden" name="retreat" value="Any upcoming retreat">
+  {% endif %}
+  <p class="form-step">About you</p>
+  <div class="field"><label for="w-name">Full name</label><input id="w-name" name="name" type="text" required autocomplete="name"></div>
+  <div class="field-row">
+    <div class="field"><label for="w-email">Email</label><input id="w-email" name="email" type="email" required autocomplete="email"></div>
+    <div class="field"><label for="w-phone">Phone number</label><input id="w-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+995 …"></div>
+  </div>
+
+  <p class="form-step">Your practice</p>
+  <fieldset class="field" data-required-group>
+    <legend>Your level of yoga or Pilates</legend>
+    <div class="chips">
+      <label class="chip"><input type="radio" name="level" value="New to it" required><span>New to it</span></label>
+      <label class="chip"><input type="radio" name="level" value="Some experience"><span>Some experience</span></label>
+      <label class="chip"><input type="radio" name="level" value="Practise regularly"><span>Practise regularly</span></label>
+      <label class="chip"><input type="radio" name="level" value="Advanced"><span>Advanced</span></label>
+    </div>
+  </fieldset>
+  <div class="field"><label for="w-motivation">What would you like from a retreat?</label><textarea id="w-motivation" name="motivation" rows="3" required placeholder="For example: rest and switch off, get stronger, help with back pain, time for myself"></textarea></div>
+  <div class="field"><label for="w-health">Anything medical Anastasia should know?</label><textarea id="w-health" name="health" rows="3" required placeholder="Injuries, back or joint pain, conditions, pregnancy, medication. Write &quot;None&quot; if nothing."></textarea><span class="hint">Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.</span></div>
+
+  <label class="check-row consent"><input type="checkbox" name="consent" required> <span>I agree that Anastasia keeps these details to plan retreats and contact me. They are never shared.</span></label>
+  <button class="btn" type="submit">Register my interest</button>
+  <p class="form-error" role="alert" hidden></p>
+</form>
+<div class="form-success" data-success hidden tabindex="-1">
+  <p class="soon-badge">You're on the list</p>
+  <h3>Thank you, <span data-first-name></span>!</h3>
+  <p>Anastasia will be in touch when the retreat is announced, and you'll be able to book before anyone else.</p>
+  <p class="muted small">In the meantime, say hello on <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>.</p>
+</div>
+{%- endmacro %}

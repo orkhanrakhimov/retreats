@@ -66,13 +66,12 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!validate()) return;
-      var f = form.elements, prefs = [];
-      form.querySelectorAll("input[name=format]:checked").forEach(function (c) { prefs.push(c.value); });
+      var f = form.elements;
       var data = {
         type: "retreat interest", name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
         level: (form.querySelector("input[name=level]:checked") || {}).value || "",
         motivation: f.motivation.value.trim(), health: f.health.value.trim(),
-        preference: prefs.join(", "), page: location.pathname, website: f.website.value
+        retreat: f.retreat ? f.retreat.value : "Any upcoming retreat", page: location.pathname, website: f.website.value
       };
       var done = function () {
         success.querySelector("[data-first-name]").textContent = data.name.split(" ")[0];
@@ -80,7 +79,7 @@
       };
       if (!SITE.forms_endpoint) {
         var body = ["Name: " + data.name, "Email: " + data.email, "Phone: " + data.phone, "Level: " + data.level,
-          "Motivation: " + data.motivation, "Health: " + data.health, "Prefers: " + (data.preference || "-")].join("\n");
+          "Motivation: " + data.motivation, "Health: " + data.health, "Retreat: " + data.retreat].join("\n");
         window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Retreat interest: " + data.name) + "&body=" + encodeURIComponent(body);
         done();
         return;

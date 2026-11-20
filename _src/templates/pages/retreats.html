@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, schedule, faq_items, contact_buttons %}
+{% from "macros.html" import photo, schedule, faq_items, contact_buttons, interest_form %}
 {% block title %}Retreats | retreats.ge{% endblock %}
 {% block content %}
 
@@ -22,60 +22,26 @@
         <div class="actions"><a class="btn" href="/retreats/{{ x.slug }}/">Details and booking</a></div>
       </div>
     </article>
-    {% else %}
-    <div class="soon-card">
+    {% endfor %}
+    <div class="soon-card{% if open_retreats %} soon-after{% endif %}">
       <div class="soon-text">
+        {% if open_retreats %}
+        <p class="soon-badge">Register</p>
+        <h2>Register for a retreat, or hear about the next ones</h2>
+        <p>Choose a retreat, or "any upcoming retreat" to be told about every new one. Anastasia will contact you personally.</p>
+        {% else %}
         <p class="soon-badge">Announcing soon</p>
         <h2>The first retreat is being planned now</h2>
         <p>Dates, place and prices will be announced here and on Instagram. Register your interest and Anastasia will contact you personally before places open to everyone.</p>
+        {% endif %}
         <ul class="ticks">
           <li>Up to 12 places per retreat</li>
           <li>Registered guests can book before anyone else</li>
           <li>No payment or commitment now</li>
         </ul>
       </div>
-      <form class="form" data-waitlist novalidate>
-        <div class="hp" aria-hidden="true"><label for="w-website">Website</label><input id="w-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <p class="form-step">About you</p>
-        <div class="field"><label for="w-name">Full name</label><input id="w-name" name="name" type="text" required autocomplete="name"></div>
-        <div class="field-row">
-          <div class="field"><label for="w-email">Email</label><input id="w-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="field"><label for="w-phone">Phone number</label><input id="w-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+995 …"></div>
-        </div>
-
-        <p class="form-step">Your practice</p>
-        <fieldset class="field" data-required-group>
-          <legend>Your level of yoga or Pilates</legend>
-          <div class="chips">
-            <label class="chip"><input type="radio" name="level" value="New to it" required><span>New to it</span></label>
-            <label class="chip"><input type="radio" name="level" value="Some experience"><span>Some experience</span></label>
-            <label class="chip"><input type="radio" name="level" value="Practise regularly"><span>Practise regularly</span></label>
-            <label class="chip"><input type="radio" name="level" value="Advanced"><span>Advanced</span></label>
-          </div>
-        </fieldset>
-        <div class="field"><label for="w-motivation">What would you like from a retreat?</label><textarea id="w-motivation" name="motivation" rows="3" required placeholder="For example: rest and switch off, get stronger, help with back pain, time for myself"></textarea></div>
-        <div class="field"><label for="w-health">Anything medical Anastasia should know?</label><textarea id="w-health" name="health" rows="3" required placeholder="Injuries, back or joint pain, conditions, pregnancy, medication. Write &quot;None&quot; if nothing."></textarea><span class="hint">Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.</span></div>
-        <fieldset class="field">
-          <legend>Which would suit you? <span class="muted">(optional)</span></legend>
-          <div class="chips">
-            <label class="chip"><input type="checkbox" name="format" value="Weekend (2–3 nights)"><span>Weekend</span></label>
-            <label class="chip"><input type="checkbox" name="format" value="Week (5–7 nights)"><span>Full week</span></label>
-            <label class="chip"><input type="checkbox" name="format" value="Abroad"><span>Abroad</span></label>
-          </div>
-        </fieldset>
-
-        <label class="check-row consent"><input type="checkbox" name="consent" required> <span>I agree that Anastasia keeps these details to plan retreats and contact me. They are never shared.</span></label>
-        <button class="btn" type="submit">Register my interest</button>
-        <p class="form-error" role="alert" hidden></p>
-      </form>
-      <div class="form-success" data-success hidden tabindex="-1">
-        <p class="soon-badge">You're on the list</p>
-        <h3>Thank you, <span data-first-name></span>!</h3>
-        <p>Anastasia will be in touch when the retreat is announced, and you'll be able to book before anyone else.</p>
-        <p class="muted small">In the meantime, say hello on <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>.</p>
-      </div>
+      {{ interest_form(site, open_retreats) }}
     </div>
-    {% endfor %}
   </div>
 </section>
 

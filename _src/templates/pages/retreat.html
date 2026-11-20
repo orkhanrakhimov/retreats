@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, insta_icon, schedule, faq_items %}
+{% from "macros.html" import photo, insta_icon, schedule, faq_items, interest_form %}
 {% block title %}{{ r.name }}, {{ r.location }} | retreats.ge{% endblock %}
 {% block description %}{{ r.summary }}{% endblock %}
 {% block content %}
@@ -90,30 +90,14 @@
   </div>
 </section>
 
-<section class="section dark" id="book">
+<section class="section tint" id="book">
   <div class="wrap split">
     <div>
       <h2 class="title">Request a place</h2>
-      <p class="lead">Fill this in and your email app will open with the request ready to send. Anastasia replies within a day with deposit details.</p>
+      <p class="lead">Fill this in and Anastasia will contact you personally to confirm your place and the deposit.</p>
       <p class="small">Prefer Instagram? <a href="{{ site.instagram }}" target="_blank" rel="noopener">Message {{ site.instagram_handle }}</a></p>
     </div>
-    <form class="form" data-book data-retreat="{{ r.name }} ({{ r.dates }})">
-      <div class="field"><label for="f-name">Name</label><input id="f-name" name="Name" type="text" required autocomplete="name"></div>
-      <div class="field-row">
-        <div class="field"><label for="f-email">Email</label><input id="f-email" name="Email" type="email" required autocomplete="email"></div>
-        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" required autocomplete="tel"></div>
-      </div>
-      <div class="field-row">
-        <div class="field"><label for="f-room">Room</label>
-          <select id="f-room" name="Room">{% for room in r.rooms %}<option>{{ room.name }}</option>{% endfor %}</select></div>
-        <div class="field"><label for="f-guests">Guests</label>
-          <select id="f-guests" name="Guests"><option>1</option><option>2</option><option>3</option></select></div>
-      </div>
-      <div class="field"><label for="f-health">Injuries or health conditions Anastasia should know about</label><textarea id="f-health" name="Health" rows="3" placeholder="Write 'none' if nothing"></textarea></div>
-      <div class="field"><label for="f-note">Anything else</label><textarea id="f-note" name="Note" rows="2"></textarea></div>
-      <button class="btn btn-light" type="submit">Send request</button>
-      <p class="form-done" hidden>Your email app should have opened with the request. If it didn't, write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
-    </form>
+    <div class="form-wrap">{{ interest_form(site, open_retreats, r.slug) }}</div>
   </div>
 </section>
 

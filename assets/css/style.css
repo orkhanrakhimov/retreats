@@ -416,3 +416,5 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
 .admin-table td[data-label="Person"] a { white-space: nowrap; word-break: normal; }
 .admin-table td[data-label="Level"] { min-width: 110px; }
 @media (max-width: 760px) { .admin-table td[data-label="Person"] a { white-space: normal; word-break: break-word; } }
+.form-wrap { position: relative; }
+.soon-after { margin-top: 32px; }

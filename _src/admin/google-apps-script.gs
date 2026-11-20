@@ -13,7 +13,7 @@
  */
 
 var SHEET_NAME = 'Sign-ups';
-var COLUMNS = ['id', 'date', 'type', 'name', 'email', 'phone', 'level', 'motivation', 'health', 'preference', 'page', 'status', 'notes'];
+var COLUMNS = ['id', 'date', 'type', 'name', 'email', 'phone', 'retreat', 'level', 'motivation', 'health', 'page', 'status', 'notes'];
 var MAX_LEN = 1000;
 
 function sheet_() {
@@ -87,7 +87,7 @@ function doPost(e) {
     var record = {
       id: id, date: new Date(), type: clean_(body.type || 'retreat interest'), name: clean_(body.name),
       email: clean_(body.email), phone: clean_(body.phone), level: clean_(body.level),
-      motivation: clean_(body.motivation), health: clean_(body.health), preference: clean_(body.preference),
+      motivation: clean_(body.motivation), health: clean_(body.health), retreat: clean_(body.retreat || 'Any upcoming retreat'),
       page: clean_(body.page), status: 'New', notes: ''
     };
     sh.appendRow(header.map(function (h) { return record[h] != null ? record[h] : ''; }));
@@ -103,7 +103,7 @@ function doPost(e) {
       body: [
         'Name: ' + body.name, 'Email: ' + body.email, 'Phone: ' + (body.phone || '-'),
         'Level: ' + (body.level || '-'), 'Wants from a retreat: ' + (body.motivation || '-'),
-        'Health: ' + (body.health || '-'), 'Prefers: ' + (body.preference || '-'),
+        'Health: ' + (body.health || '-'), 'Retreat: ' + (body.retreat || 'Any upcoming retreat'),
         '', 'See everyone at https://retreats.ge/admin/'
       ].join('\n'),
       replyTo: String(body.email)
