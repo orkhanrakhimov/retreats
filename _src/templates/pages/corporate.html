@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% from "macros.html" import mail_icon %}
+{% block title %}Corporate wellness | retreats.ge{% endblock %}
+{% block description %}Yoga and Pilates for teams, led by Anastasia Mzhavia, a medical doctor: wellness days at your office and team retreats.{% endblock %}
+{% block content %}
+
+<section class="page-top">
+  <div class="wrap">
+    <h1>Corporate wellness</h1>
+    <p class="intro page-intro">Yoga and Pilates for your team, led by a medical doctor. Better posture, healthier backs and less stress, at your office or away.</p>
+    <div class="actions"><a class="btn" href="mailto:{{ site.email }}?subject={{ 'Corporate wellness enquiry'|urlencode }}">{{ mail_icon() }} Email Anastasia</a></div>
+  </div>
+</section>
+
+<section class="section tight-top">
+  <div class="wrap">
+    <div class="options options-2">
+      <article class="option">
+        <span class="option-num">01</span>
+        <h2>Wellness day at your office</h2>
+        <p>Yoga and Pilates sessions at your workplace, with a short talk from Anastasia on posture, back health and preventing the aches that come with desk work.</p>
+        <p class="option-meta">At your office · any team size</p>
+      </article>
+      <article class="option">
+        <span class="option-num">02</span>
+        <h2>Team retreat</h2>
+        <p>A few days away for your team in a beautiful hotel: daily yoga and Pilates, good food and time to reset together. Planned around your dates and goals.</p>
+        <p class="option-meta">In Georgia or abroad · planned for your team</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap split">
+    <h2 class="title">Why a doctor-led programme</h2>
+    <ul class="styles">
+      <li><h3>Safe for every body</h3><p>Anastasia is a medical doctor with a background in rehabilitation. Every exercise has an option for beginners, sore backs and old injuries.</p></li>
+      <li><h3>Built for office life</h3><p>Focus on posture, neck, shoulders and lower back: the places long hours at a desk affect most.</p></li>
+      <li><h3>Less stress</h3><p>Breathing and relaxation your team can keep using at their desks.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <h2 class="title">How it works</h2>
+    <ol class="steps">
+      <li><span class="step-num">1</span><div><h3>Tell us about your team</h3><p>Email Anastasia with the size of your team, what you have in mind and roughly when.</p></div></li>
+      <li><span class="step-num">2</span><div><h3>We plan it together</h3><p>She suggests a programme and a price, and adjusts it until it fits.</p></div></li>
+      <li><span class="step-num">3</span><div><h3>Your team just shows up</h3><p>Classes, equipment and, for retreats, the venue, meals and transfers are taken care of.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section tint" id="get-in-touch">
+  <div class="wrap contact">
+    <h2 class="title">Plan something for your team</h2>
+    <p class="lead">Write to Anastasia and she'll reply personally.</p>
+    <div class="actions"><a class="btn" href="mailto:{{ site.email }}?subject={{ 'Corporate wellness enquiry'|urlencode }}">{{ mail_icon() }} {{ site.email }}</a></div>
+  </div>
+</section>
+{% endblock %}
