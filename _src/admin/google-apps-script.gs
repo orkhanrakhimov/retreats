@@ -7,7 +7,8 @@
  * 3. Project Settings (gear) > Script properties > Add:
  *      ADMIN_KEY   = a password for the admin page (long, private)
  *      NOTIFY_EMAIL = anastasiamzhavia@gmail.com   (gets an email for each sign-up)
- * 4. Deploy > New deployment > type "Web app".
+ * 4. Choose "setup" in the function menu at the top and press Run. Approve the permissions.
+ * 5. Deploy > New deployment > type "Web app".
  *      Execute as: Me    Who has access: Anyone
  *    Approve the permissions, then copy the Web app URL and add it to the website.
  */
@@ -20,7 +21,9 @@ function sheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(SHEET_NAME);
   if (!sh) {
-    sh = ss.insertSheet(SHEET_NAME);
+    var first = ss.getSheets()[0];
+    if (first && first.getLastRow() === 0) { sh = first; sh.setName(SHEET_NAME); }
+    else sh = ss.insertSheet(SHEET_NAME);
     sh.appendRow(COLUMNS);
     sh.setFrozenRows(1);
     sh.getRange(1, 1, 1, COLUMNS.length).setFontWeight('bold');
@@ -34,6 +37,16 @@ function sheet_() {
     }
   });
   return sh;
+}
+
+/** Run this once from the editor (select "setup", press Run) to create the columns and approve permissions. */
+function setup() {
+  sheet_();
+  var p = PropertiesService.getScriptProperties();
+  if (!p.getProperty('ADMIN_KEY')) throw new Error('Add ADMIN_KEY in Project Settings > Script properties first.');
+  var to = p.getProperty('NOTIFY_EMAIL');
+  if (to) MailApp.sendEmail(to, 'retreats.ge sign-ups are connected', 'New sign-ups from retreats.ge will be emailed here.');
+  Logger.log('All set. Now Deploy > New deployment > Web app.');
 }
 
 function headers_(sh) {
