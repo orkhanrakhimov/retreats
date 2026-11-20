@@ -666,3 +666,4 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
   .video-split { grid-template-columns: 1fr; gap: 40px; }
   .video-split .video-frame { order: -1; width: 100%; max-width: 440px; justify-self: center; }
 }
+.video-split .styles { margin-top: 8px; }
