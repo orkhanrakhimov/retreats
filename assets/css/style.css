@@ -742,3 +742,10 @@ html[lang="ka"] body { letter-spacing: .02em; }
 @media (max-width: 1180px) { html[lang="ka"] .nav .nav-lang { display: block; padding-top: 24px; } }
 @media (max-width: 480px) { .header-end > .lang { display: none; } }
 .nav .nav-lang .lang a { padding: 0 16px; height: 38px; font-size: 15px; }
+/* What to expect: numbered, two rows of three */
+.expect { counter-reset: e; margin-top: 40px; gap: 48px 56px; }
+.expect li { counter-increment: e; border-top-color: var(--line); padding-top: 22px; }
+.expect li::before { content: "0" counter(e); display: block; margin-bottom: 22px; font: 400 15px/1 var(--serif); color: var(--green); }
+.expect h3 { font: 400 clamp(23px, 2.1vw, 28px)/1.2 var(--serif); color: var(--ink); }
+.expect p { margin-top: 12px; line-height: 1.6; }
+html[lang="ka"] .expect h3 { font-family: "Mosheneba", "Noto Serif Georgian", serif; font-size: 25px; }
