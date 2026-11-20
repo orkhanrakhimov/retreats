@@ -1,47 +1,48 @@
 {% extends "base.html" %}
-{% from "macros.html" import picture, contact_buttons %}
+{% from "macros.html" import portrait, contact_buttons %}
 {% block title %}About Anastasia Mzhavia, MD | retreats.ge{% endblock %}
 {% block description %}Anastasia Mzhavia is a medical doctor (BAU International University Batumi) and certified yoga teacher who teaches yoga and Pilates in Tbilisi.{% endblock %}
 {% block content %}
 
-<section class="page-top">
-  <div class="wrap feature feature-reverse">
-    <div class="feature-text">
-      <h1>Anastasia Mzhavia</h1>
-      <p class="intro">Medical doctor, yoga and Pilates teacher.</p>
-      <div class="stack about-copy">
-        <p class="lead">Anastasia has taught yoga and Pilates for more than six years: group classes, private clients, fitness events and luxury hotels. Today she teaches at OkTopUs Fitness in Tbilisi and hosts her own retreats.</p>
-        <p>She studied medicine at BAU International University Batumi, with a focus on rehabilitation and injury prevention. That is why her classes feel safe: she understands what is happening in your body, and how to move it well.</p>
-      </div>
+<section class="bleed bleed-top">
+  {{ portrait("Anastasia Mzhavia, medical doctor and yoga teacher, in dancer pose on a beach", eager=true) }}
+  <div class="bleed-text">
+    <p class="eyebrow">Medical doctor · Yoga &amp; Pilates teacher</p>
+    <h1>Anastasia Mzhavia</h1>
+    <div class="stack about-copy">
+      <p class="lead">Anastasia has taught yoga and Pilates for more than six years: group classes, private clients, fitness events and luxury hotels. Today she teaches at OkTopUs Fitness in Tbilisi and hosts her own retreats.</p>
+      <p>She studied medicine at BAU International University Batumi, with a focus on rehabilitation and injury prevention. That is why her classes feel safe: she understands what is happening in your body, and how to move it well.</p>
     </div>
-    {{ picture("dancer", "(max-width: 860px) 90vw, 520px", "Anastasia Mzhavia, medical doctor and yoga teacher, in dancer pose on a beach", "soft-photo", eager=true) }}
+    <div class="actions"><a class="btn" href="/retreats/#waitlist">Register your interest</a><a class="btn btn-line" href="#certificates">Certificates</a></div>
   </div>
 </section>
 
 <section class="section tint">
   <div class="wrap split">
-    <h2 class="title">What she teaches</h2>
-    <ul class="styles">
+    <div><p class="eyebrow">Practice</p><h2 class="title">What she teaches</h2></div>
+    <ol class="styles">
       <li><h3>Hatha yoga</h3><p>Slow, steady poses and breathing. Good for beginners.</p></li>
       <li><h3>Ashtanga yoga</h3><p>A strong, flowing practice for energy and focus.</p></li>
       <li><h3>Kundalini yoga</h3><p>Breath, movement and meditation to calm the mind.</p></li>
       <li><h3>Mat and Reformer Pilates</h3><p>Core strength, posture and a healthy back.</p></li>
       <li><h3>Hot Power Pilates</h3><p>An intense, energising Pilates workout.</p></li>
-    </ul>
+    </ol>
   </div>
 </section>
 
 <section class="section" id="certificates">
   <div class="wrap">
-    <h2 class="title">Education and certificates</h2>
-    <p class="lead">Tap a certificate to see it full size.</p>
+    <div class="section-head">
+      <div><p class="eyebrow">Credentials</p><h2 class="title">Education and certificates</h2></div>
+      <p class="muted">Tap a certificate to see it full size.</p>
+    </div>
     <ul class="certs">
       {% for c in credentials %}
       <li>
         <button type="button" class="cert" data-cert="/assets/img/certificates/{{ c.img }}.jpg" data-caption="{{ c.title }}, {{ c.org }}, {{ c.year }}">
           <img src="/assets/img/certificates/{{ c.img }}-thumb.jpg" alt="{{ c.alt }}" loading="lazy">
         </button>
-        <p><strong>{{ c.title }}</strong><br><span class="muted">{{ c.org }}, {{ c.year }}</span></p>
+        <p><strong>{{ c.title }}</strong><span>{{ c.org }}, {{ c.year }}</span></p>
       </li>
       {% endfor %}
     </ul>

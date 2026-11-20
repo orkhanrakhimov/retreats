@@ -25,6 +25,10 @@
 <div class="pic-frame {{ cls }}"><img src="/assets/img/anastasia/{{ name }}-{{ widths[0] }}.jpg" srcset="{% for w in widths %}/assets/img/anastasia/{{ name }}-{{ w }}.jpg {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ sizes }}" alt="{{ alt }}" width="1000" height="1250"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %}></div>
 {%- endmacro %}
 
+{% macro portrait(alt, eager=false) -%}
+<div class="bleed-photo"><img src="/assets/img/anastasia/portrait-1080.jpg" srcset="/assets/img/anastasia/portrait-720.jpg 720w, /assets/img/anastasia/portrait-1080.jpg 1080w, /assets/img/anastasia/portrait-1440.jpg 1440w" sizes="(max-width: 860px) 100vw, 50vw" alt="{{ alt }}" width="1440" height="1920"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %}></div>
+{%- endmacro %}
+
 {% macro lotus() -%}
 {% set petals = [
   (-78, 0.78, 1.0), (78, 0.78, 1.0),

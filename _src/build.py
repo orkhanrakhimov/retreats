@@ -9,6 +9,7 @@ Templates live in _src/templates, content in _src/data. Output goes to the repo 
 GitHub Actions runs the --live build on every push and every 15 minutes, so retreats
 added in the admin panel appear on the site without anyone touching the code.
 """
+import hashlib
 import json
 import re
 import sys
@@ -102,6 +103,13 @@ def main():
     env.filters["paras"] = paragraphs
     # Plain string, so Jinja escapes it safely inside HTML attributes.
     env.filters["json"] = lambda v: json.dumps(v, ensure_ascii=False)
+
+    # Version stamp for CSS/JS links, so browsers fetch the new files after every change.
+    h = hashlib.sha1()
+    for f in sorted((ROOT / "assets").rglob("*.*")):
+        if f.suffix in (".css", ".js"):
+            h.update(f.read_bytes())
+    env.globals["v"] = h.hexdigest()[:8]
 
     common = dict(site=site, retreats=retreats, credentials=credentials,
                   next_retreat=retreats[0] if retreats else None)

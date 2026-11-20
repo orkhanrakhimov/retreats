@@ -580,3 +580,65 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
   .feature, .feature-reverse { grid-template-columns: 1fr; }
   .feature .soft-photo { order: -1; max-width: 440px; }
 }
+
+/* ---------- Editorial refinement ---------- */
+.eyebrow { margin: 0 0 18px; font: 600 12px/1.4 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--green); }
+.dark .eyebrow, .hero .eyebrow { color: var(--green-light); }
+.title { font-size: clamp(36px, 4.6vw, 60px); line-height: 1.04; }
+.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 40px; }
+.section-head .title { margin-bottom: 0; }
+
+/* Full-bleed photo beside text. The column has the photo's own 3:4 shape, so nothing is cropped. */
+.bleed { display: grid; grid-template-columns: minmax(300px, min(50vw, calc((100vh - 76px) * .75), 760px)) minmax(0, 1fr); align-items: center; }
+.bleed-right { grid-template-columns: minmax(0, 1fr) minmax(300px, min(50vw, calc((100vh - 76px) * .75), 760px)); margin-block: var(--gap); }
+.bleed-right .bleed-photo { order: 2; }
+.bleed-photo { aspect-ratio: 3 / 4; background: #C9CFD3; }
+.bleed-photo img { width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.bleed-text { width: 100%; max-width: 640px; padding: clamp(40px, 6vw, 96px) var(--pad); padding-left: clamp(32px, 6vw, 104px); }
+.bleed-right .bleed-text { justify-self: end; padding-left: var(--pad); padding-right: clamp(32px, 6vw, 104px); }
+.bleed-text h1 { font-size: clamp(46px, 5.6vw, 88px); line-height: 1; margin-bottom: 30px; }
+.bleed-text .title { margin-bottom: 24px; }
+.bleed-text .lead { color: var(--ink); }
+.about-copy p:not(.lead) { color: var(--muted); }
+/* Line up the text with the page grid on wide screens */
+@media (min-width: 1300px) {
+  .bleed-right .bleed-text { padding-left: max(var(--pad), calc((100vw - var(--wrap)) / 2 + var(--pad))); max-width: none; justify-self: stretch; }
+}
+@media (max-width: 860px) {
+  .bleed, .bleed-right { grid-template-columns: 1fr; }
+  .bleed-right .bleed-photo { order: -1; }
+  .bleed-text, .bleed-right .bleed-text { max-width: none; padding: 40px var(--pad) 8px; }
+}
+
+/* Numbered list of styles */
+.styles { counter-reset: s; }
+.styles li { counter-increment: s; display: grid; grid-template-columns: 52px 1fr; column-gap: 8px; padding: 22px 0; }
+.styles li::before { content: "0" counter(s); grid-row: span 2; font: 400 15px/2 var(--serif); color: var(--green); }
+.styles h3 { font: 400 clamp(22px, 2vw, 27px)/1.2 var(--serif); }
+.styles p { margin-top: 6px; }
+
+/* Pillars: a thin rule and a numeral */
+.pillars { counter-reset: p; margin-top: 12px; }
+.pillar { counter-increment: p; border-top-color: var(--line); padding-top: 24px; }
+.pillar::before { content: "0" counter(p); display: block; margin-bottom: 26px; font: 400 15px/1 var(--serif); color: var(--green); }
+
+/* Certificates: no boxes, the documents sit on a soft panel */
+.certs { gap: 48px 28px; margin-top: 48px; }
+.cert { padding: 22px; border: 0; background: var(--tint); border-radius: 2px; transition: background .25s; }
+.cert:hover { background: #E4E8DF; }
+.cert img { box-shadow: 0 10px 24px -14px rgba(25, 27, 24, .35); transition: transform .35s ease; }
+.cert:hover img { transform: translateY(-3px); }
+.certs li p { margin-top: 16px; }
+.certs li p strong { display: block; color: var(--ink); font-weight: 600; }
+.certs li p span { display: block; margin-top: 2px; color: var(--muted); font-size: 14px; }
+
+/* Option cards: soft panels instead of outlined boxes */
+.options { gap: 16px; margin-top: 12px; }
+.option { border: 0; background: var(--tint); padding: clamp(30px, 3.6vw, 48px); border-radius: 2px; transition: background .25s; }
+.option:hover { box-shadow: none; background: #E4E8DF; }
+.option-link h3 { font-size: clamp(28px, 2.6vw, 36px); }
+.option-link p { max-width: 42ch; }
+.option-link .link-more { margin-top: 18px; }
+
+/* The closing call to action reads as one calm block */
+.contact .title { margin-bottom: 18px; }
