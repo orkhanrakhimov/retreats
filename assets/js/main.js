@@ -20,31 +20,18 @@
     window.addEventListener("resize", function () { if (window.innerWidth > 900) set(false); });
   }
 
-  // Booking request: opens the guest's email app with everything filled in
-  document.querySelectorAll("[data-book]").forEach(function (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      var lines = ["Retreat: " + form.getAttribute("data-retreat")];
-      Array.prototype.forEach.call(form.elements, function (el) {
-        if (el.name && el.value) lines.push(el.name + ": " + el.value);
-      });
-      var subject = "Booking request: " + form.getAttribute("data-retreat");
-      window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-      form.querySelector(".form-done").hidden = false;
-    });
-  });
-
-  // Interest registration: saved to the sign-ups sheet (falls back to email until it is connected)
-  document.querySelectorAll("[data-waitlist]").forEach(function (form) {
+  // Sign-up forms (retreat interest, online session, corporate): saved to the Google Sheet
+  var TYPES = { retreat: "retreat interest", online: "online session", corporate: "corporate" };
+  document.querySelectorAll("[data-signup-form]").forEach(function (form) {
     var success = form.parentNode.querySelector("[data-success]");
     var error = form.querySelector(".form-error");
+    var btn = form.querySelector("button[type=submit]");
     var showError = function (msg) { error.textContent = msg; error.hidden = !msg; };
 
     var validate = function () {
       var first = null;
       form.querySelectorAll(".invalid").forEach(function (el) { el.classList.remove("invalid"); });
-      form.querySelectorAll("input[required], textarea[required]").forEach(function (el) {
+      form.querySelectorAll("input[required], textarea[required], select[required]").forEach(function (el) {
         var ok = el.type === "radio" ? !!form.querySelector('input[name="' + el.name + '"]:checked')
           : el.type === "checkbox" ? el.checked : el.checkValidity() && el.value.trim() !== "";
         if (!ok) {
@@ -59,42 +46,81 @@
       }
       showError(""); return true;
     };
-    form.addEventListener("input", function (e) {
-      var w = e.target.closest(".invalid"); if (w) w.classList.remove("invalid");
-    });
+    form.addEventListener("input", function (e) { var w = e.target.closest(".invalid"); if (w) w.classList.remove("invalid"); });
+    form.addEventListener("change", function (e) { var w = e.target.closest(".invalid"); if (w) w.classList.remove("invalid"); });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!validate()) return;
-      var f = form.elements;
-      var data = {
-        type: "retreat interest", name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
-        level: (form.querySelector("input[name=level]:checked") || {}).value || "",
-        motivation: f.motivation.value.trim(), health: f.health.value.trim(),
-        retreat: f.retreat ? f.retreat.value : "Any upcoming retreat", page: location.pathname, website: f.website.value
-      };
+      var data = { type: TYPES[form.getAttribute("data-kind")] || "retreat interest", page: location.pathname };
+      Array.prototype.forEach.call(form.elements, function (el) {
+        if (!el.name || el.name === "consent") return;
+        if ((el.type === "radio" || el.type === "checkbox") && !el.checked) return;
+        data[el.name] = el.value.trim();
+      });
       var done = function () {
         success.querySelector("[data-first-name]").textContent = data.name.split(" ")[0];
         form.hidden = true; success.hidden = false; success.focus();
       };
-      if (!SITE.forms_endpoint) {
-        var body = ["Name: " + data.name, "Email: " + data.email, "Phone: " + data.phone, "Level: " + data.level,
-          "Motivation: " + data.motivation, "Health: " + data.health, "Retreat: " + data.retreat].join("\n");
-        window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Retreat interest: " + data.name) + "&body=" + encodeURIComponent(body);
-        done();
-        return;
-      }
-      var btn = form.querySelector("button[type=submit]");
       btn.disabled = true; btn.textContent = "Sending…"; showError("");
       fetch(SITE.forms_endpoint, { method: "POST", body: JSON.stringify(data) })
         .then(function (r) { return r.json(); })
         .then(function (res) { if (!res.ok) throw new Error(res.error); done(); })
         .catch(function () {
           showError("Something went wrong. Please try again, or email " + SITE.email + ".");
-          btn.disabled = false; btn.textContent = "Register my interest";
+          btn.disabled = false; btn.textContent = btn.getAttribute("data-label");
         });
     });
   });
+
+  // Share buttons: the phone's own share sheet where available, otherwise a small menu
+  document.querySelectorAll("[data-share]").forEach(function (box) {
+    var toggle = box.querySelector("[data-share-toggle]"), menu = box.querySelector("[data-share-menu]");
+    var url = box.getAttribute("data-url"), title = box.getAttribute("data-title");
+    var close = function () { menu.hidden = true; toggle.setAttribute("aria-expanded", "false"); };
+    toggle.addEventListener("click", function () {
+      if (navigator.share && window.matchMedia("(pointer: coarse)").matches) {
+        navigator.share({ title: title, text: title, url: url }).catch(function () {});
+        return;
+      }
+      var open = menu.hidden;
+      menu.hidden = !open; toggle.setAttribute("aria-expanded", String(open));
+    });
+    box.querySelector("[data-copy]").addEventListener("click", function (e) {
+      var b = e.currentTarget;
+      var ok = function () { b.textContent = "Link copied"; setTimeout(function () { b.textContent = "Copy link"; close(); }, 1400); };
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok, function () { window.prompt("Copy this link:", url); });
+      else window.prompt("Copy this link:", url);
+    });
+    document.addEventListener("click", function (e) { if (!box.contains(e.target)) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  });
+
+  // Visitor statistics: one anonymous count per page view (no cookies, nothing personal)
+  (function () {
+    if (!SITE.forms_endpoint || /^\/admin/.test(location.pathname) || navigator.webdriver) return;
+    if (!/^(www\.)?retreats\.ge$/.test(location.hostname)) return;
+    var ref = document.referrer, source = "Direct";
+    try {
+      var host = ref ? new URL(ref).hostname.replace(/^www\./, "") : "";
+      if (host === location.hostname.replace(/^www\./, "")) source = "Internal";
+      else if (/instagram/.test(host)) source = "Instagram";
+      else if (/facebook|fb\./.test(host)) source = "Facebook";
+      else if (/google\./.test(host)) source = "Google";
+      else if (/t\.me|telegram/.test(host)) source = "Telegram";
+      else if (/whatsapp|wa\.me/.test(host)) source = "WhatsApp";
+      else if (/bing\.|yandex\.|duckduckgo/.test(host)) source = "Other search";
+      else if (host) source = host;
+      var p = new URLSearchParams(location.search).get("utm_source");
+      if (p) source = p.charAt(0).toUpperCase() + p.slice(1);
+    } catch (e) {}
+    var zone = ""; try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+    var payload = JSON.stringify({ action: "visit", path: location.pathname, source: source,
+      device: window.innerWidth < 768 ? "Mobile" : window.innerWidth < 1100 ? "Tablet" : "Desktop",
+      zone: zone, lang: (navigator.language || "").slice(0, 5) });
+    if (navigator.sendBeacon) navigator.sendBeacon(SITE.forms_endpoint, new Blob([payload], { type: "text/plain" }));
+    else fetch(SITE.forms_endpoint, { method: "POST", body: payload, keepalive: true }).catch(function () {});
+  })();
 
   // Gentle fade-in as sections scroll into view
   var targets = document.querySelectorAll(".section .title, .section .lead, .retreat-card, .soon-card, .option, .pillar, .steps li, .includes li, .schedule li, .faq details, .creds li, .price-row, .certs li, .styles li, .facts p, .two-lists > div, .form, .contact .actions");

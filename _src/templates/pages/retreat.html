@@ -1,97 +1,75 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, insta_icon, schedule, faq_items, interest_form %}
-{% block title %}{{ r.name }}, {{ r.location }} | retreats.ge{% endblock %}
-{% block description %}{{ r.summary }}{% endblock %}
+{% from "macros.html" import faq_items, signup_form, share_button %}
+{% block title %}{{ r.name }}{% if r.dates %} · {{ r.dates }}{% endif %} | retreats.ge{% endblock %}
+{% block description %}{{ r.summary or ("Yoga & Pilates retreat with Anastasia Mzhavia, MD" ~ (" in " ~ r.location if r.location else "") ~ (", " ~ r.dates if r.dates else "") ~ ".") }}{% endblock %}
+{% block og_image %}{{ r.cover or (site.url ~ "/assets/img/og-image.jpg") }}{% endblock %}
 {% block content %}
 
-<section class="page-top">
-  <div class="wrap">
-    <p class="meta"><a href="/#retreats">Retreats</a> / {{ r.location|ph }}</p>
-    <h1>{{ r.name|ph }}</h1>
+<section class="retreat-hero{% if not r.cover %} no-cover{% endif %}">
+  {% if r.cover %}<img class="retreat-hero-img" src="{{ r.cover }}" alt="{{ r.name }}" fetchpriority="high">{% endif %}
+  <div class="wrap retreat-hero-text">
+    <p class="meta"><a href="/retreats/">Retreats</a> / {{ "Registration open" if r.status == "open" else "Coming soon" }}</p>
+    <h1>{{ r.name }}</h1>
     <dl class="mini-facts big">
-      <div><dt>Dates</dt><dd>{{ r.dates|ph }}</dd></div>
-      <div><dt>Where</dt><dd>{{ r.venue|ph }}, {{ r.location|ph }}</dd></div>
-      <div><dt>From</dt><dd>{{ r|from_price }}</dd></div>
+      {% if r.dates %}<div><dt>Dates</dt><dd>{{ r.dates }}</dd></div>{% endif %}
+      {% if r.location %}<div><dt>Where</dt><dd>{{ r.location }}</dd></div>{% endif %}
+      {% if r.price %}<div><dt>Price</dt><dd>{{ r.price }}</dd></div>{% endif %}
     </dl>
-    <div class="actions"><a class="btn" href="#book">Request a place</a></div>
-  </div>
-  <div class="wrap gallery">
-    {{ photo("The hotel", "g-main") }}
-    {{ photo("A room") }}
-    {{ photo("The surroundings") }}
+    <div class="actions">
+      <a class="btn {{ 'btn-light' if r.cover else '' }}" href="#register">{{ "Register for this retreat" if r.status == "open" else "Register your interest" }}</a>
+      {{ share_button(site.url ~ "/retreats/" ~ r.slug ~ "/", r.name ~ (" · " ~ r.dates if r.dates else "")) }}
+    </div>
   </div>
 </section>
 
+{% if r.summary or r.description %}
 <section class="section">
   <div class="wrap split">
     <h2 class="title">About this retreat</h2>
-    <div class="stack">
-      <p class="lead">{{ r.summary|ph }}</p>
-      <p>{{ r.intro|ph }}</p>
+    <div class="stack prose-text">
+      {% if r.summary %}<p class="lead">{{ r.summary }}</p>{% endif %}
+      {{ r.description|paras }}
     </div>
   </div>
 </section>
+{% endif %}
 
+{% if r.gallery %}
+<section class="section tight-top">
+  <div class="wrap photo-grid">
+    {% for g in r.gallery %}<img src="{{ g }}" alt="{{ r.name }}, photo {{ loop.index }}" loading="lazy">{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if r.programme %}
 <section class="section tint">
   <div class="wrap split">
-    <h2 class="title">Where you'll stay</h2>
-    <div class="stack">
-      <p class="lead"><span class="fill">[About the hotel: the setting, the rooms, the spa or pool, the view.]</span></p>
-      <p><span class="fill">[What the place offers: rooms, food, spa, surroundings]</span></p>
-    </div>
+    <h2 class="title">Programme</h2>
+    <div class="stack prose-text">{{ r.programme|paras }}</div>
   </div>
 </section>
+{% endif %}
 
+{% if r.included or r.not_included %}
 <section class="section">
-  <div class="wrap split">
-    <div>
-      <h2 class="title">A day here</h2>
-      
-    </div>
-    <div>{{ schedule() }}</div>
+  <div class="wrap two-lists">
+    {% if r.included %}<div><h2 class="title small-title">Included</h2><ul class="ticks">{% for i in r.included %}<li>{{ i }}</li>{% endfor %}</ul></div>{% endif %}
+    {% if r.not_included %}<div><h2 class="title small-title">Not included</h2><ul class="crosses">{% for i in r.not_included %}<li>{{ i }}</li>{% endfor %}</ul></div>{% endif %}
   </div>
 </section>
+{% endif %}
 
-<section class="section tint" id="prices">
+<section class="section tint" id="register">
   <div class="wrap">
-    <h2 class="title">Rooms and prices</h2>
-    <p class="lead">Price per person for the whole retreat. Payment is by bank transfer.</p>
-    <div class="price-table">
-      {% for room in r.rooms %}
-      <div class="price-row">
-        <div><h3>{{ room.name }}</h3><p class="muted">{{ room.detail }}</p></div>
-        <p class="price">{{ room.price|price }}</p>
+    <div class="soon-card">
+      <div class="soon-text">
+        <p class="soon-badge">{{ "Registration open" if r.status == "open" else "Coming soon" }}</p>
+        <h2>{{ "Register for this retreat" if r.status == "open" else "Register your interest" }}</h2>
+        <p>Fill this in and Anastasia will contact you personally{% if r.status == "open" %} to confirm your place{% endif %}. No payment or commitment now.</p>
       </div>
-      {% endfor %}
+      <div>{{ signup_form(site, "retreat", retreats, r.slug) }}</div>
     </div>
-    <div class="two-lists">
-      <div>
-        <h3>Included</h3>
-        <ul class="ticks">{% for i in r.included %}<li>{{ i|ph }}</li>{% endfor %}</ul>
-      </div>
-      <div>
-        <h3>Not included</h3>
-        <ul class="crosses">{% for i in r.not_included %}<li>{{ i|ph }}</li>{% endfor %}</ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap split">
-    <h2 class="title">Getting there</h2>
-    <p class="lead">The venue is in {{ r.location|ph }}, about <span class="fill">[X hours]</span> from Tbilisi by car. You'll get the exact address and directions when your place is confirmed. Travel to the venue is not included.</p>
-  </div>
-</section>
-
-<section class="section tint" id="book">
-  <div class="wrap split">
-    <div>
-      <h2 class="title">Request a place</h2>
-      <p class="lead">Fill this in and Anastasia will contact you personally to confirm your place.</p>
-      <p class="small">Prefer Instagram? <a href="{{ site.instagram }}" target="_blank" rel="noopener">Message {{ site.instagram_handle }}</a></p>
-    </div>
-    <div class="form-wrap">{{ interest_form(site, open_retreats, r.slug) }}</div>
   </div>
 </section>
 

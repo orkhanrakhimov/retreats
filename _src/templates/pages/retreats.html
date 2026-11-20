@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import photo, faq_items, contact_buttons, interest_form %}
+{% from "macros.html" import faq_items, contact_buttons, signup_form, share_button %}
 {% block title %}Retreats | retreats.ge{% endblock %}
 {% block content %}
 
@@ -10,22 +10,36 @@
   </div>
 </section>
 
-<section class="section tight-top" id="waitlist">
-  <div class="wrap">
-    {% for x in open_retreats %}
+{% if retreats %}
+<section class="section tight-top">
+  <div class="wrap retreat-list">
+    {% for x in retreats %}
     <article class="retreat-card">
-      {{ photo("The hotel", "retreat-photo") }}
+      <a class="retreat-cover" href="/retreats/{{ x.slug }}/" tabindex="-1" aria-hidden="true">
+        {% if x.cover %}<img src="{{ x.cover }}" alt="" loading="lazy">{% else %}<span class="cover-empty"></span>{% endif %}
+      </a>
       <div class="retreat-body">
-        <p class="meta">{{ x.location|ph }} · {{ x.dates|ph }}</p>
-        <h2>{{ x.name|ph }}</h2>
-        <p>{{ x.summary|ph }}</p>
-        <div class="actions"><a class="btn" href="/retreats/{{ x.slug }}/">Details and booking</a></div>
+        <p class="soon-badge">{{ "Registration open" if x.status == "open" else "Coming soon" }}</p>
+        <p class="meta">{{ x.location }}{% if x.location and x.dates %} · {% endif %}{{ x.dates }}</p>
+        <h2><a href="/retreats/{{ x.slug }}/">{{ x.name }}</a></h2>
+        {% if x.summary %}<p>{{ x.summary }}</p>{% endif %}
+        {% if x.price %}<p class="retreat-price">{{ x.price }}</p>{% endif %}
+        <div class="actions">
+          <a class="btn" href="/retreats/{{ x.slug }}/">See the retreat</a>
+          {{ share_button(site.url ~ "/retreats/" ~ x.slug ~ "/", x.name ~ (" · " ~ x.dates if x.dates else "")) }}
+        </div>
       </div>
     </article>
     {% endfor %}
-    <div class="soon-card{% if open_retreats %} soon-after{% endif %}">
+  </div>
+</section>
+{% endif %}
+
+<section class="section{% if not retreats %} tight-top{% endif %}" id="waitlist">
+  <div class="wrap">
+    <div class="soon-card">
       <div class="soon-text">
-        {% if open_retreats %}
+        {% if retreats %}
         <p class="soon-badge">Register</p>
         <h2>Register for a retreat, or hear about the next ones</h2>
         <p>Choose a retreat, or "any upcoming retreat" to hear about new ones. Anastasia will contact you personally.</p>
@@ -39,7 +53,7 @@
           <li>No payment or commitment now</li>
         </ul>
       </div>
-      {{ interest_form(site, open_retreats) }}
+      <div>{{ signup_form(site, "retreat", retreats) }}</div>
     </div>
   </div>
 </section>
@@ -56,14 +70,14 @@
   </div>
 </section>
 
-<section class="section tint" id="questions">
+<section class="section" id="questions">
   <div class="wrap split">
     <h2 class="title">Questions</h2>
     {{ faq_items(site) }}
   </div>
 </section>
 
-<section class="section">
+<section class="section tint">
   <div class="wrap contact">
     <h2 class="title">Have a question?</h2>
     <p class="lead">Write to Anastasia on Instagram or by email.</p>

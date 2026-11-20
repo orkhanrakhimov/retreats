@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import mail_icon %}
+{% from "macros.html" import mail_icon, signup_form %}
 {% block title %}Corporate wellness | retreats.ge{% endblock %}
 {% block description %}Yoga and Pilates for teams, led by Anastasia Mzhavia, a medical doctor: wellness days at your office and team retreats.{% endblock %}
 {% block content %}
@@ -8,7 +8,7 @@
   <div class="wrap">
     <h1>Corporate wellness</h1>
     <p class="intro page-intro">Yoga and Pilates for your team, led by a medical doctor. Better posture, healthier backs and less stress, at your office or away.</p>
-    <div class="actions"><a class="btn" href="mailto:{{ site.email }}?subject={{ 'Corporate wellness enquiry'|urlencode }}">{{ mail_icon() }} Email Anastasia</a></div>
+    <div class="actions"><a class="btn" href="#get-in-touch">Send an enquiry</a></div>
   </div>
 </section>
 
@@ -46,7 +46,7 @@
   <div class="wrap split">
     <h2 class="title">How it works</h2>
     <ol class="steps">
-      <li><span class="step-num">1</span><div><h3>Tell us about your team</h3><p>Email Anastasia with the size of your team, what you have in mind and roughly when.</p></div></li>
+      <li><span class="step-num">1</span><div><h3>Tell us about your team</h3><p>Send the enquiry form below with the size of your team, what you have in mind and roughly when.</p></div></li>
       <li><span class="step-num">2</span><div><h3>We plan it together</h3><p>She suggests a programme and a price, and adjusts it until it fits.</p></div></li>
       <li><span class="step-num">3</span><div><h3>Your team just shows up</h3><p>Classes and equipment are taken care of, and for team retreats, the venue and meals too.</p></div></li>
     </ol>
@@ -54,10 +54,17 @@
 </section>
 
 <section class="section tint" id="get-in-touch">
-  <div class="wrap contact">
-    <h2 class="title">Plan something for your team</h2>
-    <p class="lead">Write to Anastasia and she'll reply personally.</p>
-    <div class="actions"><a class="btn" href="mailto:{{ site.email }}?subject={{ 'Corporate wellness enquiry'|urlencode }}">{{ mail_icon() }} {{ site.email }}</a></div>
+  <div class="wrap">
+    <div class="soon-card">
+      <div class="soon-text">
+        <p class="soon-badge">Enquire</p>
+        <h2>Plan something for your team</h2>
+        <p>Tell Anastasia about your team and she'll contact you personally.</p>
+        <p class="small muted">Prefer email?</p>
+        <div class="actions"><a class="btn btn-line" href="mailto:{{ site.email }}?subject={{ 'Corporate wellness enquiry'|urlencode }}">{{ mail_icon() }} {{ site.email }}</a></div>
+      </div>
+      <div>{{ signup_form(site, "corporate") }}</div>
+    </div>
   </div>
 </section>
 {% endblock %}

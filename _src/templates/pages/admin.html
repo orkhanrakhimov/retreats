@@ -2,58 +2,157 @@
 {% block title %}Admin | retreats.ge{% endblock %}
 {% block head %}<meta name="robots" content="noindex, nofollow">{% endblock %}
 {% block content %}
-<section class="admin" data-admin data-endpoint="{{ site.forms_endpoint }}">
+<section class="admin" data-admin data-endpoint="{{ site.forms_endpoint }}" data-site="{{ site.url }}">
   <div class="wrap">
 
     <div class="admin-login" data-login>
       <h1>Admin</h1>
-      <p class="muted">Everyone who registered interest in a retreat on the website.</p>
+      <p class="muted">Sign-ups, retreats and visitor statistics for retreats.ge.</p>
       <form class="form" data-login-form>
         <div class="field"><label for="a-key">Password</label><input id="a-key" type="password" required autocomplete="current-password"></div>
         <label class="check-row"><input type="checkbox" data-remember checked> Remember on this device</label>
         <button class="btn" type="submit">Open</button>
         <p class="form-error" data-login-error role="alert" hidden></p>
       </form>
-      <p class="small muted" data-not-connected hidden>The sign-up sheet isn't connected yet. <a href="?demo">Preview the admin panel with sample data</a>.</p>
+      <p class="small muted"><a href="?demo">Preview with sample data</a></p>
     </div>
 
     <div class="admin-app" data-app hidden>
       <div class="admin-head">
         <div>
-          <h1>Sign-ups</h1>
+          <h1>Admin</h1>
           <p class="muted" data-updated></p>
         </div>
         <div class="admin-tools">
           <a class="btn btn-line btn-small" data-sheet-link target="_blank" rel="noopener" hidden>Open Google Sheet</a>
-          <button class="btn btn-line btn-small" type="button" data-export>Export CSV</button>
           <button class="btn btn-line btn-small" type="button" data-refresh>Refresh</button>
           <button class="btn btn-small" type="button" data-logout>Log out</button>
         </div>
       </div>
 
-      <div class="stats" data-stats></div>
-
-      <div class="admin-filters">
-        <label class="sr" for="a-search">Search</label>
-        <input id="a-search" type="search" placeholder="Search name, email or phone" data-search>
-        <label class="sr" for="a-status">Status</label>
-        <label class="sr" for="a-level">Level</label>
-        <select id="a-level" data-filter-level>
-          <option value="">All levels</option>
-          <option>New to it</option><option>Some experience</option><option>Practise regularly</option><option>Advanced</option>
-        </select>
-        <select id="a-status" data-filter-status>
-          <option value="">All statuses</option>
-          <option>New</option><option>Contacted</option><option>Booked</option><option>Not interested</option>
-        </select>
+      <div class="tabs" role="tablist" aria-label="Admin sections">
+        <button class="tab" role="tab" type="button" aria-selected="true" aria-controls="panel-signups" id="tab-signups" data-tab="signups">Sign-ups <span class="tab-count" data-count-signups></span></button>
+        <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-retreats" id="tab-retreats" data-tab="retreats" tabindex="-1">Retreats <span class="tab-count" data-count-retreats></span></button>
+        <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-visitors" id="tab-visitors" data-tab="visitors" tabindex="-1">Visitors</button>
       </div>
 
-      <div class="admin-table-wrap">
-        <table class="admin-table">
-          <thead><tr><th>Date</th><th>Person</th><th>Level</th><th>About them</th><th>Status</th><th>Notes</th></tr></thead>
-          <tbody data-rows></tbody>
-        </table>
-        <p class="admin-empty muted" data-empty hidden>No sign-ups match.</p>
+      <!-- Sign-ups -->
+      <div class="tab-panel" role="tabpanel" id="panel-signups" aria-labelledby="tab-signups">
+        <div class="stats" data-stats></div>
+        <div class="admin-filters">
+          <label class="sr" for="a-search">Search</label>
+          <input id="a-search" type="search" placeholder="Search name, email, phone, company" data-search>
+          <label class="sr" for="a-type">Type</label>
+          <select id="a-type" data-filter-type>
+            <option value="">All types</option>
+            <option value="retreat interest">Retreat interest</option>
+            <option value="online session">Online session</option>
+            <option value="corporate">Corporate</option>
+          </select>
+          <label class="sr" for="a-status">Status</label>
+          <select id="a-status" data-filter-status>
+            <option value="">All statuses</option>
+            <option>New</option><option>Contacted</option><option>Booked</option><option>Not interested</option>
+          </select>
+          <button class="btn btn-line btn-small" type="button" data-copy-emails>Copy emails</button>
+          <button class="btn btn-line btn-small" type="button" data-export>Export CSV</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Date</th><th>Person</th><th>Type</th><th>Details</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody data-rows></tbody>
+          </table>
+          <p class="admin-empty muted" data-empty hidden>No sign-ups match.</p>
+        </div>
+      </div>
+
+      <!-- Retreats -->
+      <div class="tab-panel" role="tabpanel" id="panel-retreats" aria-labelledby="tab-retreats" hidden>
+        <div class="panel-head">
+          <p class="muted">Retreats marked "Coming soon" or "Registration open" are shown on the website. Changes appear within about 15 minutes.</p>
+          <button class="btn btn-small" type="button" data-new-retreat>+ New retreat</button>
+        </div>
+        <div class="retreat-admin-list" data-retreat-list></div>
+
+        <form class="retreat-editor" data-editor hidden novalidate>
+          <div class="editor-head">
+            <h2 data-editor-title>New retreat</h2>
+            <button class="btn btn-line btn-small" type="button" data-editor-close>Close</button>
+          </div>
+          <input type="hidden" name="id">
+          <div class="field-row">
+            <div class="field"><label for="e-name">Name *</label><input id="e-name" name="name" type="text" required placeholder="e.g. Spring retreat in Kakheti"></div>
+            <div class="field"><label for="e-status">Show on website</label>
+              <select id="e-status" name="status">
+                <option value="draft">Draft: hidden</option>
+                <option value="soon">Coming soon: visible, register interest</option>
+                <option value="open">Registration open: visible</option>
+                <option value="closed">Closed: hidden</option>
+              </select></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="e-location">Location</label><input id="e-location" name="location" type="text" placeholder="e.g. Kakheti, Georgia"></div>
+            <div class="field"><label for="e-dates">Dates (as shown)</label><input id="e-dates" name="dates" type="text" placeholder="e.g. 10–13 May 2027"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="e-start">Start date (for ordering)</label><input id="e-start" name="start_date" type="date"></div>
+            <div class="field"><label for="e-price">Price (as shown)</label><input id="e-price" name="price" type="text" placeholder="e.g. From 1 500 GEL per person"></div>
+          </div>
+          <div class="field"><label for="e-summary">Short summary</label><textarea id="e-summary" name="summary" rows="2" placeholder="One or two sentences shown on the retreat card and in link previews"></textarea></div>
+          <div class="field"><label for="e-description">About this retreat</label><textarea id="e-description" name="description" rows="6" placeholder="The place, the idea, who it's for. Leave an empty line between paragraphs."></textarea></div>
+          <div class="field"><label for="e-programme">Programme</label><textarea id="e-programme" name="programme" rows="5" placeholder="The daily plan, or what each day looks like"></textarea></div>
+          <div class="field-row">
+            <div class="field"><label for="e-included">Included (one per line)</label><textarea id="e-included" name="included" rows="5"></textarea></div>
+            <div class="field"><label for="e-not">Not included (one per line)</label><textarea id="e-not" name="not_included" rows="5"></textarea></div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Cover photo</span>
+            <div class="photo-pick" data-cover-box>
+              <img data-cover-preview alt="" hidden>
+              <div class="photo-pick-actions">
+                <label class="btn btn-line btn-small file-btn">Upload cover photo<input type="file" accept="image/jpeg,image/png,image/webp" data-cover-input></label>
+                <button class="btn btn-line btn-small" type="button" data-cover-remove hidden>Remove</button>
+              </div>
+            </div>
+            <input type="hidden" name="cover">
+          </div>
+          <div class="field">
+            <span class="field-label">More photos</span>
+            <div class="gallery-edit" data-gallery></div>
+            <label class="btn btn-line btn-small file-btn">Add photos<input type="file" accept="image/jpeg,image/png,image/webp" multiple data-gallery-input></label>
+            <input type="hidden" name="gallery">
+          </div>
+
+          <p class="form-error" data-editor-error role="alert" hidden></p>
+          <p class="editor-ok" data-editor-ok role="status" hidden></p>
+          <div class="editor-actions">
+            <button class="btn" type="submit" data-save>Save retreat</button>
+            <a class="btn btn-line" data-view-link target="_blank" rel="noopener" hidden>View on website</a>
+            <button class="btn btn-line danger" type="button" data-delete hidden>Delete</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Visitors -->
+      <div class="tab-panel" role="tabpanel" id="panel-visitors" aria-labelledby="tab-visitors" hidden>
+        <div class="panel-head">
+          <p class="muted">Page views on the website. Counted without cookies; nothing personal is stored.</p>
+          <label class="sr" for="a-days">Period</label>
+          <select id="a-days" data-days>
+            <option value="7">Last 7 days</option>
+            <option value="30" selected>Last 30 days</option>
+            <option value="90">Last 90 days</option>
+          </select>
+        </div>
+        <div class="stats" data-visit-stats></div>
+        <div class="chart-card"><h3>Page views per day</h3><div data-chart></div></div>
+        <div class="visit-lists">
+          <div class="chart-card"><h3>Where visitors come from</h3><div data-list-sources></div></div>
+          <div class="chart-card"><h3>Most viewed pages</h3><div data-list-pages></div></div>
+          <div class="chart-card"><h3>Devices</h3><div data-list-devices></div></div>
+          <div class="chart-card"><h3>Location (approximate)</h3><div data-list-zones></div></div>
+        </div>
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import contact_buttons %}
+{% from "macros.html" import contact_buttons, signup_form %}
 {% block title %}Online sessions with Anastasia | retreats.ge{% endblock %}
 {% block description %}One-to-one online yoga and Pilates sessions by video call with Anastasia Mzhavia, a medical doctor, wherever you are.{% endblock %}
 {% block content %}
@@ -28,7 +28,7 @@
   <div class="wrap split">
     <h2 class="title">How it works</h2>
     <ol class="steps">
-      <li><span class="step-num">1</span><div><h3>Write to Anastasia</h3><p>Tell her a little about yourself, your goals and any health issues.</p></div></li>
+      <li><span class="step-num">1</span><div><h3>Send a request</h3><p>Fill in the short form below with your goals and any health issues.</p></div></li>
       <li><span class="step-num">2</span><div><h3>Choose a time</h3><p>She suggests times and sends you a video-call link.</p></div></li>
       <li><span class="step-num">3</span><div><h3>Practise from home</h3><p>All you need is a mat, a little space and your phone or laptop.</p></div></li>
     </ol>
@@ -36,10 +36,17 @@
 </section>
 
 <section class="section tint" id="get-in-touch">
-  <div class="wrap contact">
-    <h2 class="title">Book a session</h2>
-    <p class="lead">Message Anastasia on Instagram or by email, and she'll reply personally.</p>
-    {{ contact_buttons(site) }}
+  <div class="wrap">
+    <div class="soon-card">
+      <div class="soon-text">
+        <p class="soon-badge">Book a session</p>
+        <h2>Request an online session</h2>
+        <p>Tell Anastasia a little about yourself and she'll contact you personally to arrange a time.</p>
+        <p class="small muted">Prefer to write directly?</p>
+        {{ contact_buttons(site) }}
+      </div>
+      <div>{{ signup_form(site, "online") }}</div>
+    </div>
   </div>
 </section>
 {% endblock %}

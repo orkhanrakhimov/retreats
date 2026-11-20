@@ -83,29 +83,55 @@
 
 
 
-{% macro interest_form(site, open_retreats, selected=None) -%}
-<form class="form" data-waitlist novalidate>
-  <div class="hp" aria-hidden="true"><label for="w-website">Website</label><input id="w-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-  {% if open_retreats %}
-  <div class="field">
-    <label for="w-retreat">Which retreat?</label>
-    <select id="w-retreat" name="retreat" required>
-      {% for x in open_retreats %}<option value="{{ x.name }} ({{ x.dates }})"{% if selected == x.slug %} selected{% endif %}>{{ x.name }}, {{ x.dates }}</option>{% endfor %}
-      <option value="Any upcoming retreat"{% if not selected %} selected{% endif %}>Tell me about any upcoming retreat</option>
-    </select>
-  </div>
-  {% else %}
-  <input type="hidden" name="retreat" value="Any upcoming retreat">
+{% macro signup_form(site, kind="retreat", retreats=[], selected=None) -%}
+{% set p = kind[0] %}
+<form class="form" data-signup-form data-kind="{{ kind }}" novalidate>
+  <div class="hp" aria-hidden="true"><label for="{{ p }}-website">Website</label><input id="{{ p }}-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+  {% if kind == "retreat" %}
+    {% if retreats %}
+    <div class="field">
+      <label for="r-retreat">Which retreat?</label>
+      <select id="r-retreat" name="retreat" required>
+        {% for x in retreats %}<option value="{{ x.name }} ({{ x.dates }})"{% if selected == x.slug %} selected{% endif %}>{{ x.name }}{% if x.dates %}, {{ x.dates }}{% endif %}</option>{% endfor %}
+        <option value="Any upcoming retreat"{% if not selected %} selected{% endif %}>Tell me about any upcoming retreat</option>
+      </select>
+    </div>
+    {% else %}
+    <input type="hidden" name="retreat" value="Any upcoming retreat">
+    {% endif %}
   {% endif %}
-  <p class="form-step">About you</p>
-  <div class="field"><label for="w-name">Full name</label><input id="w-name" name="name" type="text" required autocomplete="name"></div>
+
+  {% if kind == "corporate" %}
+  <p class="form-step">Your company</p>
   <div class="field-row">
-    <div class="field"><label for="w-email">Email</label><input id="w-email" name="email" type="email" required autocomplete="email"></div>
-    <div class="field"><label for="w-phone">Phone number</label><input id="w-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+995 …"></div>
+    <div class="field"><label for="c-company">Company</label><input id="c-company" name="company" type="text" required autocomplete="organization"></div>
+    <div class="field"><label for="c-team">Team size</label><input id="c-team" name="team_size" type="text" required placeholder="Roughly how many people"></div>
+  </div>
+  <fieldset class="field">
+    <legend>Interested in</legend>
+    <div class="chips">
+      <label class="chip"><input type="radio" name="interest" value="Wellness day at the office" required><span>Wellness day at the office</span></label>
+      <label class="chip"><input type="radio" name="interest" value="Team retreat"><span>Team retreat</span></label>
+      <label class="chip"><input type="radio" name="interest" value="Not sure yet"><span>Not sure yet</span></label>
+    </div>
+  </fieldset>
+  <p class="form-step">Contact person</p>
+  {% else %}
+  <p class="form-step">About you</p>
+  {% endif %}
+
+  <div class="field"><label for="{{ p }}-name">Full name</label><input id="{{ p }}-name" name="name" type="text" required autocomplete="name"></div>
+  <div class="field-row">
+    <div class="field"><label for="{{ p }}-email">Email</label><input id="{{ p }}-email" name="email" type="email" required autocomplete="email"></div>
+    <div class="field"><label for="{{ p }}-phone">Phone number</label><input id="{{ p }}-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+995 …"></div>
   </div>
 
+  {% if kind == "corporate" %}
+  <div class="field"><label for="c-message">What do you have in mind?</label><textarea id="c-message" name="message" rows="4" required placeholder="Dates, place, goals for your team, anything else"></textarea></div>
+  {% else %}
   <p class="form-step">Your practice</p>
-  <fieldset class="field" data-required-group>
+  <fieldset class="field">
     <legend>Your level of yoga or Pilates</legend>
     <div class="chips">
       <label class="chip"><input type="radio" name="level" value="New to it" required><span>New to it</span></label>
@@ -114,17 +140,34 @@
       <label class="chip"><input type="radio" name="level" value="Advanced"><span>Advanced</span></label>
     </div>
   </fieldset>
-  <div class="field"><label for="w-motivation">What would you like from a retreat?</label><textarea id="w-motivation" name="motivation" rows="3" required placeholder="For example: rest and switch off, get stronger, help with back pain, time for myself"></textarea></div>
-  <div class="field"><label for="w-health">Anything medical Anastasia should know?</label><textarea id="w-health" name="health" rows="3" required placeholder="Injuries, back or joint pain, conditions, pregnancy, medication. Write &quot;None&quot; if nothing."></textarea><span class="hint">Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.</span></div>
+  <div class="field"><label for="{{ p }}-motivation">{% if kind == "online" %}What would you like to work on?{% else %}What would you like from a retreat?{% endif %}</label><textarea id="{{ p }}-motivation" name="motivation" rows="3" required placeholder="{% if kind == 'online' %}For example: learn the basics, help with back pain, get stronger, a routine for home{% else %}For example: rest and switch off, get stronger, help with back pain, time for myself{% endif %}"></textarea></div>
+  <div class="field"><label for="{{ p }}-health">Anything medical Anastasia should know?</label><textarea id="{{ p }}-health" name="health" rows="3" required placeholder="Injuries, back or joint pain, conditions, pregnancy, medication. Write &quot;None&quot; if nothing."></textarea><span class="hint">Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.</span></div>
+  {% endif %}
 
-  <label class="check-row consent"><input type="checkbox" name="consent" required> <span>I agree that Anastasia keeps these details to plan retreats and contact me. They are never shared.</span></label>
-  <button class="btn" type="submit">Register my interest</button>
+  <label class="check-row consent"><input type="checkbox" name="consent" required> <span>I agree that Anastasia keeps these details to contact me{% if kind != "corporate" %} and plan safe classes{% endif %}, as described in the <a href="/privacy/" target="_blank">privacy policy</a>.</span></label>
+  <button class="btn" type="submit" data-label="{{ {'retreat': 'Register my interest', 'online': 'Request a session', 'corporate': 'Send enquiry'}[kind] }}">{{ {'retreat': 'Register my interest', 'online': 'Request a session', 'corporate': 'Send enquiry'}[kind] }}</button>
   <p class="form-error" role="alert" hidden></p>
 </form>
 <div class="form-success" data-success hidden tabindex="-1">
-  <p class="soon-badge">You're on the list</p>
+  <p class="soon-badge">{{ {'retreat': "You're on the list", 'online': 'Request sent', 'corporate': 'Enquiry sent'}[kind] }}</p>
   <h3>Thank you, <span data-first-name></span>!</h3>
-  <p>Anastasia will be in touch personally about the retreat.</p>
+  <p>{{ {'retreat': 'Anastasia will be in touch personally about the retreat.', 'online': 'Anastasia will be in touch personally to arrange your session.', 'corporate': 'Anastasia will be in touch personally to plan it with you.'}[kind] }}</p>
   <p class="muted small">In the meantime, say hello on <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>.</p>
+</div>
+{%- endmacro %}
+
+{% macro share_button(url, title, text="") -%}
+<div class="share" data-share data-url="{{ url }}" data-title="{{ title }}" data-text="{{ text }}">
+  <button type="button" class="btn btn-line btn-small share-toggle" data-share-toggle aria-expanded="false">
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
+    Share
+  </button>
+  <div class="share-menu" data-share-menu hidden>
+    <a href="https://wa.me/?text={{ (title ~ ' ' ~ url)|urlencode }}" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://t.me/share/url?url={{ url|urlencode }}&amp;text={{ title|urlencode }}" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url|urlencode }}" target="_blank" rel="noopener">Facebook</a>
+    <a href="mailto:?subject={{ title|urlencode }}&amp;body={{ url|urlencode }}">Email</a>
+    <button type="button" data-copy>Copy link</button>
+  </div>
 </div>
 {%- endmacro %}

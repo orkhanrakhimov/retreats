@@ -11,8 +11,6 @@
 <meta property="og:url" content="https://retreats.ge/retreats/">
 <meta property="og:site_name" content="retreats.ge">
 <meta property="og:image" content="https://retreats.ge/assets/img/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FAFAF7">
 <link rel="canonical" href="https://retreats.ge/retreats/">
@@ -41,7 +39,8 @@
       <a href="/contact/">Contact</a>
     </nav>
     <div class="header-end">
-<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
+      <a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
         <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>
     </div>
@@ -57,6 +56,7 @@
   </div>
 </section>
 
+
 <section class="section tight-top" id="waitlist">
   <div class="wrap">
     <div class="soon-card">
@@ -69,18 +69,21 @@
           <li>No payment or commitment now</li>
         </ul>
       </div>
-      <form class="form" data-waitlist novalidate>
-  <div class="hp" aria-hidden="true"><label for="w-website">Website</label><input id="w-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-  <input type="hidden" name="retreat" value="Any upcoming retreat">
+      <div><form class="form" data-signup-form data-kind="retreat" novalidate>
+  <div class="hp" aria-hidden="true"><label for="r-website">Website</label><input id="r-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+    <input type="hidden" name="retreat" value="Any upcoming retreat">
+
   <p class="form-step">About you</p>
-  <div class="field"><label for="w-name">Full name</label><input id="w-name" name="name" type="text" required autocomplete="name"></div>
+
+  <div class="field"><label for="r-name">Full name</label><input id="r-name" name="name" type="text" required autocomplete="name"></div>
   <div class="field-row">
-    <div class="field"><label for="w-email">Email</label><input id="w-email" name="email" type="email" required autocomplete="email"></div>
-    <div class="field"><label for="w-phone">Phone number</label><input id="w-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+995 …"></div>
+    <div class="field"><label for="r-email">Email</label><input id="r-email" name="email" type="email" required autocomplete="email"></div>
+    <div class="field"><label for="r-phone">Phone number</label><input id="r-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+995 …"></div>
   </div>
 
   <p class="form-step">Your practice</p>
-  <fieldset class="field" data-required-group>
+  <fieldset class="field">
     <legend>Your level of yoga or Pilates</legend>
     <div class="chips">
       <label class="chip"><input type="radio" name="level" value="New to it" required><span>New to it</span></label>
@@ -89,19 +92,19 @@
       <label class="chip"><input type="radio" name="level" value="Advanced"><span>Advanced</span></label>
     </div>
   </fieldset>
-  <div class="field"><label for="w-motivation">What would you like from a retreat?</label><textarea id="w-motivation" name="motivation" rows="3" required placeholder="For example: rest and switch off, get stronger, help with back pain, time for myself"></textarea></div>
-  <div class="field"><label for="w-health">Anything medical Anastasia should know?</label><textarea id="w-health" name="health" rows="3" required placeholder="Injuries, back or joint pain, conditions, pregnancy, medication. Write &quot;None&quot; if nothing."></textarea><span class="hint">Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.</span></div>
+  <div class="field"><label for="r-motivation">What would you like from a retreat?</label><textarea id="r-motivation" name="motivation" rows="3" required placeholder="For example: rest and switch off, get stronger, help with back pain, time for myself"></textarea></div>
+  <div class="field"><label for="r-health">Anything medical Anastasia should know?</label><textarea id="r-health" name="health" rows="3" required placeholder="Injuries, back or joint pain, conditions, pregnancy, medication. Write &quot;None&quot; if nothing."></textarea><span class="hint">Only Anastasia sees this. As a doctor, she uses it to plan safe classes for you.</span></div>
 
-  <label class="check-row consent"><input type="checkbox" name="consent" required> <span>I agree that Anastasia keeps these details to plan retreats and contact me. They are never shared.</span></label>
-  <button class="btn" type="submit">Register my interest</button>
+  <label class="check-row consent"><input type="checkbox" name="consent" required> <span>I agree that Anastasia keeps these details to contact me and plan safe classes, as described in the <a href="/privacy/" target="_blank">privacy policy</a>.</span></label>
+  <button class="btn" type="submit" data-label="Register my interest">Register my interest</button>
   <p class="form-error" role="alert" hidden></p>
 </form>
 <div class="form-success" data-success hidden tabindex="-1">
-  <p class="soon-badge">You're on the list</p>
+  <p class="soon-badge">You&#39;re on the list</p>
   <h3>Thank you, <span data-first-name></span>!</h3>
   <p>Anastasia will be in touch personally about the retreat.</p>
   <p class="muted small">In the meantime, say hello on <a href="https://www.instagram.com/anastasiamzhavia/" target="_blank" rel="noopener">Instagram</a>.</p>
-</div>
+</div></div>
     </div>
   </div>
 </section>
@@ -118,7 +121,7 @@
   </div>
 </section>
 
-<section class="section tint" id="questions">
+<section class="section" id="questions">
   <div class="wrap split">
     <h2 class="title">Questions</h2>
     <div class="faq">
@@ -132,7 +135,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section tint">
   <div class="wrap contact">
     <h2 class="title">Have a question?</h2>
     <p class="lead">Write to Anastasia on Instagram or by email.</p>
@@ -172,11 +175,11 @@
   </div>
   <div class="wrap footer-base">
     <span>© <span data-year>2026</span> retreats.ge</span>
-    <span>Tbilisi, Georgia</span>
+    <span><a href="/privacy/">Privacy</a> · Tbilisi, Georgia</span>
   </div>
 </footer>
 
-<script>window.SITE = {"currency": "\u20be", "deposit_percent": 30, "email": "anastasiamzhavia@gmail.com", "forms_endpoint": "https://script.google.com/macros/s/AKfycbw7rtVzHM5ICAAonRQyu2-azB40anuuOnZAT7ZeqKxeD_r4IMXqIiPM0R4JaWuWe9qx/exec", "host": "Anastasia Mzhavia", "instagram": "https://www.instagram.com/anastasiamzhavia/", "instagram_handle": "@anastasiamzhavia", "name": "retreats.ge", "tagline": "Yoga \u0026 Pilates retreats with Anastasia Mzhavia", "url": "https://retreats.ge"};</script>
+<script>window.SITE = {"email": "anastasiamzhavia@gmail.com", "forms_endpoint": "https://script.google.com/macros/s/AKfycbw7rtVzHM5ICAAonRQyu2-azB40anuuOnZAT7ZeqKxeD_r4IMXqIiPM0R4JaWuWe9qx/exec", "host": "Anastasia Mzhavia", "instagram": "https://www.instagram.com/anastasiamzhavia/", "instagram_handle": "@anastasiamzhavia", "name": "retreats.ge", "tagline": "Yoga \u0026 Pilates retreats with Anastasia Mzhavia", "url": "https://retreats.ge"};</script>
 <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

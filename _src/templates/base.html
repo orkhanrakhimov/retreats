@@ -10,9 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ path }}">
 <meta property="og:site_name" content="retreats.ge">
-<meta property="og:image" content="{{ site.url }}/assets/img/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="{% block og_image %}{{ site.url }}/assets/img/og-image.jpg{% endblock %}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FAFAF7">
 <link rel="canonical" href="{{ site.url }}{{ path }}">
@@ -53,7 +51,7 @@
       <a href="/contact/"{% if path == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
     </nav>
     <div class="header-end">
-      {% if next_retreat %}<a class="btn btn-small" href="/retreats/{{ next_retreat.slug }}/#book">Book</a>{% else %}<a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>{% endif %}
+      <a class="btn btn-small" href="/retreats/#waitlist"><span class="hide-sm">Register your interest</span><span class="show-sm">Register</span></a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-menu>
         <span class="sr">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>
@@ -87,7 +85,7 @@
   </div>
   <div class="wrap footer-base">
     <span>© <span data-year>2026</span> retreats.ge</span>
-    <span>Tbilisi, Georgia</span>
+    <span><a href="/privacy/">Privacy</a> · Tbilisi, Georgia</span>
   </div>
 </footer>
 
