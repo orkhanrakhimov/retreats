@@ -421,3 +421,16 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
 
 .options-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 900px) { .options-2 { grid-template-columns: 1fr; } }
+
+/* Split sections: text on one side, photo filling the other half edge to edge */
+.split-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: clamp(560px, calc(100vh - 76px), 860px); }
+.split-text { align-self: center; padding: clamp(56px, 7vw, 96px) clamp(32px, 5vw, 80px) clamp(56px, 7vw, 96px) max(var(--pad), calc((100vw - var(--wrap)) / 2 + var(--pad))); }
+.split-hero.reverse .split-text { padding-left: clamp(32px, 5vw, 80px); padding-right: max(var(--pad), calc((100vw - var(--wrap)) / 2 + var(--pad))); }
+.split-text h1 { font-size: clamp(44px, 5.4vw, 80px); line-height: 1.04; margin-bottom: 16px; }
+.split-photo.pic-frame { aspect-ratio: auto; height: 100%; min-height: 100%; border-radius: 0; }
+.split-photo img { object-position: center 45%; }
+@media (max-width: 860px) {
+  .split-hero, .split-hero.reverse { grid-template-columns: 1fr; min-height: 0; }
+  .split-hero .split-photo.pic-frame { order: -1; aspect-ratio: 4 / 5; height: auto; max-height: 78vh; }
+  .split-hero .split-text, .split-hero.reverse .split-text { padding: 40px var(--pad) 56px; }
+}
