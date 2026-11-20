@@ -653,3 +653,8 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--green-light
 .video-toggle.paused span::after { display: none; }
 @media (max-width: 860px) { .bleed-video { grid-template-columns: 1fr; } }
 .footer-privacy { margin-left: 20px; }
+.parts { margin-top: 32px; border-top: 1px solid var(--line); }
+.parts li { display: grid; grid-template-columns: 130px 1fr; gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.parts strong { font: 400 21px/1.3 var(--serif); color: var(--ink); }
+.parts span { color: var(--muted); font-size: 16px; line-height: 1.55; padding-top: 2px; }
+@media (max-width: 480px) { .parts li { grid-template-columns: 1fr; } }
