@@ -157,3 +157,15 @@
     });
   }
 })();
+
+// Class video: pause button, and no autoplay for people who prefer less motion
+(function () {
+  document.querySelectorAll(".video-frame").forEach(function (frame) {
+    var v = frame.querySelector("video"), b = frame.querySelector("[data-video-toggle]");
+    if (!v || !b) return;
+    function sync() { var p = v.paused; b.classList.toggle("paused", p); b.setAttribute("aria-label", p ? "Play video" : "Pause video"); }
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); }
+    b.addEventListener("click", function () { v.paused ? v.play() : v.pause(); });
+    v.addEventListener("play", sync); v.addEventListener("pause", sync); sync();
+  });
+})();
